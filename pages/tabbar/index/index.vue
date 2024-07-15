@@ -35,7 +35,7 @@
         :background="global__theme__ == 'black' ? '#19191e' : '#ffffff'"
       >
         <view slot="left" class="lxy-nav-bar__logo default">
-          <block v-if="config_app_multi > 0">
+          <!-- <block v-if="config_app_multi > 0">
             <block
               v-if="
                 config_page_index_channels &&
@@ -97,7 +97,8 @@
                 ></i>
               </block>
             </block>
-          </block>
+          </block> -->
+          <text class="lxy-nav-bar__logo-text">KISS</text>
         </view>
         <block
           v-if="
@@ -196,6 +197,7 @@
                 <text class="tab-bar-title" v-if="item.plate_name">{{
                   item.plate_name
                 }}</text>
+                <view class="tab-bar-title-slider"></view>
               </block>
             </view>
           </scroll-view>
@@ -216,7 +218,7 @@
 
       <block v-if="channelIndex == 1">
         <!-- 幻灯片 -->
-        <view
+        <!-- <view
           v-if="
             _type == 1 &&
             config_page_index_banner &&
@@ -295,7 +297,54 @@
               </swiper-item>
             </swiper>
           </view>
-        </block>
+        </block> -->
+
+        <!-- 圈子分类 -->
+        <view class="new-circle-class" v-if="_type == 1">
+          <view class="title">圈子分类</view>
+          <view class="content">
+            <view class="left">
+              <image src="@/static/tabbar/53.png"></image>
+            </view>
+            <view class="right">
+              <view class="top">
+                <image src="@/static/tabbar/57.png"></image>
+                <image src="@/static/tabbar/58.png"></image>
+              </view>
+              <view class="bottom">
+                <image src="@/static/tabbar/59.png"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <!-- 大家都在看 -->
+        <view class="all-person-view" v-if="_type == 1">
+          <view class="title">大家都在看</view>
+          <view class="content">
+            <view class="title">
+              <view class="left">热门活动</view>
+              <view class="right">
+                <image src="@/static/tabbar/60.png"></image>
+              </view>
+            </view>
+            <view class="activity">
+              <view class="activity-item">
+                <view class="pic">
+                  <image src="@/static/tabbar/60.png" alt="" />
+                </view>
+                <view class="activity-info">
+                  <view class="title">
+                    <text>#夜半剧本杀</text>
+                    <view class="personJoin">100人已参与</view>
+                  </view>
+                  <view class="intro">周末组队游戏沉浸式体验...</view>
+                </view>
+                <view class="goto">去看看</view>
+              </view>
+            </view>
+          </view>
+        </view>
 
         <!-- 滚动nav -->
         <scroll-nav
@@ -464,6 +513,7 @@
                               <user-info
                                 :user="item.user"
                                 :format_time="item.format_time"
+                                :created_at="item.created_at"
                                 :ip_address="item.ip_address"
                                 :distance="item.distance"
                                 :device="item.device"
@@ -1162,6 +1212,7 @@
       config_tab: {
         get() {
           let that = this
+          console.log(that.$store.state.config.tab), 111111
           return that.$store.state.config.tab
         },
         set(v) {}
@@ -1373,6 +1424,7 @@
             that.$store.state.config.tab.length > 0 &&
             that.$store.state.config.tab[that.type]
           ) {
+            console.log(that.$store.state.config.tab[that.type]['type'], 4444)
             return that.$store.state.config.tab[that.type]['type'] || 0
           }
           return 0
@@ -1780,7 +1832,9 @@
             })
             if (type_ == 2 && that.topicTopTenLoad) {
               that.getRealtimeTopics()
+              console.log(22222)
             }
+            console.log(type_, 33333)
             that.indexPosts()
           }
         }
@@ -1948,6 +2002,225 @@
 </script>
 <style lang="scss">
   @import './index.scss';
+
+  .mini-page-body {
+    background-color: #fff !important;
+  }
+
+  .lxy-nav-bar__logo-text {
+    font-family: HarmonyOS Sans SC, HarmonyOS Sans SC;
+    font-weight: 700;
+    font-size: 36rpx;
+    color: #000000;
+    line-height: 36rpx;
+  }
+
+  .tab-bar-item {
+    .tab-bar-title {
+      font-weight: 500;
+      font-size: 36rpx;
+      color: #4c4c4c;
+    }
+
+    &.active {
+      position: relative;
+
+      .tab-bar-title {
+        font-weight: 500;
+        font-size: 40rpx;
+        color: #000000;
+      }
+      .tab-bar-title-slider {
+        position: absolute;
+        left: 50%;
+        bottom: 0rpx;
+        transform: translateX(-50%);
+        width: 30rpx;
+        height: 6rpx;
+        background: #ff2442;
+        border-radius: 4rpx 4rpx 4rpx 4rpx;
+      }
+    }
+  }
+
+  .index-header-height {
+    height: 50rpx !important;
+    min-height: 50rpx !important;
+  }
+
+  .new-circle-class {
+    display: flex;
+    padding: 44rpx 20rpx 60rpx 20rpx;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 24rpx;
+    background-color: #fff;
+
+    .title {
+      font-weight: 400;
+      font-size: 32rpx;
+    }
+    .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: 10rpx;
+
+      .left {
+        image {
+          width: 410rpx;
+          height: 260rpx;
+        }
+      }
+      .right {
+        .top {
+          display: flex;
+          justify-content: center;
+          column-gap: 10rpx;
+          align-items: center;
+
+          image {
+            width: 130rpx;
+            height: 122rpx;
+          }
+        }
+
+        .bottom {
+          margin-top: 16rpx;
+          image {
+            width: 270rpx;
+            height: 122rpx;
+          }
+        }
+      }
+    }
+  }
+
+  .all-person-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20rpx;
+    row-gap: 20rpx;
+    background-color: #fff;
+
+    .title {
+      font-weight: 400;
+      font-size: 32rpx;
+    }
+
+    .content {
+      max-height: 448rpx;
+      padding: 44rpx 14rpx 40rpx 46rpx;
+      background: linear-gradient(180deg, #ffb637 2%, #ffffff 64%);
+      box-shadow: 0rpx 2rpx 2rpx 0rpx rgba(0, 0, 0, 0.1);
+      border-radius: 28rpx 28rpx 28rpx 28rpx;
+
+      .title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .left {
+          width: 192rpx;
+          height: 48rpx;
+          font-family: EYXDH_3500ZSYB, EYXDH_3500ZSYB;
+          font-weight: bold;
+          font-size: 48rpx;
+          color: #000000;
+          line-height: 48rpx;
+          text-align: left;
+          font-style: normal;
+          text-transform: none;
+          text-shadow: 2px 2px 0 white; /* 右下方向白色描边 */
+        }
+
+        .right {
+          image {
+            width: 100rpx;
+            height: 100rpx;
+          }
+        }
+      }
+
+      .activity {
+        margin-top: 12rpx;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20rpx;
+
+        .activity-item {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          height: 80rpx;
+          min-height: 80rpx;
+          max-height: 80rpx;
+          column-gap: 28rpx;
+
+          .pic {
+            width: 80rpx;
+            height: 80rpx;
+
+            image {
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          .activity-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            row-gap: 18rpx;
+
+            .title {
+              display: flex;
+              align-items: center;
+              justify-content: start;
+              font-weight: 400;
+              font-size: 32rpx;
+              color: #000000;
+              font-style: normal;
+              column-gap: 16rpx;
+
+              .personJoin {
+                padding: 6rpx;
+                background: #ffb637;
+                font-weight: 400;
+                font-size: 20rpx;
+                color: #ffffff;
+                border-radius: 8rpx 8rpx 8rpx 8rpx;
+              }
+            }
+
+            .intro {
+              font-weight: 400;
+              font-size: 24rpx;
+              color: #999999;
+            }
+          }
+
+          .goto {
+            margin-right: 26rpx;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100rpx;
+            height: 46rpx;
+            padding: 12rpx 20rpx;
+            background: #000000;
+            font-weight: 400;
+            font-size: 20rpx;
+            color: #ffffff;
+            border-radius: 23rpx 23rpx 23rpx 23rpx;
+            box-sizing: border-box;
+          }
+        }
+      }
+    }
+  }
 
   .hasRefreshData-tip {
     background: #f0f9eb;
