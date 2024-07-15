@@ -1,0 +1,96 @@
+@import '@/pages/template/circle.scss';
+@import '@/pages/template/user.scss';
+
+.sub-head{
+	@include background_color(page-body-background-color);
+	display: flex;
+	justify-content: space-between;
+	.shop-enter{
+		justify-content: center;
+		padding-right: 30rpx;
+		._view{
+			@include color(color-lighter-er-dark);
+			font-size: $uni-font-size-sm-base;
+		}
+	}
+	.inner{
+		padding: 0 30rpx;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 70rpx;
+		font-size: $uni-font-size-sm;
+		width: 400rpx;
+		.item{
+			display: flex;
+			._text{
+				height: 70rpx;
+				line-height: 70rpx;
+				@include color(color-lighter-er-dark);
+			}
+			.box{
+				height: 70rpx;
+				display: flex;
+				flex-direction: column;
+				margin-left: 4rpx;
+				transform: scale(0.5);
+				justify-content: center;
+				.mini-icon{
+					font-size: 22rpx;
+					line-height: 22rpx;
+					@include color(color-lightest-dark);
+				}
+				.mini-icon.active{
+					@include color(color-primary);
+				}
+			}
+		}
+		.item.current{
+			._text{
+				@include color(color-primary);
+			}
+		}
+	}
+}
+
+.vip-img {
+    width: 500rpx;
+    height: 500rpx;
+}
+
+.like-box {
+    width: 500rpx;
+    height: 380rpx;
+    @include background_color(page-box-background-color);
+    border-radius: 30rpx;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.like-box image {
+    position: absolute;
+    top: -120rpx;
+    width: 400rpx;
+    height: 400rpx;
+    animation: fadeIn 0.6s ease;
+}
+
+.like-box view {
+    font-size: 48rpx;
+    font-weight: bold;
+    color: $uni-color-primary;
+    height: 90rpx;
+}
+
+.like-box text {
+    font-size: $uni-font-size-sm-base;
+    @include color(color-lightest-dark);
+    height: 45rpx;
+    max-width: 450rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

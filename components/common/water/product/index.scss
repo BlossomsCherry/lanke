@@ -1,0 +1,342 @@
+$waterfall-img-max-height: 600rpx; // 瀑布流图片最大高度（默认值：600rpx ）
+// 瀑布流
+$waterfall-random-bg-font-size: 26rpx; // 随机图片瀑布流文字大小 （默认值：30rpx ）
+$waterfall-random-bg-padding: 20rpx; // 随机图片瀑布流内间距 （默认值：20rpx ）
+$waterfall-random-bg-max-height: 120rpx; // 随机图片瀑布流文字行数，可设置为120rpx则显示三行文字，40rpx大概一行 （默认值：80rpx ）
+$waterfall-random-bg-justify-content: start;  // 随机图片瀑布流文字上下的位置，改为center可居中。（默认值：start ）
+
+
+.water-ad-wrap{
+	width: 100%;
+	overflow: hidden;
+	margin-bottom: 20rpx;
+	position: relative;
+	.ad-content{
+		width: 100%;
+		margin: auto;
+	}
+	._image{
+		width: 100%;
+		max-width: 100%;
+		margin: auto;
+	}
+	.mini-adtip{
+		position: absolute; top: 8rpx; left: 8rpx;  color: #cccccc; z-index: 9;opacity: 0.6;
+	}
+}
+.shop-box{
+	width: 100%;
+	overflow: hidden;
+	margin-bottom: 20rpx;
+	border-radius: $uni-border-radius-sm;
+	@include background_color(page-box-background-color);
+	.img-wrap{
+		width: 100%;
+		border-radius: $uni-border-radius-sm $uni-border-radius-sm 0 0;
+		overflow: hidden;
+		position: relative;
+		max-height: $waterfall-img-max-height;
+		.shop-box-cover {
+		    width: 100%;
+		    border-radius: $uni-border-radius-sm $uni-border-radius-sm 0 0;
+		    animation: fadeIn 1s ease;
+			background-color: #eee;
+		}
+		.mini-icon.mini-shipin1 {
+		    position: absolute;
+		    top: 20rpx;
+		    right: 20rpx;
+		    color: #ffffff;
+		    font-size: 46rpx;
+		}
+		.civ2-icon-wrap{
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: rgba(0, 0, 0, .1);
+			right: 0;
+			bottom: 0;
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			.civ2-icon{
+				color: #ffffff;
+				font-size: $uni-font-size-medium;
+				display: inline;
+			}
+		}
+	}
+	.title-wrap{
+		 margin: 15rpx 0 0;
+		 max-height: 80rpx;
+		 padding: 0 10rpx;
+		.shop-box-title {
+		    @include color(color-light-dark);
+		    font-size: $uni-font-size-base;
+			max-height: 80rpx;
+		    line-height: 40rpx;
+		    display: -webkit-box;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    word-wrap: break-word;
+		    white-space: normal;
+		    -webkit-line-clamp: 2;
+		    -webkit-box-orient: vertical;
+			font-weight: 500;
+			.icon-text::before, .icon-text::after{
+				font-family: "mini-icon" !important;
+				font-size: $uni-font-size-base;
+				display: inline-flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+			.icon-text.isSticky-icon::before{
+				content: "\e657";
+				color: #13cbb9;
+				margin-right: 10rpx;
+			}
+			.icon-text.isInReview-icon::before{
+				content: "\e6ab";
+				color: #008df0;
+				margin-right: 10rpx;
+			}
+			.icon-text.reviewBack-icon::before{
+				content: "\e69b";
+				color: red;
+				margin-right: 10rpx;
+			}
+			.icon-text.isAdminDelete-icon::before{
+				content: "\e696";
+				color: #000000;
+				margin-right: 10rpx;
+			}
+			.icon-text.pay-coins-icon::after{
+				content: "\e6aa";
+				color: #ce994f;
+				margin-right: 10rpx;
+			}
+			.icon-text.pay-balance-icon::after{
+				content: "\e6bd";
+				color: #ce994f;
+				margin-right: 10rpx;
+			}
+		}
+	}
+	
+	.df-box {
+	    width: 100%;
+	    display: flex;
+	    align-items: center;
+	    justify-content: space-between;
+		margin: 15rpx 0;
+		padding: 0 10rpx;
+		box-sizing: border-box;
+		.df-box-comt {
+		    width: 230rpx;
+		    display: flex;
+		    align-items: center;
+		    @include color(color-lightest-dark);
+		    font-size: $uni-font-size-sm;
+			.head-portrait-wrap{
+				position: relative;
+				width: 36rpx;
+				height: 36rpx;
+				margin-right: 15rpx;
+				.head-portrait {
+				    width: 36rpx;
+				    height: 36rpx;
+				    border-radius: 50%;
+				}
+				.avatar-authentication-icon{
+					position: absolute;
+					right: -30%;
+					bottom: -15%;
+					@include background_color(page-box-background-color);
+					border-radius: 50%;
+					width: 20rpx;
+					max-width: 20rpx;
+					height: 20rpx;
+					line-height: 20rpx;
+					max-height: 20rpx;
+					font-size: 18rpx;
+					font-weight: unset;
+					padding-top: 0;
+				}
+			}
+			.shop-box-name {
+			    max-width: 160rpx;
+			    white-space: nowrap;
+			    overflow: hidden;
+			    text-overflow: ellipsis;
+			}
+			.mini-icon {
+				font-size: $uni-font-size-lg-er;
+				line-height: 24rpx;
+				box-sizing: border-box;
+			}
+			.mini-icon.mini-xihuan-shixin{
+				color: $uni-color-love;
+			}
+			.watar-header-label{
+				width: 28rpx;
+				height: 28rpx;
+				line-height: 20rpx;
+				font-size: $uni-font-size-base;
+				margin-left: 8rpx;
+				display: inline-block;
+			}
+			
+		}
+		.df-box-comt.jc{
+			width: 115rpx;
+		}
+		.jc {
+		    justify-content: flex-end;
+		}
+	}
+	.random-bg-wrap{
+		width: 100%;
+		border-radius: $uni-border-radius-sm $uni-border-radius-sm 0 0;
+		overflow: hidden;
+		position: relative;
+		max-height: $waterfall-img-max-height;
+		background-size: cover;
+		height: 400rpx;
+		padding: $waterfall-random-bg-padding;
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column; 
+		justify-content: $waterfall-random-bg-justify-content;
+		.quotation-icon{
+			font-size: $waterfall-random-bg-font-size;
+			color: #ffffff;
+			display: block;
+			height: $waterfall-random-bg-font-size;
+		}
+		.title-wrap2{
+			max-height: $waterfall-random-bg-max-height;
+			margin: 15rpx 0 0;
+			overflow: hidden;
+			.post-title{
+				color: #ffffff;
+				font-size: $waterfall-random-bg-font-size;
+				line-height: 40rpx;
+				font-weight: 500;
+				max-height: $waterfall-random-bg-max-height;
+				.icon-text::before, .icon-text::after{
+					font-family: "mini-icon" !important;
+					font-size: $uni-font-size-base;
+					display: inline-flex;
+					flex-direction: column;
+					justify-content: center;
+				}
+				.icon-text.isSticky-icon::before{
+					content: "\e657";
+					color: #13cbb9;
+					margin-right: 10rpx;
+				}
+				.icon-text.isInReview-icon::before{
+					content: "\e6ab";
+					color: #008df0;
+					margin-right: 10rpx;
+				}
+				.icon-text.reviewBack-icon::before{
+					content: "\e69b";
+					color: red;
+					margin-right: 10rpx;
+				}
+				.icon-text.isAdminDelete-icon::before{
+					content: "\e696";
+					color: #000000;
+					margin-right: 10rpx;
+				}
+				.icon-text.pay-coins-icon::after{
+					content: "\e6aa";
+					color: #ce994f;
+					margin-right: 10rpx;
+				}
+				.icon-text.pay-balance-icon::after{
+					content: "\e6bd";
+					color: #ce994f;
+					margin-right: 10rpx;
+				}
+			}
+		}
+		.df-box{
+			margin-top: 30rpx;
+			margin-bottom: 0;
+			.mini-icon.mini-xihuan-kongxin{
+				color: #efefef;
+			}
+			.shop-box-name {
+			    color: #efefef;
+			}
+			.df-box-comt ._text{
+				color: #efefef;
+			}
+		}
+		.civ2-icon-wrap{
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: rgba(0, 0, 0, .1);
+			right: 0;
+			bottom: 0;
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			.civ2-icon{
+				justify-content: center; display: inline-flex; flex-direction: column;
+				color: #ffffff;
+				font-size: $uni-font-size-medium;
+				margin-right: 10rpx;
+			}
+			.text{
+				color: #ffffff;
+				font-size: $uni-font-size-medium;
+			}
+		}
+	}
+}
+
+.shop-box.scene_19{
+	.random-bg-wrap{
+		border-radius: $uni-border-radius-sm;
+	}
+	.img-wrap{
+		border-radius: $uni-border-radius-sm;
+		.shop-box-cover {
+		    width: 100%;
+		    border-radius: $uni-border-radius-sm;
+		    animation: fadeIn 1s ease;
+			background-color: #eee;
+		}
+		.mini-icon.mini-shipin1 {
+		    position: absolute;
+		    top: 20rpx;
+		    right: 20rpx;
+		    color: #ffffff;
+		    font-size: 46rpx;
+		}
+	}
+}
+.shop-box.scene_60001{
+	.img-wrap{
+		.civ2-icon-wrap{
+			display: none !important;
+		}
+	}
+	.random-bg-wrap{
+		.civ2-icon-wrap{
+			display: none !important;
+		}
+	}
+}
+
+.icon {
+    width: 38rpx;
+    height: 38rpx;
+    margin-left: 15rpx;
+}

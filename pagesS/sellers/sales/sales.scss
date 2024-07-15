@@ -1,0 +1,530 @@
+.top-tabs{
+	@include background_color(page-box-background-color);
+}
+
+.container {
+    padding: 20rpx 0 60rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.order-list {
+    width: 660rpx;
+    padding: 25rpx;
+    border-radius: 20rpx;
+    @include background_color(page-box-background-color);
+    margin-bottom: 20rpx;
+}
+
+.order-list-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.on {
+    font-size: $uni-font-size-sm-base;
+    @include color(color-light-dark);
+}
+
+.state {
+    font-size: $uni-font-size-sm-base;
+    font-weight: 500;
+	@include color(color-darkest);
+}
+
+.order-list-center {
+    padding: 30rpx 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.list-center-left {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.list-center-left image {
+    width: 130rpx;
+    height: 130rpx;
+    margin-right: 10rpx;
+	border-radius: 15rpx;
+}
+
+.list-center-left .picsum {
+    width: 130rpx;
+    height: 130rpx;
+    margin-right: 10rpx;
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $uni-font-size-base;
+    font-weight: 500;
+    color: #ffffff;
+    background: linear-gradient(to right, #00000030, #00000060);
+}
+
+.list-center-rigth {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+	.price{
+		font-weight: bold;
+		font-size: $uni-font-size-lg;
+		@include color(color-darkest);
+		.blance{
+			display: flex;
+			.gold-icon{
+				justify-content: center;
+				font-weight: normal;
+			}
+		}
+	}
+}
+
+.list-center-rigth .number {
+    margin-top: 20rpx;
+    font-size: 22rpx;
+    font-weight: 500;
+	@include color(color-lightest-dark);
+}
+
+.l-collapse-title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title-font {
+    display: flex;
+    align-items: center;
+    font-size: $uni-font-size-sm;
+    font-weight: 500;
+    @include color(color-light-dark);
+	white-space: nowrap;
+}
+
+.title-font .arrow-d {
+    margin-left: 10rpx;
+    width: 10rpx;
+    height: 10rpx;
+    border-left: 5rpx solid;
+    border-top: 5rpx solid;
+    transform: translate(0, 5rpx) rotate(45deg);
+	@include border_color(border-color-light-dark);
+}
+
+.title-font .arrow-s {
+    margin-left: 10rpx;
+    width: 10rpx;
+    height: 10rpx;
+    border-right: 5rpx solid;
+    border-bottom: 5rpx solid;
+    transform: translate(0, -5rpx) rotate(45deg);
+	@include border_color(border-color-light-dark);
+}
+
+.logistics {
+    margin-bottom: 20rpx;
+    padding: 20rpx 30rpx;
+    border-radius: 10rpx;
+	@include background_color(page-box-item-background-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logistics-box {
+    display: flex;
+    align-items: center;
+    font-size: $uni-font-size-sm;
+	@include color(color-light-dark);
+}
+
+.logistics-box .arrow-y {
+    margin-left: 5rpx;
+    width: 10rpx;
+    height: 10rpx;
+    border-top: 5rpx solid;
+    border-right: 5rpx solid;
+    transform: rotate(45deg);
+	@include border_color(border-color-light-dark);
+}
+
+.logistics-box .copy {
+    margin-left: 10rpx;
+    width: 60rpx;
+    height: 36rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8rpx;
+    font-size: 20rpx;
+    font-weight: bold;
+    @include color(color-light-dark);
+    background: #cecece;
+}
+
+.order-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.btn {
+    margin-right: 25rpx;
+    height: 50rpx;
+    padding: 0 30rpx;
+    border-radius: 80rpx;
+    font-size: 22rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	white-space: nowrap;
+}
+
+.btn:last-child {
+    margin-right: 0;
+}
+
+.bg1 {
+    color: #ffffff;
+    background: $uni-color-shop-primary;
+    border: 2rpx solid $uni-color-shop-primary;
+}
+
+.bg2 {
+    color: $uni-color-shop-primary;
+    @include background_color(page-box-background-color);
+    border: 2rpx solid;
+}
+
+.content-box {
+    padding-top: 20rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-title {
+    @include color(color-darkest);
+    font-size: $uni-font-size-sm-base;
+    font-weight: bold;
+}
+
+.content-info-fill{
+	margin: 20rpx 0;
+	padding: 0 30rpx 20rpx;
+	border-radius: 10rpx;
+	@include background_color(page-box-item-background-color);
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	.right{
+		position: absolute;
+		right: 20rpx;
+		top: 20rpx;
+		z-index: 999;
+		.mini-icon{
+			@include color(color-light-dark);
+		}
+	}
+	.fill-item{
+		margin-top: 20rpx;
+		.left-label{
+			font-size: $uni-font-size-medium;
+			@include color(color-darkest);
+			line-height: 32rpx;
+			width: 200rpx;
+			max-width: 200rpx;
+			min-width: 200rpx;
+		}
+		.right-value{
+			font-size: $uni-font-size-medium;
+			@include color(color-darkest);
+			line-height: 32rpx;
+			max-width: 360rpx;
+		}
+	}
+}
+
+.content-adds {
+    margin: 20rpx 0;
+    padding: 20rpx 30rpx;
+    border-radius: 10rpx;
+	@include background_color(page-box-item-background-color);
+    display: flex;
+	justify-content: space-between;
+	.right{
+		.mini-icon{
+			@include color(color-light-dark);
+		}
+	}
+}
+
+.content-adds ._image {
+    width: 48rpx;
+    height: 48rpx;
+	min-height: 48rpx;
+	min-width: 48rpx;
+}
+
+.adds {
+    margin-left: 10rpx;
+}
+
+.adds .txt1 {
+    font-size: $uni-font-size-sm-base;
+	@include color(color-light-dark);
+    font-weight: bold;
+}
+
+.adds .txt2 {
+    font-weight: 500;
+    margin-top: 10rpx;
+    font-size: 22rpx;
+    @include color(color-lightest-dark);
+}
+
+.content-goods {
+    margin: 20rpx 0;
+    padding: 20rpx 30rpx;
+    border-radius: 10rpx;
+	@include background_color(page-box-item-background-color);
+}
+
+.goods {
+    padding: 10rpx 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.goods image {
+    width: 140rpx;
+    height: 140rpx;
+    border-radius: 15rpx;
+}
+
+.goods .goods-info {
+    margin-top: 10rpx;
+    width: 410rpx;
+}
+
+.goods-info .goods-info-name {
+	._text{
+		@include color(color-darkest);
+		font-size: $uni-font-size-sm-base;
+		font-weight: bold;
+	}
+	.icon{
+		justify-content: center;
+		.mini-icon2.mini-ershou{
+			font-size: $uni-font-size-sm;
+			color: #f4610b;
+		}
+	}
+	
+}
+
+.goods-info .goods-info-doc {
+    @include color(color-light-dark);
+    font-size: 22rpx;
+    padding: 15rpx 0 0;
+}
+
+.goods-info .goods-info-number {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+	.blance{
+		display: flex;
+		.gold-icon{
+			justify-content: center;
+		}
+	}
+}
+
+.goods-info .goods-info-number .txt {
+    font-size: 22rpx;
+    @include color(color-lightest-dark);
+    padding-right: 10rpx;
+}
+
+.goods-info .goods-info-btn-box {
+    margin-top: 30rpx;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.goods-info .goods-info-btn {
+    padding: 0 16rpx;
+	height: 50rpx;
+	font-weight: 500;
+	font-size: 22rpx;
+	text-align: center;
+	line-height: 50rpx;
+	border-radius: 50rpx;
+}
+
+.tbg1 {
+    color: $uni-color-shop-primary;
+    @include background_color(page-box-background-color);
+}
+
+.tbg2 {
+    padding: 0 !important;
+    color: #ff5f5c;
+    @include background_color(page-box-item-background-color);
+}
+
+.content-list {
+    padding-top: 20rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: $uni-font-size-sm;
+	.num{
+		@include color(color-light-dark);
+		.blance{
+			display: flex;
+			.gold-icon{
+				justify-content: center;
+			}
+		}
+	}
+}
+
+.content-list .t1 {
+    @include color(color-lightest-dark);
+}
+
+.content-list .t2 {
+    @include color(color-light-dark);
+    font-weight: 500;
+}
+
+.remark-text {
+    margin: 20rpx 0;
+    font-size: $uni-font-size-sm-base;
+    font-weight: 500;
+    padding: 20rpx 30rpx;
+    border-radius: 10rpx;
+    color: #444444;
+    @include background_color(page-box-item-background-color);
+}
+
+.popup-box {
+    padding: 20rpx 40rpx 50rpx;
+    width: 500rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 40rpx;
+    @include background_color(page-box-background-color);
+}
+
+.evaluate-goods {
+    width: 500rpx;
+    display: flex;
+    align-items: center;
+    padding: 30rpx 0;
+    justify-content: space-around;
+    border-bottom: 2rpx solid;
+	@include border_color(border-color-box-item-background-color);
+}
+
+.evaluate-goods:last-child {
+    border-bottom: 2rpx solid #ffffff;
+}
+
+.evaluate-goods-pic {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 20rpx;
+    border: 2rpx solid;
+	@include border_color(border-color-box-item-background-color);
+}
+
+.evaluate-goods-text {
+    padding: 0 30rpx;
+    width: 272rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.evaluate-goods-text .t1 {
+    font-size: $uni-font-size-sm;
+    font-weight: bold;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.evaluate-goods-text .t2 {
+    color: #444444;
+    font-size: 22rpx;
+    font-weight: 500;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.evaluate-goods-radio {
+    width: 48rpx;
+    height: 48rpx;
+}
+
+.evaluate-goods-radio image {
+    width: 48rpx;
+    height: 48rpx;
+}
+
+.evaluate-btn {
+    margin-top: 30rpx;
+    width: 300rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    font-size: $uni-font-size-sm-base;
+    font-weight: bold;
+    border-radius: 70rpx;
+    color: #ffffff;
+    background: $uni-color-shop-primary;
+    box-shadow: 5px 5px 5px -4px rgba(51, 51, 51, 0.3);
+}
+
+.service-t1 {
+    font-size: $uni-font-size-base;
+    margin-top: 30rpx;
+    font-weight: bold;
+}
+
+.service-t2 {
+    font-size: $uni-font-size-sm-base;
+    margin-top: 20rpx;
+}
+
+.service-btn {
+    margin-top: 40rpx;
+    width: 430rpx;
+    height: 90rpx;
+    font-size: $uni-font-size-sm-base;
+    font-weight: bold;
+    border-radius: 90rpx;
+    color: #ffffff;
+    background-color: $uni-color-shop-primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

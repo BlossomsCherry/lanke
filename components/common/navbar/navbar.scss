@@ -1,0 +1,259 @@
+.lxy-nav-bar .ios {
+   /* #ifndef APP-NVUE */
+   --height: 44px;
+   --right: 97px;
+   --navBarExtendHeight: 4px;
+   box-sizing: border-box;
+   /* #endif */
+   
+}
+
+.lxy-nav-bar .android {
+    /* #ifndef APP-NVUE */
+    --height: 48px;
+    --right: 96px;
+    --navBarExtendHeight: 4px;
+	box-sizing: border-box;
+    /* #endif */
+}
+
+.lxy-nav-bar .devtools {
+    /* #ifndef APP-NVUE */
+    --height: 42px;
+    --right: 88px;
+    --navBarExtendHeight: 4px;
+	box-sizing: border-box;
+    /* #endif */
+    
+}
+
+.lxy-nav-bar__inner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    /* #ifndef APP-NVUE */
+    height: var(--height);
+	padding-right: var(--right);
+	padding-bottom: var(--navBarExtendHeight);
+    /* #endif */
+	/* #ifdef APP-NVUE */
+	height: 44px;
+	padding-right: 97px;
+	padding-bottom: 4px;
+	/* #endif */
+    display: flex;
+	flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+.lxy-nav-bar.scene_20002{
+	.lxy-nav-bar__inner{
+		border-bottom: 0.08px solid;
+		@include border_color(border-color-lightest-est-est-dark);
+	}
+}
+
+.lxy-nav-bar__inner .lxy-nav-bar__left {
+    position: relative;
+	/* #ifndef APP-NVUE */
+	width: var(--right);
+	/* #endif */
+    /* #ifdef APP-NVUE */
+    width: 97px;
+    /* #endif */
+    height: 32px;
+    display: flex;
+    align-items: center;
+}
+
+.lxy-nav-bar__buttons {
+    height: 100%;
+    width: 100%;
+    display: flex;
+	flex-direction: row;
+    align-items: center;
+    border-radius: 16px;
+    border: 1rpx solid;
+	@include border_color(border-color-box-item-background-color);
+    position: relative;
+	.lxy-nav-bar__button {
+		width: 50%;
+	}
+}
+
+.lxy-nav-bar__buttons.android {
+    border: 1rpx solid;
+	@include border_color(border-color-box-item-background-color);
+}
+
+.lxy-nav-bar__buttons::after {
+    position: absolute;
+    /* #ifndef APP-NVUE */
+    content: '';
+    /* #endif */
+    width: 1rpx;
+    height: 18.4px;
+    background: rgba(204, 204, 204, 0.6);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.lxy-nav-bar__buttons.android::after {
+	@include background_color(page-box-item-background-color);
+}
+
+.lxy-nav-bar__button {
+    height: 100%;
+    display: flex;
+    font-size: 12px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 1em 2em;
+}
+.lxy-nav-bar__button.mini-icon {
+    font-size: 23px;
+	@include color(color-darkest);
+}
+.lxy-nav-bar__button.mini-icon.white{
+	color: #ffffff!important;
+}
+.lxy-nav-bar__buttons .lxy-nav-bar__button.mini-icon{
+	@include color(color-darkest);
+	font-size: 40rpx;
+	text-align: center;
+	line-height: 32px;
+	/* #ifndef APP-NVUE */
+	display: block;
+	/* #endif */
+	/* #ifdef APP-NVUE */
+	display: flex;
+	/* #endif */
+}
+
+.lxy-nav-bar__buttons .lxy-nav-bar__button.mini-icon.white{
+    color: white !important;
+    font-size: 40rpx;
+    text-align: center;
+    /* #ifndef APP-NVUE */
+    display: block;
+    /* #endif */
+    /* #ifdef APP-NVUE */
+    display: flex;
+    /* #endif */
+    line-height: 32px;
+}
+.lxy-nav-bar__inner .lxy-nav-bar__left .lxy-nav-bar__btn_goback:active,
+.lxy-nav-bar__inner .lxy-nav-bar__left .lxy-nav-bar__btn_gohome:active {
+    opacity: 0.5;
+}
+
+.lxy-nav-bar__inner .lxy-nav-bar__center {
+    font-size: 17px;
+    line-height: 17px;
+    text-align: left;
+    position: relative;
+    flex: 1;
+	
+	/* #ifndef APP-NVUE */
+	display: -webkit-box;
+	display: -webkit-flex;
+	align-items: left;
+	/* #endif */
+    
+    /* #ifdef APP-NVUE */
+    display: flex;
+	align-items: flex-start;
+    /* #endif */
+	
+	
+    justify-content: center;
+    padding-left: 10px;
+	/* #ifndef MP */
+	padding-right: 10px;
+	/* #endif */
+	width: 100%;
+}
+
+.lxy-nav-bar__inner .lxy-nav-bar__center ._text {
+    font-size: 16px;
+    font-weight: 500;
+    
+    text-overflow: ellipsis;
+    overflow: hidden;
+    /* #ifndef APP-NVUE */
+	max-width: 320rpx;
+    white-space: nowrap;
+    /* #endif */
+	/* #ifndef APP-NVUE */
+	width: 320rpx;
+	/* #endif */
+}
+
+.lxy-nav-bar__inner .lxy-nav-bar__center .lxy-nav-bar__center-title {
+    margin-top: -2px;
+}
+
+.lxy-nav-bar__inner .lxy-nav-bar__loading {
+    font-size: 0;
+}
+
+.lxy-nav-bar__inner .lxy-nav-bar__loading .lxy-loading {
+    margin-left: 0;
+}
+
+
+.lxy-nav-bar__placeholder {
+	/* #ifndef APP-NVUE */
+	height: var(--height);
+	/* #endif */
+	/* #ifdef APP-NVUE */
+	height: 44px;
+	/* #endif */
+    @include background_color(page-box-item-background-color);
+    position: relative;
+    z-index: 50;
+}
+
+.lxy-nav-bar-search {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-radius: 200rpx;
+	@include background_color(page-box-item-background-color);
+    position: relative;
+}
+
+.lxy-nav-bar-search__input {
+    width: 100%;
+}
+
+.lxy-nav-bar-search__input-item {
+    display: flex;
+    align-items: center;
+    padding-left: 15rpx;
+    @include color(color-lightest-dark);
+    font-size: $uni-font-size-sm-base;
+    font-weight: normal;
+    line-height: 14px;
+	/* #ifndef APP-NVUE */
+	animation: fadeIn 1s ease;
+	white-space: nowrap;
+	/* #endif */
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.lxy-nav-bar-search__icon {
+    width: 19px;
+    height: 19px;
+    margin-left: 20rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADzElEQVRYR8WWXWgcVRTHz5nMSh/UBx+U5qEURfAD1NJiFR8UDA2+9MkvaPwogk32npkEWq2IaBQlWJWQmXOHWIypHwFdfeuDUBVBi6hY1H4oxdL2oXmJRKiUBMPOPXKXu2HczOzOZqG9MOwy8z/n/O655557Ea7wwCscH7oGqNVqV83Pz/dXKpWNvu9fXFlZuRCG4T/rnUgpAGZ+UEQeRsR7AOCunGDnAeA7EfkmCILZbmA6AjDz2wCwt6xTRPwsTdOJMAx/KWPTFoCZfwSAuzOOzgDArwDwm/vtB4CtmacpvWShiehgJ4hCAGaWjPElz/Oeq1ar00UOoyja4XneWwBwR0bzJBF91A4iF0BrXRORR5zhUWPMQBiG/3aajf3OzAwAqqn1PG9btVo9VmS7BqBlzeeIaKhM4KxGa71LRD52774mooFSALbaAeArKxaRvxcXF28YHx+vdwvgMmEBdtn/iLhPKfVOnp//ZSCO4/cQ8RknfIyIausJbm2mpqZu9jzvB0S8DhHPKqVu6gjAzCcB4HYAOEdEN643eNOOmbNZGFRKHWn1uZoB2+EWFhYahYaIh5VSO3sF0Fq/ICITzs8EEb1YCDA5Obm5UqmccwBvKKVe6hUgSZIBY8yXzs8hItpdCMDM9wLA9w5gp1LqcK8AURRd63neRVfUR4IgGCwEmJ6evq1er59ygj1lulgnwDiOb0HEP5zuIBHtKQTI0gJArrhTwNbvSZIMGWManRARh5VS7xYCuL1ra2AzABwjom3dBmzVM/MUAITu/f1E9G0ngA8B4AkrMsYMhmG4ZtuUhZqZmblmeXn5aPNsMMZcH4bhX20B4jjejYjvO9FxIrqzbMCc2a9OBhEPKKX25/lacxa0HESaiKhbiGxLB4DTIvJQEASNLd42A/ZjFEVbPM+za3W1K54hpdRcWQit9a0i8ntTj4hjSilbC7kj9zhm5mcBIFuxc2mavjo6OvpnkaPZ2dkNS0tLe0Xk9axGRB4PguDTrgDcjrDFaNexMezpiIhfIOJJRPy5Xq//VKlUNhlj7jPG2HvidkTcUhDoaSL6oNQSZEVJkmw1xrwJAPaYLjvO2j4iIucR8ZOMUW5z63gptQ601vZSWhWRtiekiHCapjw2NnbaZfEpADiUgRgloig7k1IATQOt9Q4ReQAANopIPyJeAIAT9unr6zsxMjKy0Jqm1noSkf1BEBxYLdKyee1Fx8y2G2Z3witE9Jr12VUGeoGI4/h5RLT1dMr3/UeHh4cbW/WyAbiaeNn3/c+bwS87QNfbsJeUl7X9D5JheDCcDtLjAAAAAElFTkSuQmCC');
+    /* #ifndef APP-NVUE */
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* #endif */
+}

@@ -1,0 +1,176 @@
+$page-gurantee-icon-size: 60rpx;
+
+.guarantee-content{
+	width: 750rpx;
+	.inner{
+		width: $page-content-body-width;
+		margin: auto;
+		.margin-rest{
+			@include background_color(page-box-background-color);
+			border-radius: $uni-border-radius-lg-er;
+			padding: 40rpx 0;
+			.line-1{
+				@include color(color-lightest-dark);
+				font-size: $uni-font-size-base;
+				text-align: center;
+			}
+			.line-2{
+				justify-content: center;
+				margin: 40rpx 0;
+				.num{
+					@include color(color-darkest);
+					font-size: 80rpx;
+				}
+			}
+			.margin-need{
+				color: red;
+				text-align: center;
+				margin-bottom: 30rpx;
+				font-size: $uni-font-size-base;
+			}
+			.line-3{
+				justify-content: center;
+				.recharge{
+					width: 60%;
+					border-radius: 300rpx;
+					background-color: $uni-color-follow;
+					color: $uni-color-follow-font;
+					font-size: $uni-font-size-base;
+					padding: 25rpx;
+					text-align: center;
+				}
+			}
+		}
+		.guarantee-record-list{
+			padding: 30rpx;
+			box-sizing: border-box;
+			@include background_color(page-box-background-color);
+			border-radius: $uni-border-radius-lg-er;
+			.head{
+				justify-content: space-between;
+				.title{
+					@include color(color-light-dark);
+					font-size: $uni-font-size-base;
+				}
+				.filter{
+					
+				}
+			}
+			.guarantee-record-item{
+				margin-top: 30rpx;
+				justify-content: space-between;
+				.left{
+					.icon{
+						justify-content: center;
+						margin-right: 30rpx;
+						.icon_{
+							background-color: #3b8bf2;
+							color: #ffffff;
+							border-radius: 50%;
+							font-size: $uni-font-size-base;
+							min-width: $page-gurantee-icon-size;
+							min-height: $page-gurantee-icon-size;
+							max-width: $page-gurantee-icon-size;
+							max-height: $page-gurantee-icon-size;
+							text-align: center;
+							line-height: $page-gurantee-icon-size;
+						}
+					}
+					.title{
+						font-size: $uni-font-size-base;
+						@include color(color-dark);
+						line-height: 36rpx;
+					}
+					.time{
+						font-size: $uni-font-size-sm;
+						@include color(color-lightest-dark);
+					}
+				}
+				.right{
+					justify-content: center;
+					.num{
+						font-weight: bold;
+						font-size: $uni-font-size-base;
+						@include color(color-darkest);
+					}
+				}
+			}
+		}
+	}
+}
+
+.recharge-input-wrap{
+	width: 750rpx;
+	@include background_color(page-box-item-background-color);
+	border-top-right-radius: $uni-border-radius-lg-er;
+	border-top-left-radius: $uni-border-radius-lg-er;
+	/* #ifndef APP-NVUE */
+		box-sizing: border-box;
+	/* #endif */
+	padding: 20rpx 0 40rpx;
+	.inner{
+		width: $page-content-body-width;
+		/* #ifndef APP-NVUE */
+		padding-bottom: env(safe-area-inset-bottom);
+		margin: auto;
+		/* #endif */
+		/* #ifdef APP-NVUE */
+		margin-left: 20rpx;
+		margin-right: 20rpx;
+		/* #endif */
+	
+		.title{
+			width: 100%;
+			@include color(color-lighter-er-dark);
+			position: relative;
+			text-align: center;
+			margin-bottom: 20rpx;
+			.mini-icon{
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+		}
+		
+		.tip{
+			@include color(color-lightest-dark);
+			font-size: $uni-font-size-sm;
+			margin-bottom: 40rpx;
+		}
+		.input-wrap{
+			display: flex;
+			border-bottom: 1rpx solid;
+			@include border_color(border-color-light-line-background-color);
+			padding: 30rpx 0;
+			.icon{
+				font-size: 40rpx;
+				font-weight: bold;
+				@include color(color-light-dark);
+			}
+			._input{
+				font-size: 40rpx;
+				font-weight: bold;
+				@include color(color-light-dark);
+			}
+		}
+		.btn-wrap{
+			display: flex;
+			justify-content: center;
+			margin-top: 80rpx;
+			.btn{
+				background-color: $uni-color-follow;
+				color: $uni-color-follow-font;
+				width: 100%;
+				text-align: center;
+				border-radius: 300rpx;
+				padding: 20rpx 0;
+			}
+			.btn.disable{
+				opacity: 0.6;
+			}
+		}
+		.height-p{
+			height: 20rpx;
+		}
+	}
+}

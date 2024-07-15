@@ -1,0 +1,155 @@
+@font-face {
+  font-family: "mini-icon2"; /* Project id 3975577 */
+  src: url('@/static/icon/C/iconfont.woff2?t=1719478302738') format('woff2'),
+       url('@/static/icon/C/iconfont.woff?t=1719478302738') format('woff'),
+       url('@/static/icon/C/iconfont.ttf?t=1719478302738') format('truetype');
+}
+
+.mini-icon2 {
+  font-family: "mini-icon2" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.mini-zuju1:before {
+  content: "\e733";
+}
+
+.mini-wodehuiyuan:before {
+  content: "\e686";
+}
+
+.mini-woderenzheng:before {
+  content: "\e687";
+}
+
+.mini-wodequanzi:before {
+  content: "\e683";
+}
+
+.mini-zhifumima:before {
+  content: "\e688";
+}
+
+.mini-xiaofeijilu:before {
+  content: "\e689";
+}
+
+.mini-wodedingdan:before {
+  content: "\e68b";
+}
+
+.mini-shouhuodizhi:before {
+  content: "\e68d";
+}
+
+.mini-wodetuandui:before {
+  content: "\e67f";
+}
+
+.mini-wodeqianbao:before {
+  content: "\e68e";
+}
+
+.mini-wodegouwudai:before {
+  content: "\e68f";
+}
+
+.mini-zuju:before {
+  content: "\e6fe";
+}
+
+.mini-dianpuguanli:before {
+  content: "\e717";
+}
+
+.mini-huodongzhongxin:before {
+  content: "\e72c";
+}
+
+.mini-jiarujulebu:before {
+  content: "\e72b";
+}
+
+.mini-wodejulebu:before {
+  content: "\e72d";
+}
+
+.mini-xuanpiao:before {
+  content: "\e719";
+}
+
+.mini-shanchu:before {
+  content: "\e60f";
+}
+
+.mini-youhua:before {
+  content: "\e73c";
+}
+
+.mini-fangke:before {
+  content: "\e678";
+}
+
+.mini-w_jinbi:before {
+  content: "\e673";
+}
+
+.mini-jinbi1:before {
+  content: "\e6b1";
+}
+
+.mini-shoushoushi:before {
+  content: "\e6d1";
+}
+
+.mini-dianzan:before {
+  content: "\e8c3";
+}
+
+.mini-shizhongfill:before {
+  content: "\e74e";
+}
+
+.mini-anquanbaozhang-mian:before {
+  content: "\e63e";
+}
+
+.mini-lianxi:before {
+  content: "\e70a";
+}
+
+.mini-womaichude:before {
+  content: "\e70b";
+}
+
+.mini-ershou:before {
+  content: "\e61f";
+}
+
+.mini-qijiandian:before {
+  content: "\e701";
+}
+
+.mini-gerendian:before {
+  content: "\e702";
+}
+
+.mini-getigongshanghu:before {
+  content: "\e703";
+}
+
+.mini-putongqiye:before {
+  content: "\e705";
+}
+
+.mini-pingguo2:before {
+  content: "\e704";
+}
+
+.mini-pingguo:before {
+  content: "\e610";
+}
+

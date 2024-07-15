@@ -1,0 +1,205 @@
+$bottom-button-height: 75rpx;
+
+.searchBar {
+    @include background_color(page-box-background-color);
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    overflow: hidden;
+    padding-top: 10rpx;
+    padding-bottom: 1px;
+    position: fixed;
+    width: 690rpx;
+	z-index: 99;
+}
+
+.searchBar,
+.tit_seabox_bar {
+    height: 68rpx;
+    display: flex;
+    align-items: center;
+}
+
+.tit_seabox_bar {
+    width: 564rpx;
+    border-bottom: 1px solid $uni-color-primary;
+	._input {
+	    height: 68rpx;
+	    line-height: 68rpx;
+	    font-size: $uni-font-size-base;
+	    width: 100%;
+	    margin-right: 32rpx;
+		@include color(color-lighter-dark);
+	}
+}
+
+
+
+.activity_seabtn {
+    width: 110rpx;
+    height: 68rpx;
+    border-radius: 10rpx;
+    background: $uni-color-follow;
+    color: $uni-color-follow-font;
+    font-weight: bold;
+    margin-left: 16rpx;
+    font-size: $uni-font-size-sm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.no_topic {
+    margin: 0 30rpx;
+    padding-bottom: 20rpx;
+    display: flex;
+    padding-top: 120rpx;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: $uni-font-size-lg;
+    font-weight: 500;
+	@include color(color-lightest-dark);
+    border-bottom: 1px solid;
+	@include border_color(border-color-box-item-background-color);
+}
+
+.topic {
+    line-height: 100rpx;
+}
+
+.topic {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 60rpx 30rpx;
+	.left{
+		display: flex;
+		height: 60rpx;
+		.avatar{
+			margin-right: 20rpx;
+			height: 60rpx;
+			image{
+				width: 60rpx;
+				height: 60rpx;
+				min-width: 60rpx;
+				max-width: 60rpx;
+				max-height: 60rpx;
+				min-height: 60rpx;
+				border-radius: 2px 5px;
+			}
+		}
+		.tag_name {
+		    font-size: $uni-font-size-lg;
+		    @include color(color-light-dark);
+		    display: flex;
+		    align-items: center;
+			.tag-image.mini-icon{
+				color: $uni-color-primary;
+			}
+		}
+	}
+	.right{
+		height: 60rpx;
+		font-size: $uni-font-size-sm-base;
+		@include color(color-lightest-dark);
+		.mini-icon{
+			display: inline-block;
+		}
+	}
+}
+
+.topic:last-child {
+    border-bottom: 0;
+    margin-bottom: 100rpx;
+}
+.sub {
+    font-weight: 400;
+    line-height: 100rpx;
+}
+
+.sub {
+    font-size: $uni-font-size-sm;
+    @include color(color-lightest-dark);
+}
+
+.noData {
+    height: 540rpx;
+    margin-top: 150rpx;
+}
+
+.noData-img {
+    width: 340rpx;
+    height: 280rpx;
+    display: block;
+    margin: 0 auto 10rpx;
+}
+
+.noDataTxt {
+    text-align: center;
+    @include color(color-lightest-dark);
+    font-size: $uni-font-size-base;
+}
+
+.btnbottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    @include background_color(page-box-background-color);
+    border-top: 1rpx solid;
+	@include border_color(border-color-box-item-background-color);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.issue {
+    margin: 30rpx auto;
+    width: 90%;
+    height: $bottom-button-height;
+    line-height: $bottom-button-height;
+    text-align: center;
+    border-radius: 50rpx;
+    font-size: $uni-font-size-sm;
+    font-family: PingFangSC-Medium;
+    font-weight: bold;
+	background: $uni-color-follow !important;
+	color: $uni-color-follow-font;
+}
+
+.address-tag-all-view {
+    padding: 0 20rpx;
+    display: flex;
+    position: relative;
+    flex: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.tag-view {
+    position: relative;
+    padding: 0 30rpx;
+    margin-top: 20rpx;
+    margin-right: 16rpx;
+    height: 56rpx;
+    display: flex;
+    align-items: center;
+    border-radius: 500rpx;
+    border: 1px solid;
+	@include border_color(page-box-item-background-color);
+}
+
+.tag-text {
+    font-size: 22rpx;
+    line-height: 22rpx;
+    @include color(color-light-dark);
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.audio-delete {
+    position: absolute;
+    width: 30rpx;
+    height: 30rpx;
+    top: -15rpx;
+    right: -15rpx;
+	font-size: $uni-font-size-medium;
+	color: $uni-color-error;
+	display: inline;
+}

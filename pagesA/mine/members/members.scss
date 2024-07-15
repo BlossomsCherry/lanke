@@ -1,0 +1,456 @@
+.page_bg{
+	@include background_color(page-box-background-color);
+}
+
+.head_bj {
+	background-color: #19191e;
+	/* #ifdef H5 */
+	height: 230px;
+	/* #endif */
+	/* #ifndef H5 */
+	height: 280px;
+	/* #endif */
+}
+
+.arc_box {
+	flex-direction: row;
+	margin-top: -10px;
+	@include background_color(page-box-background-color);
+	padding-bottom: 20px;
+}
+
+.arc_img {
+	width: 750upx;
+	height: 40upx;
+}
+
+.card_vip {
+	border-radius: 10px;
+	background-color: #333;
+	flex-direction: column;
+	height: 180px;
+	position: absolute;
+	/* #ifdef H5 */
+	top: 80px;
+	/* #endif */
+	/* #ifndef H5 */
+	top: 130px;
+	/* #endif */
+	left: 15px;
+	right: 15px;
+	/* background-image: linear-gradient(45deg, #f7d680, #f3bc6e); */
+}
+
+.vip_bj {
+	opacity: 0.3;
+	flex-direction: row;
+	flex: 1;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+}
+
+.card_top_box {
+	display: flex;
+	flex-direction: row;
+	margin-top: 20px;
+	padding: 10px 15px;
+}
+
+.card_vip_info {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+.vip_title {
+	font-size: 20px;
+	font-weight: 500;
+	color: #FFFFFF;
+	margin-bottom: 10px;
+}
+
+.vip_des {
+	font-size: 13px;
+	@include color(color-lighter-dark);
+}
+
+.vip_img {
+	height: 55px;
+	width: 70px;
+}
+
+.card_vip_footer {
+	display: flex;
+	flex-direction: row;
+	padding: 10px 15px;
+	position: absolute;
+	bottom: 10px;
+	left: 0px;
+	right: 0px;
+	align-items: center;
+}
+
+.vip_expire {
+	color: #f3bc6e;
+	font-size: 13px;
+	flex: 1;
+}
+
+.btn_vip {
+	padding: 6px 10px;
+	font-size: 13px;
+	font-weight: 500;
+	border-radius: 20px;
+	@include color(color-darkest);
+	background-image: linear-gradient(45deg, #f7d680, #f3bc6e);
+}
+
+.card_box {
+	padding: 15px;
+	@include background_color(page-box-background-color);
+}
+
+.card_timelimit {
+	width: 30px;
+	height: 15px;
+}
+
+.card_head {
+	justify-content: center;
+	margin-bottom: 10px;
+}
+
+.head_fgf {
+	width: 10px;
+	height: 2px;
+	background-image: linear-gradient(45deg, #f3bc6e, #ab7431);
+	transform: rotate(45deg);
+	margin: 10px;
+	border-radius: 5px;
+}
+
+.head_title {
+	font-size: 16px;
+	color: #ab7431;
+	font-weight: 500;
+}
+
+.card_content {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+.card_margin {
+	margin: 20px 0;
+}
+
+.card_item {
+	width: 130upx;
+	text-align: center;
+}
+
+.icon_box {
+	flex-direction: row;
+	justify-content: center;
+}
+
+.cate_icon {
+	width: 40px;
+	height: 40px;
+}
+.cate_txt {
+	font-size: 12px;
+	@include color(color-light-dark);
+	text-align: center;
+	margin-top: 10px;
+	font-weight: 500;
+}
+
+/********vip购买************/
+
+.buy_box {
+	@include background_color(page-box-background-color);
+	border-top-left-radius: $uni-border-radius-lg-er;
+	border-top-right-radius: $uni-border-radius-lg-er;
+	padding-top: 10px;
+}
+
+.vip_buy_pad {
+	padding-top: 20px;
+	padding-bottom: 10px;
+	flex-wrap: nowrap;
+}
+
+.vip_buy_item {
+	min-width: 215rpx;
+	width: 215rpx;
+	max-width: 215rpx;
+	position: relative;
+	margin-right: 20rpx;
+}
+
+.vip_buy_item_border {
+	border-radius: 10px;
+	border-style: solid;
+	border-width: 1rpx;
+	@include border_color(border-color-lightest-dark);
+	padding: 20px 5px;
+	padding-bottom: 10px;
+	text-align: center;
+}
+
+.vip_buy_title {
+	font-size: 16px;
+	font-weight: 600;
+	text-align: center;
+	margin-top: 5px;
+	@include color(color-darkest);
+}
+
+.vip_buy_info {
+	margin: 5px 0;
+	justify-content: center;
+}
+
+.vip_money_cuenry {
+	font-size: 13px;
+	margin-right: 5px;
+}
+
+.vip_money {
+	font-size: 25px;
+	font-weight: 800;
+	@include color(color-light-dark);
+}
+
+.vip_buy_item_active {
+	@include border_color(color-primary);
+}
+
+.vip_txt_active {
+	@include color(color-primary);
+}
+
+.vip_old_money {
+	font-size: 12px;
+	color: #c2c2c2;
+	text-decoration: line-through;
+	text-align: center;
+}
+
+.give_box{
+	padding: 5px 0px;
+	margin: 10px 10upx;
+	justify-content: center;
+}
+
+.give_icon{
+	width: 15px;
+	height: 15px;
+	margin-right: 3px;
+}
+
+.give_text{
+	font-size: 10px;
+	@include color(color-lightest-dark);
+}
+
+.vip_buy_tip {
+	font-size: 13px;
+	color: #c2c2c2;
+}
+.buy_btn_wrap{
+	width: 750rpx;
+	text-align: center;
+	.btn_openvip {
+		font-size: 16px;
+		font-weight: 600;
+		background-color: $uni-color-follow;
+		color: $uni-color-follow-font;
+		padding: 12px;
+		margin: 5px 20upx;
+		text-align: center;
+		border-radius: 20px;
+		display: block;
+	}
+}
+.buy_tip_sub {
+	background-color: $uni-color-follow;
+	color: $uni-color-follow-font;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	padding: 4px 10px;
+	font-size: 13px;
+	font-weight: 600;
+	position: absolute;
+	top: -12px;
+	left: 0px;
+}
+
+.vip_buy_notice_box {
+	padding: 15px;
+}
+
+.notice_title {
+	font-size: 15px;
+	font-weight: 500;
+	@include color(color-lighter-dark);
+	margin: 5px 0;
+}
+
+.notice_txt {
+	font-size: 13px;
+	color: #ababab;
+	margin: 3px 0;
+}
+
+.notice_active {
+	color: #0ca2ff;
+	font-size: 13px;
+	margin: 3px 0;
+}
+
+/*************邀请好友领会员***************/
+.invite_box {
+	margin: 10px;
+	border-width: 1px;
+	border-color: #f9f9f9;
+	// box-shadow: 0px 1px 1px #ececec;
+	@include background_color(page-box-background-color);
+	border-radius: 10px;
+	padding: 15px 0;
+}
+
+.card_title {
+	font-size: 15px;
+	color: #333;
+	text-align: center;
+	font-weight: 600;
+}
+
+.share_box {
+	flex: 1;
+	padding: 10px 0;
+}
+
+.card_invite_item {
+	justify-content: center;
+	margin-left: -5px;
+}
+
+.user_photo_box {
+	width: 45px;
+	height: 45px;
+	line-height: 43px;
+	border-radius: 40px;
+	border-style: dashed;
+	border-width: 1px;
+	border-color: #e5e5e5;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	@include background_color(page-box-background-color);
+}
+
+.invtite_userPhoto {
+	width: 45px;
+	height: 45px;
+	border-radius: 40px;
+}
+
+.user_add {
+	color: #daa26b;
+	font-size: 20px;
+}
+
+.btn_share {
+	height: 38px;
+	line-height: 18px;
+	padding: 10px 15px;
+	margin-top: 13px;
+	font-size: 15px;
+	font-weight: 500;
+	background-color: $uni-color-follow;
+	color: $uni-color-follow-font;
+	box-shadow: 0 2px 8px 0 rgba(241, 184, 85, .3);
+	border-radius: 20px;
+	box-sizing: border-box;
+}
+.user_nick {
+	margin-top: 10px;
+	font-size: 13px;
+	color: #daa26b;
+}
+
+.card_footer_left {
+	font-size: 13px;
+	color: #555;
+}
+
+/***********头像挂件**************/
+
+.widget_item {
+	width: 210rpx;
+	@include background_color(border-color-box-item-background-color);
+	margin-bottom: 10px;
+}
+
+.widget_box {
+	width: 150upx;
+	height: 150upx;
+	padding-top: 70upx;
+	@include background_color(border-color-box-item-background-color);
+	border-radius: 5px;
+	margin: auto;
+	align-items: center;
+	justify-content: center;
+}
+
+.widget_photo_info {
+	width: 100upx;
+	height: 100upx;
+	margin: auto;
+	position: relative;
+	display: block;
+	
+}
+
+.widget_photo {
+	width: 100upx;
+	height: 100upx;
+	border-radius: 80upx;
+}
+
+.widget_img {
+	position: absolute;
+	top: -20upx;
+	left: -20upx;
+	width: 140upx;
+	height: 140upx;
+}
+
+.widget_title {
+	margin: 10px 0;
+	text-align: center;
+	font-size: 15px;
+	@include color(color-light-dark);
+	display: block;
+}
+
+/**********底部************/
+.footer_box {
+	border-top-width: 1px;
+	border-top-color: #f8f8f8;
+	text-align: center;
+}
+
+.footer_tip {
+	font-size: 12px;
+	color: #ababab;
+	text-align: center;
+	margin: 20px 0;
+}

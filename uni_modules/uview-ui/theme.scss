@@ -1,0 +1,44 @@
+// 此文件为uView的主题变量，这些变量目前只能通过uni.scss引入才有效，另外由于
+// uni.scss中引入的样式会同时混入到全局样式文件和单独每一个页面的样式中，造成微信程序包太大，
+// 故uni.scss只建议放scss变量名相关样式，其他的样式可以通过main.js或者App.vue引入
+
+$uni-color-primary: #303133;
+$uni-text-color: #606266;
+$uni-text-color-light: #909193;
+$uni-text-color-disable: #c0c4cc;
+$uni-border-color: #dadbde;
+$uni-bg-color: #f3f4f6;
+$uni-text-color-disable: #c8c9cc;
+
+$uni-color-primary: #3c9cff;
+$uni-color-primary-dark: #398ade;
+$uni-color-primary-disabled: #9acafc;
+$uni-color-primary-light: #ecf5ff;
+
+$uni-color-warning: #f9ae3d;
+$uni-color-warning-dark: #f1a532;
+$uni-color-warning-disabled: #f9d39b;
+$uni-color-warning-light: #fdf6ec;
+
+$uni-color-success: #5ac725;
+$uni-color-success-dark: #53c21d;
+$uni-color-success-disabled: #a9e08f;
+$uni-color-success-light: #f5fff0;
+
+$uni-color-error: #f56c6c;
+$uni-color-error-dark: #e45656;
+$uni-color-error-disabled: #f7b2b2;
+$uni-color-error-light: #fef0f0;
+
+$uni-color-info: #909399;
+$uni-color-info-dark: #767a82;
+$uni-color-info-disabled: #c4c6c9;
+$uni-color-info-light: #f4f4f5;
+
+// scss混入，为了少写几行#ifndef
+@mixin flex($direction: row) {
+	/* #ifndef APP-NVUE */
+	display: flex;
+	/* #endif */
+	flex-direction: $direction;
+}

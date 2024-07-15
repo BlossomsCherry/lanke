@@ -1,0 +1,82 @@
+.container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.load-log {
+    margin-top: 120rpx;
+    width: 68rpx;
+    height: 68rpx;
+}
+
+.empty-view {
+    margin-top: 60rpx;
+}
+
+.user-list {
+    width: 100%;
+	min-height: 100vh;
+}
+
+.user-item {
+    display: flex;
+    align-items: center;
+    padding: 0 32rpx;
+    height: 140rpx;
+}
+
+.user-item .avatars {
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 50%;
+    @include background_color(page-box-item-background-color);
+}
+
+.user-item .infos {
+    flex: 1;
+    margin: 0 30rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.user-item .nickname {
+    flex: 1;
+    line-height: 50rpx;
+    height: 50rpx;
+    font-size: $uni-font-size-medium;
+    width: 100%;
+    @include color(color-light-dark);
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.user-item .follow-btn {
+    width: 120rpx;
+    height: 55rpx;
+    line-height: 55rpx;
+    border-radius: 10rpx;
+    font-size: $uni-font-size-sm-base;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $uni-color-primary;
+    padding: 0;
+    border: 1px solid $uni-color-primary;
+    @include background_color(page-box-background-color);
+}
+
+.follow {
+    width: 160rpx !important;
+    color: $uni-text-color-grey !important;
+    border: 1px solid;
+	@include background_color(page-box-background-color);
+	@include border_color(border-color-box-item-background-color);
+}

@@ -1,0 +1,181 @@
+@mixin dflex() {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	@mixin dflexsb() {
+		@include dflex();
+		justify-content: space-between;
+	}
+
+	@mixin dflexsa() {
+		@include dflex();
+		justify-content: space-around;
+	}
+
+	.content {
+
+		// 吸顶激活
+		.topfixedActive {
+			width: 100%;
+			padding: 0 25rpx;
+			position: fixed;
+			/* 顶部导航栏还有其他盒子 使用  */
+			left: 0;
+			background: #fff;
+			z-index: 9;
+			box-sizing: border-box;
+		}
+
+		// 导航栏左边插槽
+		.u-nav-slot-left {
+			@include dflex();
+			align-items: baseline;
+			width: 110rpx;
+
+			text {
+				margin-right: 6rpx;
+				font-size: $uni-font-size-sm;
+			}
+		}
+
+		// 顶部插槽内容中间部分
+		.u-nav-slot-center {
+			margin: 0 50rpx 0 0rpx;
+			background: #f9f9f9;
+			height: 56rpx !important;
+			border-radius: 28rpx !important;
+			padding: 0rpx 12rpx;
+			@include dflexsb();
+		}
+
+		// 顶部提示通知功能模块信息
+		.topInfo {
+			padding: 14rpx 24rpx;
+			box-sizing: border-box;
+			background: #fff;
+
+			// 关闭通知栏-废弃
+			.notice {
+				border-radius: 25rpx !important;
+				margin: 0 0 16rpx 0;
+				padding: 14rpx 18rpx;
+				@include dflex();
+				justify-content: flex-start;
+				background: #fdf6f4;
+				font-size: 22rpx;
+				color: #d89089;
+			}
+
+			.moduleList {
+				padding: 14rpx 8rpx;
+				box-sizing: border-box;
+				@include dflex();
+				justify-content: flex-start;
+				flex-wrap: wrap;
+
+				.item {
+					@include dflex();
+					width: 20%;
+					margin: 0 0 30rpx 0;
+					flex-direction: column;
+
+					.moduleImg {
+						width: 58rpx;
+						height: 58rpx;
+					}
+
+					.moduleText {
+						font-size: $uni-font-size-sm;
+						color: #333;
+						margin-top: 10rpx;
+					}
+				}
+			}
+		}
+
+		// 需要吸顶的筛选数据
+		.tagTop {
+			background: #fafafc;
+			padding: 10rpx 30rpx 10rpx 30rpx;
+			box-sizing: border-box;
+
+			.filter {
+				padding: 18rpx 0rpx 0rpx 0rpx;
+				box-sizing: border-box;
+				width: 100%;
+				z-index: 999;
+
+				.filterTab {
+					overflow: hidden;
+					white-space: nowrap;
+					width: 100%;
+
+					.item {
+						min-width: 144rpx !important;
+						line-height: 50rpx !important;
+						display: inline-block;
+						flex-direction: column;
+						font-size: $uni-font-size-sm-base;
+						color: #9a9a9a;
+						text-align: center;
+
+						&:last-child {
+							border: none;
+						}
+
+						&.activeJob {
+							background: #ec613e;
+							border-radius: 30rpx;
+							color: #fff;
+						}
+
+						&.activeHome {
+							background: #f4b73f;
+							border-radius: 30rpx;
+							color: #fff;
+						}
+
+						&.activeService {
+							background: #5ec3a9;
+							border-radius: 30rpx;
+							color: #fff;
+						}
+					}
+
+					.hireItem,
+					.serviceItem {
+						min-width: 140rpx !important;
+						line-height: 48rpx !important;
+						display: inline-block;
+						flex-direction: column;
+						font-size: $uni-font-size-sm-base;
+						color: #9a9a9a;
+						text-align: center;
+						background: #fff;
+						margin-right: 24rpx;
+
+						&.activeHireHome {
+							background: #fef8ea;
+							color: #f4b73f;
+						}
+					}
+
+					.serviceItem {
+						&.activeSelfService {
+							color: #5ec3a9;
+							background: #fef8ea;
+						}
+					}
+				}
+			}
+		}
+
+		// 数据列表
+		.wrap {
+			background: #fafafc;
+			padding: 10rpx 30rpx 10rpx 24rpx;
+			box-sizing: border-box;
+		}
+	}

@@ -1,0 +1,135 @@
+.house_cont{
+	padding: 30rpx;
+	.house_cont--title{
+		font-size: 40rpx;
+		font-weight: bold;
+		
+	}
+	.house_cont--name{
+		font-size: $uni-font-size-lg-er;
+		font-weight: bold;
+	}
+	.house_cont--num{
+		font-size: $uni-font-size-sm;
+		color: #7f7f7f;
+		padding: 20rpx 0;
+	}
+	.house_cont--pirce{
+		font-size: 40rpx;
+		font-weight: bold;
+		color: #ff552e;
+		padding-top: 20rpx;
+		padding-bottom: 10rpx;
+		text{
+			font-size: $uni-font-size-sm;
+		}
+	}
+	.house_cont--pirceTag{
+		color: #7f7f7f;
+		display: flex;
+		align-items: center;
+		font-size: 22rpx;
+		.box{
+			padding-right: 20rpx;
+		}
+	}
+	.house_cont--map{
+		padding-bottom: 30rpx;
+		.map{
+			width: 100%;
+		}
+	}
+	.house_cont--jieshao{
+		font-size: $uni-font-size-sm-base;
+		padding-bottom: 30rpx;
+	}
+	.house_cont--list{
+		padding-bottom: 200rpx;
+	}
+	.house_cont--jieshaoTag{
+		display: flex;
+		align-items: center;
+		padding-bottom: 30rpx;
+		.box{
+			font-size: $uni-font-size-sm-base;
+			color: #8a8a8a;
+			background: #f6f6f6;
+			border-radius: 10rpx;
+			padding: 10rpx 20rpx;
+		}
+	}
+	.boss{
+		 @include flex();
+		justify-content: flex-start;
+		margin-top: 14rpx;
+		.header{
+			image{
+				width: 80rpx;
+				height: 80rpx;
+				border-radius: 50%;
+			}
+			margin-right: 20rpx;
+			@include flex();
+		}
+		.bInfo{
+			@include flex();
+			flex: 1;
+			flex-direction: column;
+			align-items: flex-start;
+			.bossName{
+				font-size: $uni-font-size-sm-base;
+				color: #000;
+			}
+			.companyName{
+				color: #7f7f7f;
+				font-size: 22rpx;
+			}
+		}
+		.apply{
+			width: 180rpx;
+			height: 70rpx;
+			@include flex();
+		}
+	}
+	@mixin flex() {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	.flex {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	.bottom {
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		padding: 24rpx 32rpx;
+		box-shadow: 0rpx -4rpx 24rpx 0rpx rgba(100, 57, 11, 0.08);
+		border-radius: 40rpx 0rpx;
+		background: #FFFFFF;
+	
+		.bottom_btn {
+			width: 686rpx;
+			height: 96rpx;
+			background: linear-gradient(90deg, #fe8326 0%, #fe552d 100%);
+			border-radius:10rpx;
+			margin: 0 auto;
+			font-size: 36rpx;
+			font-weight: bold;
+			color: #FFFFFF;
+	
+			text {
+				font-size: 40rpx;
+			}
+		}
+	}
+}
+.app_bottom {
+	padding-bottom: constant(safe-area-inset-bottom);
+	/* 兼容 iOS < 11.2 */
+	padding-bottom: env(safe-area-inset-bottom);
+}

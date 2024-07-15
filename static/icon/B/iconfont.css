@@ -1,0 +1,119 @@
+@font-face {
+  font-family: "mini-app"; /* Project id 4143922 */
+  src: url('@/static/icon/B/iconfont.woff2?t=1719902065415') format('woff2'),
+       url('@/static/icon/B/iconfont.woff?t=1719902065415') format('woff'),
+       url('@/static/icon/B/iconfont.ttf?t=1719902065415') format('truetype');
+}
+
+.mini-app {
+  font-family: "mini-app" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.mini-icon-app-tarbar-zuju:before {
+  content: "\e735";
+}
+
+.mini-icon-app-tarbar-zuju-copy:before {
+  content: "\e734";
+}
+
+.mini-icon-app-tarbar-xuanpiao-copy:before {
+  content: "\e717";
+}
+
+.mini-icon-app-tarbar-xuanpiao:before {
+  content: "\e716";
+}
+
+.mini-icon-app-tabbar-kebiao:before {
+  content: "\e6de";
+}
+
+.mini-icon-app-tabbar-kebiao-copy:before {
+  content: "\e6d8";
+}
+
+.mini-icon-app-tabbar-xianzhi:before {
+  content: "\e6c0";
+}
+
+.mini-icon-app-tabbar-lingyang:before {
+  content: "\e6bf";
+}
+
+.mini-icon-app-tarbar-xianzhi-copy:before {
+  content: "\e6ba";
+}
+
+.mini-icon-app-tabbar-lingyang-copy:before {
+  content: "\e6bc";
+}
+
+.mini-icon-app-fabu-copy:before {
+  content: "\ef62";
+}
+
+.mini-icon-app-fabu:before {
+  content: "\e674";
+}
+
+.mini-icon-app-tarbar-shouye:before {
+  content: "\e690";
+}
+
+.mini-icon-app-tarbar-wo:before {
+  content: "\e676";
+}
+
+.mini-icon-app-tarbar-xiaoxi:before {
+  content: "\e67b";
+}
+
+.mini-icon-app-tarbar-faxian:before {
+  content: "\e686";
+}
+
+.mini-icon-app-tarbar-shipin:before {
+  content: "\e687";
+}
+
+.mini-icon-app-tarbar-pengyou:before {
+  content: "\e688";
+}
+
+.mini-icon-app-tarbar-gouwu:before {
+  content: "\e689";
+}
+
+.mini-icon-app-tarbar-shouye-copy:before {
+  content: "\ef5b";
+}
+
+.mini-icon-app-tarbar-wo-copy:before {
+  content: "\ef5c";
+}
+
+.mini-icon-app-tarbar-xiaoxi-copy:before {
+  content: "\ef5d";
+}
+
+.mini-icon-app-tarbar-faxian-copy:before {
+  content: "\ef5e";
+}
+
+.mini-icon-app-tarbar-shipin-copy:before {
+  content: "\ef5f";
+}
+
+.mini-icon-app-tarbar-pengyou-copy:before {
+  content: "\ef60";
+}
+
+.mini-icon-app-tarbar-gouwu-copy:before {
+  content: "\ef61";
+}
+

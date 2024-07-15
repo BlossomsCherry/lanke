@@ -1,0 +1,118 @@
+.search-form{
+		line-height: 68rpx;
+		height: 68rpx;
+		width: 100%;
+		display: flex;
+		border: 1px solid;
+		@include border_color(border-color-lightest-est-dark);
+		@include background_color(page-box-background-color);
+		border-radius: 500px;
+		.left_icon{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			margin-right: 20rpx;
+			margin-left: 20rpx;
+			@include color(color-lightest-dark);
+		}
+		.center-range{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			max-width: 85%;
+			overflow: hidden;
+		}
+		.right_input{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			width: 100%;
+			._input{
+				width: 95%;
+				font-size: $uni-font-size-base;
+				white-space: nowrap;
+				@include color(color-lightest-dark);
+			}
+		}
+	}
+	.category-page-content {
+		height: 100%;
+		display: flex;
+	}
+	.left-aside {
+		flex-shrink: 0;
+		width: 200rpx;
+		height: 100%;
+		@include background_color(page-box-background-color);
+	}
+	.f-item {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100rpx;
+		font-size: $uni-font-size-base;
+		@include color(color-light-dark);
+		position: relative;
+		&.active{
+			@include color(color-primary);
+			@include background_color(page-gray-background-color);
+			&:before{
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				height: 36rpx;
+				width: 8rpx;
+				background-color: $uni-color-primary;
+				border-radius: 0 4px 4px 0;
+				opacity: .8;
+			}
+		}
+	}
+
+	.right-aside{
+		flex: 1;
+		overflow: hidden;
+		padding-left: 20rpx;
+		height: 100%;
+		@include background_color(page-body-background-color);
+	}
+	.s-item{
+		display: flex;
+		align-items: center;
+		height: 70rpx;
+		padding-top: 8rpx;
+		font-size: $uni-font-size-base;
+		@include color(color-dark);
+	}
+	.t-list{
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		@include background_color(page-box-background-color);
+		padding-top: 30rpx;
+		&:after{
+			content: '';
+			flex: 99;
+			height: 0;
+		}
+	}
+	.t-item{
+		flex-shrink: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		width: 176rpx;
+		font-size: $uni-font-size-sm-base;
+		@include color(color-lighter-er-dark);
+		padding-bottom: 30rpx;
+		
+		._image{
+			width: 80rpx;
+			height: 80rpx;
+			margin-bottom: 6rpx;
+		}
+	}

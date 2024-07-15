@@ -1,0 +1,120 @@
+.accountbind-wrapper {
+  width: 750rpx;
+  @include background_color(page-box-background-color);
+  .inner {
+    width: $page-content-body-width;
+    margin: auto;
+    padding-top: 30rpx;
+	.item-wrapper {
+		.label.other-info-title{
+			font-weight: bold;
+			font-size: $uni-font-size-medium;
+			@include color(color-dark);
+		}
+	}
+    .info-list-wrapper {
+      margin-top: 20rpx;
+
+      .item-wrapper {
+        padding: 20rpx 0;
+        display: flex;
+        align-items: center;
+        font-size: $uni-font-size-base;
+        height: 80rpx;
+        line-height: 80rpx;
+        @include color(color-lighter-er-dark);
+        justify-content: space-between;
+        .label {
+          margin-right: auto;
+          white-space: nowrap;
+          font-size: $uni-font-size-base;
+        }
+
+        .right {
+          .content {
+            @include color(color-light-dark);
+          }
+
+          .signature {
+            height: 80rpx;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            ._text {
+              margin: auto;
+              width: 460rpx;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 2;
+              line-height: 40rpx;
+              text-align: right;
+            }
+          }
+
+          .mini-icon {
+            font-size: $uni-font-size-base;
+          }
+
+          .placeholder.able {
+			@include color(color-success);
+          }
+
+          .image {
+            width: 80rpx;
+            height: 50rpx;
+            border-radius: 8rpx;
+          }
+
+          .picker-wrapper {
+            flex: 1;
+            text-align: right;
+          }
+
+          ._scroll-view {
+            width: 530rpx;
+            max-width: 530rpx;
+            white-space: nowrap;
+
+            .tag-list {
+              display: flex;
+              max-width: 530rpx;
+              height: 80rpx;
+              line-height: 80rpx;
+              box-sizing: border-box;
+
+              .tag-item {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                .tag {
+                  margin-left: 20rpx;
+                  padding: 6rpx 14rpx;
+                  border-radius: 60rpx;
+                  font-size: $uni-font-size-sm-base;
+                  line-height: 30rpx;
+                  white-space: nowrap;
+                  @include background_color(follow-background-color);
+                  @include color(color-follow-font);
+                }
+              }
+            }
+          }
+
+          .youjiantou-icon {
+
+          }
+        }
+      }
+
+      .split {
+        height: 0.5px;
+        background-color: #e7e7e7;
+        width: 100%;
+      }
+    }
+  }
+}

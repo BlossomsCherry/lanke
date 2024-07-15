@@ -1,0 +1,152 @@
+.publish{
+	.publish_head{
+		background: #fee610;
+		display: flex;
+		justify-content: space-between;
+		padding: 20rpx;
+		>view{
+			background: rgba(255, 237, 91, 1.0);
+			padding: 30rpx;
+			border-radius: 20rpx;
+			border-top: #fff solid 2rpx;
+			.title{
+				font-size: $uni-font-size-sm-base;
+				font-weight: bold;
+			}
+			.value{
+				width: 100rpx;
+				height: 100rpx;
+				border-radius: 50%;
+			}
+		}
+		.publish_head_num{
+			width: 25%;
+			max-width: 25%;
+			.value{
+				background: url('https://mini.minisns.cn/statics/images/used/published_yuan.png') no-repeat;
+				background-size: cover;
+				width: 170rpx;
+				height: 170rpx;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-top: 20rpx;
+				font-size: 42rpx;
+				font-weight: bold;
+				color: #413400;
+			}
+		}
+		.publish_head_list{
+			width: 55%;
+			max-width: 55%;
+			background: url('https://mini.minisns.cn/statics/images/used/published_bck2.png') no-repeat;
+			background-size: cover;
+			.title{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+			.emity{
+				font-size: $uni-font-size-sm;
+				color: #413400;
+				padding-top: 40rpx;
+			}
+			.cont{
+				font-size: $uni-font-size-sm;
+				color: #413400;
+				padding-top: 30rpx;
+				.flex{
+					display: flex;
+					align-items: center;
+					.text{
+						padding-left: 20rpx;
+					}
+					.tip{
+						background: #fff4a3;
+						font-size: 20rpx;
+						padding: 5rpx 10rpx;
+						margin-left: 20rpx;
+					}
+				}
+			}
+		}
+	}
+	.publish_tabs{
+		display: flex;
+		padding:  20rpx;
+		justify-content: space-between;
+		align-items: center;
+		.search{
+			background: #f6f6f6;
+			border-radius: 50%;
+			width: 60rpx;
+			height: 60rpx; 
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			>i{
+				color: #9c9c9c;
+			}
+		}
+	}
+	.publish_Kong{
+		background: #fee610;
+		padding: 20rpx;
+		.publish_Kong_flex{
+			border-radius: 30rpx;
+			background: #f4fcfe;
+			border-radius: 30rpx;
+			display: flex;
+			align-items: center;
+			.width33{
+				width: 33%;
+				min-width: 33%;
+				max-width: 33%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				padding: 20rpx 0;
+			}
+			.publish_Kong_btn{
+				color: #333;
+				font-weight: bold;
+				font-size: $uni-font-size-medium;
+				.value{
+					width: 150rpx;
+				  height: 75rpx;
+				  background: url('https://mini.minisns.cn/statics/images/used/published_btn.png') no-repeat;
+			    background-size: contain;
+			    padding: 26rpx 0 10rpx 56rpx;
+			    
+				}
+				.hideValue{
+					width: 170rpx;
+					height: 75rpx;
+					background: #e4e4e4;
+					border-radius: 40rpx;
+					line-height: 75rpx;
+					text-align: center;
+					color: #999999;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
+			}
+			.publish_Kong_box{
+				.title{
+					color: #333;
+					font-weight: bold;
+					font-size: $uni-font-size-medium;
+					display: flex;
+					align-items: center;
+				}
+				.value{
+					font-size: 23rpx;
+					color: #9c9c9c;
+					padding-top: 20rpx;
+				}
+			}
+		}
+	}
+}

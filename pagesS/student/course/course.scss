@@ -1,0 +1,24 @@
+.course-detail-content{
+	width: 750rpx;
+	.inner{
+		width: $page-content-body-width;
+		margin: auto;
+		padding-bottom: 200rpx;
+		.line{
+			display: flex;
+			@include background_color(page-box-background-color);
+			padding: 30rpx 20rpx;
+			box-sizing: border-box;
+			justify-content: space-between;
+			margin-top: 30rpx;
+			.left{
+				font-size: $uni-font-size-base;
+				@include color(color-lightest-dark);
+			}
+			.right{
+				font-size: $uni-font-size-base;
+				@include color(color-light-dark);
+			}
+		}
+	}
+}

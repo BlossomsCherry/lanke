@@ -1,0 +1,79 @@
+.real-name-content{
+	width: 750rpx;
+	@include background_color(page-box-background-color);
+	.inner{
+		width: $page-content-body-width;
+		margin: auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		.item-list{
+			padding-top: 40rpx;
+			box-sizing: border-box;
+			.item{
+				display: flex;
+				height: 80rpx;
+				.left{
+					width: 160rpx;
+					._text{
+						@include color(color-dark);
+						line-height: 80rpx;
+						font-size: $uni-font-size-base;
+					}
+				}
+				.right{
+					._input{
+						@include color(color-lightest-dark);
+						height: 80rpx;
+						font-size: $uni-font-size-base;
+					}
+				}
+			}
+			.line{
+				height: 1rpx;
+				width: $page-content-body-width;
+				@include background_color(page-gray-background-color);
+			}
+		}
+		.bottom{
+			display: flex;
+			flex-direction: column;
+			padding-bottom: calc(env(safe-area-inset-bottom) + 30rpx);
+			._button{
+				white-space: normal;
+				width: 100%;
+				height: 76rpx;
+				padding: 0px;
+				background-color: $uni-color-follow;
+				color: $uni-color-follow-font;
+				text-align: center;
+				justify-content: center;
+				border-radius: 300rpx;
+				cursor: pointer;
+				font-size: $uni-font-size-base;
+				line-height: 76rpx;
+			}
+			.privacy{
+				display: flex;
+				justify-content: center;
+				margin-top: 20rpx;
+				.icon{
+					margin-right: 10rpx;
+					display: inline-flex;
+					.mini-icon{
+						font-size: $uni-font-size-sm-base;
+						@include color(color-lightest-dark);
+						transform: scale(1.2);
+					}
+				}
+				._text{
+					font-size: $uni-font-size-sm-base;
+					@include color(color-lightest-dark);
+				}
+				._a{
+					@include color(color-navigater);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,58 @@
+$grid-image-size: 344rpx;
+
+.bureau-album-page{
+	width: 750rpx;
+	.inner{
+		width: $page-content-body-width;
+		margin: auto;
+		.item-list{
+			width: $page-content-body-width;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			.album-item{
+				height: 420rpx;
+				width: $grid-image-size;
+				display: flex;
+				flex-direction: column;
+				justify-content: left;
+				margin-bottom: 30rpx;
+				._image{
+					width: $grid-image-size;
+					height: $grid-image-size;
+					min-width: $grid-image-size;
+					min-height: $grid-image-size;
+					max-width: $grid-image-size;
+					max-height: $grid-image-size;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					background-size: cover;
+					@include background_color(page-box-item3-background-color);
+					border-radius: $uni-border-radius-sm;
+					.mini-icon{
+						@include color(color-lighter-er-dark);
+						font-size: $uni-font-size-lg-er;
+					}
+					._text{
+						margin-top: 30rpx;
+						text-align: center;
+						@include color(color-lighter-er-dark);
+						font-size: $uni-font-size-base;
+					}
+				}
+				.title{
+					@include color(color-light-dark);
+					font-size: $uni-font-size-sm-base;
+					margin-top: 10rpx;
+				}
+				.desc{
+					font-size: $uni-font-size-sm;
+					@include color(color-lightest-dark);
+					margin-top: 4rpx;
+				}
+			}
+		}
+		
+	}
+}

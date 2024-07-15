@@ -1,0 +1,141 @@
+.mini-page-body{
+	@include background_color(page-box-item4-background-color);
+}
+
+.circle-page-content{
+	width: 750rpx;
+	.circle_head {
+		background: linear-gradient($uni-color-primary-lightest, transparent);
+		.circle_head_swiper {
+			width: $page-content-body-width;
+			border-radius: 20rpx;
+			overflow: hidden;
+			margin: auto;
+		}
+		margin-bottom: 20rpx;
+	}
+	.sticky_wrap{
+		@include background_color(page-box-item4-background-color);
+		width: 710rpx;
+		padding: 0 20rpx;
+		.circle_head_search {
+
+		}
+		.circle_head_tabs{
+			transform: translateX(-18rpx);
+			padding-bottom: 10rpx;
+		}
+	}
+	.inner{
+		width: $page-content-body-width;
+		margin: auto;
+		.circle_head_list {
+			.box {
+				@include background_color(page-box-background-color);
+				display: flex;
+				align-items: center;
+				padding: 20rpx;
+				justify-content: space-between;
+				margin-bottom: 20rpx;
+				border-radius: 30rpx;
+				.img {
+					width: 80rpx;
+					height: 80rpx;
+					min-width: 80rpx;
+					border-radius: 50%;
+					overflow: hidden;
+				}
+		
+				.cont {
+					min-width: 430rpx;
+					width: 430rpx;
+					max-width: 430rpx;
+					display: flex;
+					flex-direction: column;
+					padding-left: 20rpx;
+					.title {
+						font-size: $uni-font-size-base;
+						@include color(color-light-dark);
+						font-weight: bold;
+						.num {
+							font-weight: normal;
+							font-size: $uni-font-size-sm-base;
+							@include color(color-lightest-est-er-dark);
+							padding-left: 10rpx;
+						}
+						.dot_wrap{
+							justify-content: flex-start;
+							margin-left: 6rpx;
+							.dot{
+								width: 10rpx;
+								height: 10rpx;
+								background-color: red;
+								@include background_color(color-error);
+								border-radius: 50%;
+							}
+						}
+						
+					}
+		
+					.label {
+						font-size: 20rpx;
+						margin-top: 20rpx;
+						display: flex;
+						.labelBox{
+							@include color(color-lighterr-dark);
+							padding: 5rpx 10rpx;
+							@include background_color(page-box-item3-background-color);
+							margin-right: 10rpx;
+						}
+						
+					}
+		
+					.tip {
+						color: #b7b7b7;
+						font-size: 20rpx;
+						margin-top: 20rpx;
+						white-space: nowrap;
+						/*规定段落中的文本不进行换行*/
+						overflow: hidden;
+						/*内容会被修剪，并且其余内容是不可见的。*/
+						text-overflow: ellipsis;
+						/*显示省略号来代表被修剪的文本*/
+					}
+				}
+				.btn{
+					padding: 5rpx 25rpx;
+					color: $uni-color-primary;
+					border: $uni-color-primary solid 2rpx;
+					border-radius: 30rpx;
+					font-size: $uni-font-size-sm-base;
+					letter-spacing: 1rpx;
+				}
+			}
+		}
+		.to-publish{
+			background-color: $uni-color-follow;
+			color: $uni-color-follow-font;
+			position: fixed;
+			bottom: calc( 40rpx + env(safe-area-inset-bottom) );
+			left: 50%;
+			transform: translateX(-50%);
+			display: flex;
+			border-radius: 200rpx;
+			padding: 14rpx 26rpx;
+			._text{
+				margin-right: 10rpx;
+				font-size: $uni-font-size-base;
+			}
+			.icon{
+				justify-content: center;
+				margin-right: 10rpx;
+				.mini-icon{
+					font-size: $uni-font-size-base;
+				}
+			}
+		}
+		.to-publish.tabbar{
+			bottom: calc( 160rpx + env(safe-area-inset-bottom) );
+		}
+	}
+}

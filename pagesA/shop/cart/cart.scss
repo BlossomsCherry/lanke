@@ -1,0 +1,312 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cart-empty-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 80rpx;
+    padding-top: 120rpx;
+}
+
+.cart-empty-txt {
+    color: #555;
+    font-weight: 500;
+    font-size: 36rpx;
+}
+
+.bt15 {
+    margin-bottom: 15rpx;
+}
+
+.cart-empty-img {
+    width: 560rpx;
+    height: 440rpx;
+}
+
+.cart-empty-btn {
+    border-radius: 50rpx;
+    @include background_color(page-box-background-color);
+    width: 340rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    font-size: $uni-font-size-base;
+    font-weight: bold;
+    margin-bottom: 30rpx;
+	color: $uni-color-shop-primary;
+}
+
+.goods-list {
+    width: 100%;
+    height: 240rpx;
+    overflow: hidden;
+    position: relative;
+    @include background_color(page-box2-background-color);
+}
+
+.touch-move-active .goods-box,
+.touch-move-active .slide-right {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+
+.goods-box {
+    border-top: 2rpx solid;
+	@include border_color(border-color-box-item-background-color);
+    width: 100%;
+    height: 238rpx;
+    margin-right: 0;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    -webkit-transform: translateX(90px);
+    transform: translateX(90px);
+    margin-left: -90px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.slide-right {
+    width: 90px;
+    height: 240rpx;
+    line-height: 240rpx;
+    text-align: center;
+    font-size: $uni-font-size-base;
+    font-weight: bold;
+    color: #fff;
+    background-color: #fa5150;
+    -webkit-transform: translateX(90px);
+    transform: translateX(90px);
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.goods-radio {
+    padding: 0 40rpx;
+    width: 42rpx;
+    height: 240rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.goods-radio .mini-icon {
+    width: 42rpx;
+    height: 42rpx;
+	text-align: center;
+	font-size: 40rpx;
+	@include color(color-lightest-dark);
+}
+.goods-radio .mini-icon.checked{
+	color: $uni-color-shop-primary !important;
+}
+.goods-img {
+    width: 140rpx;
+    height: 140rpx;
+    margin-bottom: 20rpx;
+}
+
+.goods-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.goods-info-df {
+    padding-left: 40rpx;
+    width: 420rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.goods-info-df-icon {
+    width: 40rpx;
+    height: 40rpx;
+	@include color(color-darkest);
+}
+
+.goods-info-text {
+    width: 320rpx;
+    font-size: $uni-font-size-sm;
+    font-weight: bold;
+}
+
+.goods-info-text .txt1 {
+    @include color(color-darkest);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.goods-info-text .txt2 {
+    @include color(color-lightest-dark);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.gi2 {
+    margin-top: 30rpx;
+    align-items: center;
+}
+
+.number {
+    height: 60rpx;
+    width: 100rpx;
+    font-size: 22rpx;
+    font-weight: bold;
+    border-radius: 50rpx;
+    border: 2rpx solid $uni-text-color-grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	@include color(color-darkest);
+}
+
+.goods-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 100px;
+}
+
+.goods-title {
+    width: calc(100% - 60rpx);
+    padding: 50rpx 0 40rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include color(color-light-dark);
+    font-size: $uni-font-size-base;
+    font-weight: bold;
+}
+
+.footer {
+    position: fixed;
+    z-index: 99;
+    bottom: 0;
+    left: 0;
+    /* width: calc(100% - 80rpx); */
+	width: 100%;
+    padding: 0rpx 30rpx;
+    height: 90rpx;
+    @include background_color(page-box-background-color);
+    filter: drop-shadow(0px -2px 10px rgba(0, 0, 0, 0.06));
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.footer-box {
+	width: calc( 100% - 60rpx );
+    height: 90rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.l-radio-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-left .mini-icon {
+    width: 42rpx;
+    height: 42rpx;
+	text-align: center;
+	font-size: 40rpx;
+	@include color(color-lightest-dark);
+}
+.footer-left .mini-icon.checked{
+	color: $uni-color-shop-primary !important;
+}
+.footer-left text {
+    padding-top: 4rpx;
+    font-size: 20rpx;
+    font-weight: 500;
+}
+
+.footer-rigth {
+    display: flex;
+    align-items: center;
+}
+
+.footer-rigth-price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.footer-rigth-text {
+    @include color(color-lightest-dark);
+    font-size: 22rpx;
+    font-weight: bold;
+}
+
+.pay-btn {
+    margin-left: 20rpx;
+    height: 70rpx;
+    padding: 0 50rpx;
+    border-radius: 80rpx;
+    font-size: $uni-font-size-sm-base;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg1 {
+    color: #ffffff;
+    background: $uni-color-shop-primary;
+}
+
+.bg2 {
+    @include color(color-lightest-dark);
+    @include background_color(page-box-item-background-color);
+}
+.dialog_conent .select-item {
+    width: 750rpx;
+    padding: 40rpx 0;
+    font-size: $uni-font-size-lg;
+    text-align: center;
+    font-weight: bold;
+    @include color(color-light-dark);
+}
+
+.c1 {
+    @include color(color-light-dark);
+    border-bottom: 8px solid;
+	@include border_color(border-color-box-item-background-color);
+}
+
+.c2 {
+    color: #fa5150 !important;
+    border-bottom: 8px solid;
+	@include border_color(border-color-box-item-background-color);
+}
+
+.sold-out {
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    height: 238rpx;
+    background: #f5f5f599;
+}
+
+.sold-out image {
+    position: absolute;
+    top: 12px;
+    right: 35px;
+    width: 128rpx;
+    height: 128rpx;
+}

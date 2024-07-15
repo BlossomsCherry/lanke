@@ -1,0 +1,348 @@
+
+$page-content-body-width: 710rpx;  //页面整体宽度 （默认710rpx）
+
+/* 颜色变量 */
+$uni-color-love: #FF2442; // 点赞，喜欢，红心（默认值：#fc3a73 ）
+$uni-color-follow: #FF2442; // 关注按钮颜色（默认值：#fc3a73 ）
+$uni-color-follow-font: #FFFFFF; // 关注按钮字体颜色颜色（默认值：#ffffff ）
+$uni-color-collected: #F2BF66; // 收藏的颜色 （默认值：#f2bf66 ）
+$uni-color-used-mall: #FF2442; // 闲置商城主题色
+
+$uni-color-authentication: #FFC22F; // 认证图标颜色（默认值：#199bec ）
+$uni-color-official: #F13B03; // 官方图标颜色（默认值：#000000 ）
+
+$uni-color-primary: #FF2442;
+$uni-color-primary-dark: #FF2442;
+$uni-color-primary-disabled: #FF2442;
+$uni-color-primary-light: #FF2442;
+$uni-color-shop-primary: #fd204c;
+$uni-color-primary-lightest: #F8E7EC;
+
+/* 文字基本颜色 */
+$uni-text-color:  #333333;
+$uni-text-color-inverse:#fff;//反色
+$uni-text-color-grey:#999;//辅助灰色，如加载更多的提示信息
+$uni-text-color-light:#909399;
+$uni-text-color-placeholder: #989898;
+$uni-text-color-disable:#C0C4CC;
+
+/* 等级相关颜色 */
+$uni-lv1-color: #CB1470; // （默认值：#c6c4c5 ）
+$uni-lv2-color: #91D660; // （默认值：#91d660 ）
+$uni-lv3-color: #7BCDEF; // （默认值：#7bcdef ）
+$uni-lv4-color: #FEBB8B; // （默认值：#febb8b ）
+$uni-lv5-color: #EE672A; // （默认值：#ee672a ）
+$uni-lv6-color: #FF2442; // （默认值：#ff0000 ）
+
+$uni-color-success: #5ac725;
+$uni-color-success-dark: #53c21d;
+$uni-color-success-disabled: #a9e08f;
+$uni-color-success-light: #f5fff0;
+
+
+$uni-color-warning: #f9ae3d;
+$uni-color-warning-dark: #f1a532;
+$uni-color-warning-disabled: #f9d39b;
+$uni-color-warning-light: #fdf6ec;
+
+$uni-color-error: #f56c6c;
+$uni-color-error-dark: #e45656;
+$uni-color-error-disabled: #f7b2b2;
+$uni-color-error-light: #fef0f0;
+
+$uni-color-info: #909399;
+$uni-color-info-dark: #767a82;
+$uni-color-info-disabled: #c4c6c9;
+$uni-color-info-light: #f4f4f5;
+
+/* 背景颜色 */
+$uni-bg-color:#f6f6f6;
+$uni-bg-color-grey:#f8f8f8;
+$uni-bg-color-hover:#f1f1f1;//点击状态颜色
+$uni-bg-color-mask:rgba(0, 0, 0, 0.4);//遮罩颜色
+
+/* 边框颜色 */
+$uni-border-color:#dadbde;
+
+/* 尺寸变量 */
+$font-content-size: 30rpx; // 内容字体大小（默认值：30rpx ）
+
+/* 文字尺寸 */
+$uni-font-size-sm:20rpx;
+$uni-font-size-sm-base: 26rpx;
+$uni-font-size-base:24rpx;
+$uni-font-size-medium:26rpx;
+$uni-font-size-lg:24rpx;
+$uni-font-size-lg-er:24rpx;
+
+/* 图片尺寸 */
+$uni-img-size-sm:20px;
+$uni-img-size-base:26px;
+$uni-img-size-lg:40px;
+
+$base-border-radius: 8rpx; // 页面块的圆角（默认值：8rpx ）
+$popup-border-radius: 24rpx; // 弹层圆角（默认值：24rpx ）
+$input-border-radius: 10rpx; // 搜索框，聊天框等圆角（默认值：30rpx ）
+$nav-border-radius: 50rpx; // 点击切换按钮 圆角，如商品搜索页面的切换按钮（默认值：50rpx ）
+$item-border-radius: 50rpx;  // （默认值：50rpx ）
+
+/* 圆角 */
+$uni-border-radius-sm-est: 4rpx;
+$uni-border-radius-sm: 8rpx;
+$uni-border-radius-base: 10rpx;
+$uni-border-radius-lg: 12rpx;
+$uni-border-radius-lg-er: 20rpx;
+$uni-border-radius-lg-est: 50rpx;
+$uni-border-radius-circle: 50%;
+
+/* 水平间距 */
+$uni-spacing-row-sm: 5px;
+$uni-spacing-row-base: 10px;
+$uni-spacing-row-lg: 15px;
+
+/* 垂直间距 */
+$uni-spacing-col-sm: 4px;
+$uni-spacing-col-base: 15rpx;
+$uni-spacing-col-lg: 12px;
+
+/* 透明度 */
+$uni-opacity-disabled: 0.3; // 组件禁用态的透明度
+$uni-mask-opacity: 0.8; // 蒙版透明度
+
+/* 文章场景相关 */
+$uni-color-title: #2C405A; // 文章标题颜色
+$uni-font-size-title:20px;
+$uni-color-subtitle: #555555; // 二级标题颜色
+$uni-font-size-subtitle:26px;
+$uni-color-paragraph: #3F536E; // 文章段落颜色
+$uni-font-size-paragraph:15px;
+
+// 、、、、、、、、、、、、、、
+/* 页面左右间距 */
+$page-row-spacing: 30upx;
+$page-color-base: #f8f8f8;
+$page-color-light: #f8f6fc;
+$base-color: #fa436a;
+
+/* 边框颜色 */
+$border-color-dark: #DCDFE6;
+$border-color-base: #E4E7ED;
+$border-color-light: #EBEEF5;
+/* 图片加载中颜色 */
+$image-bg-color: #eee;
+$uni-navigater-color: #528cba;
+
+$themes: (
+	black: (
+	
+        //字体
+		color-primary: #FF2442,
+		color-box-bg: #19191e,
+		color-follow-font: #FFFFFF,
+		color-topic: #c9d8ed,
+		color-dark: #bcbfc8,
+		color-darkest: #ffffff,
+		color-always-white: #ffffff,
+		color-always-black: #000000,
+		color-ligh-dark: #d8d8d9,
+		color-light-dark: #dadadb,
+		color-lighter-dark: #6d7179,
+		color-lighterr-dark: #9a9a9c,
+		color-lighter-er-dark: #93979e,
+		color-lightest-dark: #6b6f77,
+		color-lightest-est-dark: #e3e4e7,
+		color-lightest-est-er-dark: #7c7c7f,
+		color-lightest-est-est-dark: #000000,
+		color-dark-gray: #6c6c6e,
+		color-vip: #ce994f,
+        color-success: #5ac725,
+        color-error: #f56c6c,
+        color-warning: #f9ae3d,
+        color-navigater: #528cba,
+		//背景
+		primary-background-color: #FF2442,
+		follow-background-color: #FF2442,
+		second-primary-background-color: #38272f,
+		uni-color-used-mall: #FF2442,
+		dark-background-color: #bcbfc8,
+		page-color-light-dark: #dadadb,
+		page-body-background-color: #141417,
+        page-body2-background-color: #141417,
+		page-box-background-color: #19191e,
+		page-box2-background-color: #26262b,
+		page-box-item2-background-color: #242328,
+		page-box-item3-background-color: #222227,
+		page-box-item4-background-color: #0e0e11,
+		page-box-item5-background-color: #131317,
+		page-box-item-background-color: #26262b,
+
+		page-lightest-dark-background-color: #6b6f77,
+
+		page-light2-line-background-color: #2d2d36,
+		page-light-line-background-color: #1a1a1a,
+		page-lighter-line-background-color: #29282d,
+		page-lighter-er-line-background-color: #888888,
+		page-lightest-line-background-color: #333333,
+
+		page-gray-background-color: #000000,
+		page-gray-er-background-color: #454953,
+
+		relative-background-color: #000000,
+		relative2-background-color: #ffffff,
+		// 边框
+		border-darkest: #ffffff,
+		border-color-primary: #FF2442,
+		border-color-light-dark: #dadadb,
+		border-color-lightest-dark: #6b6f77,
+		border-color-lightest-est-dark: #888888,
+		border-color-lightest-est-est-dark: #39393c,
+
+		border-color-body-background-color: #141417,
+		border-color-box-background-color: #19191e,
+		border-color-box-item-background-color: #26262b,
+
+		border-color-light-line-background-color: #1a1a1a,
+		border-color-lighter-line-background-color: #29282d,
+
+		background-image-primary: linear-gradient(rgba(60, 50, 50, 0.6) 0, #333333 100%),
+        
+	),
+
+	default: (
+		
+            //字体
+		color-primary: #FF2442,
+		color-box-bg: #ffffff,
+		color-follow-font: #FFFFFF,
+		color-topic: #1c3563,
+		color-dark: #141414,
+		color-darkest: #000000,
+		color-always-white: #ffffff,
+		color-always-black: #000000,
+		color-ligh-dark: #313131,
+		color-light-dark: #333333,
+		color-lighter-dark: #504f55,
+		color-lighterr-dark: #5d5d5d,
+		color-lighter-er-dark: #666666,
+		color-lightest-dark: #999999,
+		color-lightest-est-dark: #999999,
+		color-lightest-est-er-dark: #a3a3a3,
+		color-lightest-est-est-dark: #ffffff,
+		color-dark-gray: #8d8d8d,
+		color-vip: #ce994f,
+		color-success: #5ac725,
+        color-error: #f56c6c,
+        color-warning: #f9ae3d,
+        color-navigater: #528cba,
+		//背景
+		primary-background-color: #FF2442,
+		follow-background-color: #FF2442,
+		second-primary-background-color: #f2e0e0,
+		uni-color-used-mall: #FF2442,
+		dark-background-color: #141414,
+		page-color-light-dark: #333333,
+		page-body-background-color: #fafafa,
+        page-body2-background-color: #f4f6f9,
+		page-box-background-color: #ffffff,
+		page-box2-background-color: #ffffff,
+		page-box-item2-background-color: #f3f3f3,
+		page-box-item3-background-color: #f4f4f5,
+		page-box-item4-background-color: #f6f6f6,
+		page-box-item5-background-color: #fdfdfd,
+		page-box-item-background-color: #f5f5f5,
+
+		page-lightest-dark-background-color: #999999,
+
+		page-light2-line-background-color: #e4e4e4,
+		page-light-line-background-color: #e6e6e6,
+		page-lighter-line-background-color: #fafafa,
+		page-lighter-er-line-background-color: #dddddd,
+		page-lightest-line-background-color: #fefefe,
+
+
+		page-gray-background-color: #f7f7f7,
+		page-gray-er-background-color: #cccccc,
+
+		relative-background-color: #ffffff,
+		relative2-background-color: #000000,
+		// 边框
+		border-darkest: #000,
+		border-color-primary: #FF2442,
+		border-color-light-dark: #333333,
+		border-color-lightest-dark: #999999,
+		border-color-lightest-est-dark: #dddddd,
+		border-color-lightest-est-est-dark: #eeeeee,
+
+		border-color-body-background-color: #f5f5f5,
+		border-color-box-background-color: #ffffff,
+		border-color-box-item-background-color: #f5f5f5,
+
+		border-color-light-line-background-color: #e6e6e6,
+		border-color-lighter-line-background-color: #fafafa,
+
+		background-image-primary: linear-gradient(rgba(255, 241, 241, 0.6) 0, #fffcff 100%),
+        
+	));
+
+
+//遍历主题map
+@mixin themeify {
+	@each $theme-name,
+	$theme-map in $themes {
+		//global 把局部变量强升为全局变量
+		$theme-map: $theme-map !global;
+
+		//判断html的data-theme的属性值  #{}是sass的插值表达式
+		//& sass嵌套里的父容器标识   @content是混合器插槽，像vue的slot
+		/* #ifdef APP-NVUE */
+		.global-theme-#{$theme-name} & {
+			@content;
+		}
+		/* #endif */
+		/* #ifndef APP-NVUE */
+		[data-theme="#{$theme-name}"] & {
+			@content;
+		}
+		/* #endif */
+	}
+}
+
+
+//声明一个根据Key获取颜色的function
+@function themed($key) {
+	@return map-get($theme-map, $key);
+}
+
+
+@mixin background_color($color) {
+	@include themeify {
+		background-color:  themed($color) !important;
+	}
+}
+
+@mixin color($color) {
+	@include themeify {
+		color:  themed($color) !important;
+	}
+}
+@mixin border_color($color) {
+	@include themeify {
+		border-color:  themed($color) !important;
+	}
+}
+
+@mixin background_image($src) {
+	@include themeify {
+		background-image:  themed($src) !important;
+	}
+}
+
+// scss混入，为了少写几行#ifndef
+@mixin flex($direction: row) {
+	/* #ifndef APP-NVUE */
+	display: flex;
+	/* #endif */
+	flex-direction: $direction;
+}
+
+        

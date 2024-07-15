@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "mini-icon-z"; /* Project id 4593392 */
+  src: url('@/pagesZ/static/icon/iconfont.woff2?t=1719464965179') format('woff2'),
+       url('@/pagesZ/static/icon/iconfont.woff?t=1719464965179') format('woff'),
+       url('@/pagesZ/static/icon/iconfont.ttf?t=1719464965179') format('truetype');
+}
+
+.mini-icon-z {
+  font-family: "mini-icon-z" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.mini-z-leixing1:before {
+  content: "\e731";
+}
+
+.mini-z-qiangzhishiming:before {
+  content: "\e730";
+}
+
+.mini-z-xingbie:before {
+  content: "\e732";
+}
+
+.mini-z-location:before {
+  content: "\e71f";
+}
+
+.mini-z-shijian1:before {
+  content: "\e71e";
+}
+
+.mini-z-dingshi:before {
+  content: "\e723";
+}
+
+.mini-z-fanwei:before {
+  content: "\e722";
+}
+
+.mini-z-yinsi:before {
+  content: "\e721";
+}
+
+.mini-z-houbu:before {
+  content: "\e720";
+}
+
+.mini-z-qian:before {
+  content: "\e725";
+}
+
+.mini-z-renshu:before {
+  content: "\e724";
+}
+
+.mini-z-tuikuan:before {
+  content: "\e71d";
+}
+
+.mini-z-gerenxinxi:before {
+  content: "\e728";
+}
+
+.mini-z-riqi:before {
+  content: "\e727";
+}
+
+.mini-z-zhandui:before {
+  content: "\e72a";
+}
+
+.mini-z-xiangou:before {
+  content: "\e729";
+}
+

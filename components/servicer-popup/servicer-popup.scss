@@ -1,0 +1,31 @@
+.servicer-popup-box{
+	@include background_color(page-box-background-color);
+	border-radius: $uni-border-radius-lg;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 460rpx;
+	justify-content: center;
+	padding: 50rpx 50rpx 20rpx;
+	box-sizing: border-box;
+	.inner{
+		margin: auto;
+		._image{
+			width: 360rpx;
+			height: 360rpx;
+			transform: scale(1.25);
+		}
+		.tips{
+			text-align: center;
+			font-size: $uni-font-size-sm;
+			@include color(color-lightest-dark);
+			margin-top: 34rpx;
+			margin-bottom: 40rpx;
+		}
+		.btn{
+			text-align: center;
+			font-size: $uni-font-size-base;
+			@include color(color-darkest);
+		}
+	}
+}

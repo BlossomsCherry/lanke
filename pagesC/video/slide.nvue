@@ -1,0 +1,1024 @@
+<template>
+	<view
+		:class="'mini-page-wrap global-theme-' + global__theme__  + ' global-platform-' + global__platform__ + ' global-device-' + global__device__ + ' global-tenant-' + global__tenant__.tenant_id"
+		:data-theme="global__theme__  ">
+		<view class="mini-page-body">
+			<navBar :back="false" :home="false" iconTheme="white" color="#ffffff" background="rgba(255, 255, 255, 0);"
+				:placeholder="false" :scene="75">
+				<view slot="left" class="lxy-nav-bar__logo" @tap.stop.prevent="toSliderUrl(-2, null)">
+					<!-- #ifdef APP-NVUE -->
+					<text class="left-back-icon mini-icon">&#xe609;</text>
+					<!-- #endif -->
+					<!-- #ifndef APP-NVUE -->
+					<i class="left-back-icon mini-icon mini-zuojiantou"></i>
+					<!-- #endif -->
+				</view>
+			</navBar>
+			<swiper class="swiper" circular vertical @change="changed" :style="'height:'+systemInfo.windowHeight+'px;'"
+				:current="swiperCurrent">
+				<swiper-item class="swiper-item" v-for="(item,index) in displaySwiperList" :key="index"
+					:style="'height:'+systemInfo.windowHeight+'px;'">
+					<video class="video" @click="dbclick(item)" id="videoBox" v-if="index==changeIndex"
+						:src="item.video.video_url" :autoplay="true" :controls="false" custom-cache="false" :loop="true"
+						:show-center-play-btn="false" :muted="videomuted" :enable-progress-gesture="true"
+						:style="'height:'+systemInfo.windowHeight+'px;'" @ended="nextVideo" @timeupdate="timeupdate">
+					</video>
+					<view class="video-text">
+						<view class="goods" v-if="item.goods && item.goods.length > 0">
+							<view class="goods-item" @tap.stop.prevent="toGoodDetail" v-for="(git, index) in item.goods"
+								:key="git.id" v-if="index <= 0">
+								🛒{{git.name}}
+							</view>
+						</view>
+						<view class="username" @tap.stop.prevent="toSliderUrl(4, item.user.id)">
+							<text style="color: #fff;font-size: 32rpx;">@{{item.user.user_name }}</text>
+						</view>
+						<view class="tips">
+							<text style="color: #fff;font-size: 28rpx;">{{ item.posts_content_raw }}</text>
+						</view>
+					</view>
+					<view class="caozuolei">
+						<view class="own-header-img">
+							<view class="own-header-img-box" @click.stop="toSliderUrl(4, item.user.id)">
+								<image class="own-header-img-src" :src="item.user.user_avatar"></image>
+							</view>
+							<!-- #ifdef APP-NVUE -->
+							<text class="follow mini-icon mini-gou" v-if="item.is_follow_user"
+								@tap.stop.prevent="postsActionFollow" :data-userid="item.user.id"
+								:data-index="index">&#xe63b;</text>
+							<text class="follow mini-icon mini-jiahao-" v-else @tap.stop.prevent="postsActionFollow"
+								:data-userid="item.user.id" :data-index="index">&#xe606;</text>
+							<!-- #endif -->
+							<!-- #ifndef APP-NVUE -->
+							<i class="follow mini-icon mini-gou" v-if="item.is_follow_user"
+								@tap.stop.prevent="postsActionFollow" :data-userid="item.user.id"
+								:data-index="index"></i>
+							<i class="follow mini-icon mini-jiahao-" v-else @tap.stop.prevent="postsActionFollow"
+								:data-userid="item.user.id" :data-index="index"></i>
+							<!-- #endif -->
+						</view>
+						<view class="operateBox" @tap.stop.prevent="tapfooter(2, item.id, index, 0, 0)">
+
+							<!-- #ifndef APP-NVUE -->
+							<i class="operateImg mini-icon mini-xihuan-shixin yes" v-if="item.is_like"></i>
+							<i class="operateImg mini-icon mini-xihuan-shixin" v-else></i>
+							<view style="color: #ffffff;font-size: 24rpx;">
+								{{ item.like_count > 0 ? filters.toFix(item.like_count) : '喜欢' }}
+							</view>
+							<!-- #endif -->
+							<!-- #ifdef APP-NVUE -->
+							<text class="operateImg mini-icon mini-xihuan-shixin yes"
+								v-if="item.is_like">&#xe610;</text>
+							<text class="operateImg mini-icon mini-xihuan-shixin" v-else>&#xe610;</text>
+							<text
+								style="color: #ffffff;font-size: 24rpx;">{{ item.like_count > 0 ? item.like_count : '喜欢' }}</text>
+							<!-- #endif -->
+						</view>
+						<view class="operateBox"
+							@tap.stop.prevent="tapfooter(4, item.id, index, 0, item.comment_count)">
+
+							<!-- #ifndef APP-NVUE -->
+							<i class="operateImg mini-icon mini-a-pinglun2-shi"></i>
+							<view style="color: #ffffff;font-size: 24rpx;">
+								{{ item.comment_count > 0 ? filters.toFix(item.comment_count) : '评论' }}
+							</view>
+							<!-- #endif -->
+							<!-- #ifdef APP-NVUE -->
+							<text class="operateImg mini-icon mini-a-pinglun2-shi">&#xe6a0;</text>
+							<text
+								style="color: #ffffff;font-size: 24rpx;">{{ item.comment_count > 0 ? item.comment_count : '评论' }}</text>
+							<!-- #endif -->
+						</view>
+
+						<view class="operateBox" @tap.stop.prevent="tapfooter(3, item.id, index, item.user.id, 0)">
+
+							<!-- #ifndef APP-NVUE -->
+							<i class="operateImg mini-icon mini-shoucang-shixin1 yes" v-if="item.is_collect"></i>
+							<i class="operateImg mini-icon mini-shoucang-shixin1" v-else></i>
+							<view style="color: #ffffff;font-size: 24rpx;">
+								{{ item.collected_count > 0 ? filters.toFix(item.collected_count) : '收藏' }}
+							</view>
+							<!-- #endif -->
+							<!-- #ifdef APP-NVUE -->
+							<text class="operateImg mini-icon mini-shoucang-shixin1 yes"
+								v-if="item.is_collect">&#xe629;</text>
+							<text class="operateImg mini-icon mini-shoucang-shixin1" v-else>&#xe629;</text>
+							<text
+								style="color: #ffffff;font-size: 24rpx;">{{ item.collected_count > 0 ? item.collected_count : '收藏' }}</text>
+							<!-- #endif -->
+						</view>
+						<view class="operateBox" @tap.stop.prevent="tapfooter(1, item.id, index, 0, 0)">
+							<!-- #ifndef APP-NVUE -->
+							<i class="operateImg mini-icon mini-fenxiang-shi"></i>
+							<!-- #endif -->
+							<!-- #ifdef APP-NVUE -->
+							<text class="operateImg mini-icon mini-fenxiang-shi">&#xe6a3;</text>
+							<!-- #endif -->
+						</view>
+						<view class="changpian operateBox" @click.stop="changpian(item)">
+							<image class="changpingimg" :class="{'rotate-animation':!videomuted}" :src="item.squre">
+							</image>
+						</view>
+					</view>
+					<view class="playboxPlus" :style="'height:'+systemInfo.windowHeight+'px;width:780rpx;'"
+						v-if="!playon">
+						<view class="playBox" @tap.stop.prevent="videoClick">
+							<image class="playBoximg" src="@/pagesC/static/playCircle.png" alt=""></image>
+						</view>
+					</view>
+
+					<view class="viedo-progress-warp" v-if="progressInnerWidth > 0">
+						<view class="video-progress"> </view>
+						<view class="progress-inner" :style="{width:progressInnerWidth + 'rpx'}"> </view>
+						<view class="progress-dot" @touchmove="progressDotTouchmove" @touchstart="progressDotTouchstart" @touchend="progressDotTouchend" :style="{left:progressInnerWidth - 4 + 'rpx'}"> </view>
+						
+					</view>
+
+				</swiper-item>
+			</swiper>
+			<u-popup :show="commentPopupShow" @close="shutCommentPopupShow" :zIndex="99999991009" mode="bottom">
+				<view class="dialog">
+					<view class="dialog_container" :style="commentPopupShow ? '' : 'height: 0;padding-bottom: 0;'">
+						<view class="dialog_box_title">
+
+							<!-- #ifndef APP-NVUE -->
+							评论
+							{{ commentCount > 999 ? filters.toFix(commentCount) : commentCount }}
+							<text class="mini-icon mini-shanchu2 close-icon"
+								@tap.stop.prevent="shutCommentPopupShow"></text>
+							<!-- #endif -->
+							<!-- #ifdef APP-NVUE -->
+							<text>评论{{ commentCount > 999 ? commentCount : commentCount }}</text>
+
+							<text class="mini-icon mini-shanchu2 close-icon"
+								@tap.stop.prevent="shutCommentPopupShow">&#xe64d;</text>
+							<!-- #endif -->
+						</view>
+						<comment-scroll unicom-id="commentScroll_75_0" ref="commentScroll" :postsId="postsId"
+							@tapComment="tapComment" :scene="75"></comment-scroll>
+						<comment-form unicom-id="commentForm_75_0" ref="commentForm" :postsId="postsId"
+							:commentFormShow="commentFormShow" @maskClick="commentFormMaskClick"
+							@sendComment="onInputComment" @tapComment="tapComment"
+							:placeholder="replyName || '此时此刻想说~' " :scene="75"></comment-form>
+					</view>
+				</view>
+			</u-popup>
+			<post-share unicom-id="postShare_75_0" :postsId="postsId" :show="showSharePopup"></post-share>
+		</view>
+	</view>
+</template>
+<script module="filters" lang="wxs" src="@/utils/fixed.wxs"></script>
+<script>
+	import navBar from '@/components/common/navbar/navbar';
+
+	// #ifdef APP-NVUE
+	const domModule = weex.requireModule('dom');
+	domModule.addRule('fontFace', {
+		fontFamily: 'mini-icon',
+		src: "url('../../static/icon/A/iconfont.ttf')"
+	});
+	// #endif
+
+	// #ifdef APP-NVUE
+	import PostShare from "@/pagesC/video/components/nvue/post-share";
+	import CommentForm from "@/pagesC/video/components/nvue/comment-form";
+	import CommentScroll from "@/pagesC/video/components/nvue/comment-scroll";
+	// import CommentForm from "@/pagesC/video/components/vue/comment-form";
+	// import CommentScroll from "@/pagesC/video/components/vue/comment-scroll";
+	// #endif
+	// #ifndef APP-NVUE
+	import PostShare from "@/pagesC/video/components/vue/post-share";
+	import CommentForm from "@/pagesC/video/components/vue/comment-form";
+	import CommentScroll from "@/pagesC/video/components/vue/comment-scroll";
+	// #endif
+
+	var options = {};
+
+	const forum = require('@/mixins/forum');
+	const common = require('@/mixins/common');
+
+
+	const base = require('@/mixins/forum');
+	base(options);
+	forum(options);
+	common(options);
+
+	export default {
+		mixins: [{
+			methods: options
+		}],
+		components: {
+			navBar,
+			PostShare,
+			CommentForm,
+			CommentScroll,
+		},
+		computed: {
+			global__theme__: {
+				get() {
+					let that = this;
+					return that.$store.state.theme;
+				},
+				set(v) {}
+			},
+			global__tenant__: {
+				get() {
+					let that = this;
+					if (that.$store.state.tenant) {
+						return that.$store.state.tenant;
+					}
+
+					return {
+						tenant_id: null,
+						name: '',
+						short: ''
+					};
+				},
+				set(v) {}
+			},
+			global__platform__: {
+				get() {
+					let that = this;
+					if (that.$store.state.platform) {
+						return that.$store.state.platform;
+					}
+					return 'android';
+				},
+				set(v) {}
+			},
+			global__device__: {
+				get() {
+					let that = this;
+					if (that.$store.state.device) {
+						return that.$store.state.device;
+					}
+					return 'mp';
+				},
+				set(v) {}
+			}
+		},
+		data() {
+			return {
+				// startX: 0, 
+				// progressBarWidth: 0,
+				// totalWidth: 750, 
+				// totalDuration: 3600,
+				progressInnerWidth: 0,
+				swiperCurrent: 0,
+				pagebgcolorClass: 'pagebg_white',
+				fph: false,
+				mytoast_data: {},
+				pageTheme: 'default',
+				page__scene__: 75,
+				firstVideo: 0,
+				isCircle: false,
+
+				screenHeight: 0,
+				systemInfo: [],
+				statusBarHeight: 0,
+				navBarHeight: 0,
+				posts: [],
+				displaySwiperList: [],
+				displayIndex: 0,
+				originIndex: 0,
+				changeIndex: 0,
+				page: 1,
+				num: 0,
+				flag: true,
+				playon: true,
+				touchNum: 0,
+				ondbclick: true,
+				videomuted: false,
+				changpiana: false,
+
+				postsId: 0,
+				showSharePopup: 0,
+				commentCount: 0,
+				commentFormShow: 0,
+				replyName: '',
+
+				commentPopupShow: false,
+
+				swiperPostId: 0,
+			}
+		},
+
+		watch: {
+			displaySwiperList(newVal, oldVal) {
+				// console.log('displaySwiperList:',newVal,oldVal)
+			},
+			posts(newVal, oldVal) {
+				// console.log('posts:',newVal,oldVal)
+			},
+		},
+		onReady() {
+			this.videoContext = uni.createVideoContext('videoBox')
+			console.log(this.videoContext, 'this.videoContext')
+		},
+		onLoad(options) {
+			let that = this;
+			/* 获取系统信息 */
+			// console.log(uni.getSystemInfoSync())
+			var systemInfo = uni.getSystemInfoSync()
+			that.systemInfo = systemInfo;
+
+			// wx.getSystemInfo({
+			// 	success: (res) => {
+			// 		this.screenHeight = res.screenHeight
+			// 		this.statusBarHeight = res.statusBarHeight
+			// 		if (res.system.substring(0, 3) == "iOS") {
+			// 			this.navBarHeight = 42
+			// 		} else {
+			// 			this.navBarHeight = 40
+			// 		}
+			// 	}
+			// })
+			// 调用函数
+
+			var scene = decodeURIComponent(options.scene);
+			if (scene && scene != 'undefined') {
+				let query = {};
+				if (scene.indexOf('&') !== -1) {
+					let scene_arr = scene.split('&');
+					scene_arr.map((item) => {
+						let queryData = item.split('=')
+						query[queryData[0]] = queryData[1]
+					})
+				} else {
+					let queryData = scene.split('=')
+					query[queryData[0]] = queryData[1]
+				}
+				if (query.from_user && query.from_user.length > 0) {
+					uni.setStorageSync('form_user', query.from_user);
+					uni.$store.commit('updateFormUser', query.from_user);
+				}
+				that.firstVideo = query.id;
+			}
+
+			if (options.id && options.id > 0) {
+				that.firstVideo = options.id;
+				if (options.is_circle == 1) {
+					that.isCircle = true;
+				}
+			}
+
+			that.getPageID()
+		},
+		onShow: function() {
+			let that = this;
+			that.$store.commit('updateScene', {
+				scene: 75,
+				scene_id: 0
+			});
+		},
+		onShareAppMessage: function(res) {
+			let that = this;
+
+			let share_title = that.$store.state.config.share.format.app_share_post;
+			let share_img = '';
+
+			for (let index = 0; index < this.posts.length; index++) {
+				const post = that.posts[index];
+
+				if (post.id == Math.abs(that.swiperPostId)) {
+					share_title = share_title.replace('[post_content]', post.posts_content_raw).replace(
+						'[author_name]', post.user.user_name);
+					share_img = post.share_img;
+					break;
+				}
+			}
+
+			share_title = share_title.replace(/<[^>]*?>/g, '');
+
+			return {
+				title: share_title,
+				path: '/pagesC/video/slide?id=' + that.swiperPostId + '&from_user=' + that.$store.state.userInfo.id +
+					'&tenant=' + that.global__tenant__.tenant_id,
+				imageUrl: share_img
+			};
+		},
+
+		onShareTimeline: function(res) {
+			let that = this;
+
+			let share_title = that.$store.state.config.share.format.app_share_post;
+			let share_img = '';
+
+			for (let index = 0; index < this.posts.length; index++) {
+				const post = that.posts[index];
+
+				if (post.id == Math.abs(that.swiperPostId)) {
+					share_title = share_title.replace('[post_content]', post.posts_content_raw).replace(
+						'[author_name]', post.user.user_name);
+					share_img = post.share_img;
+					break;
+				}
+			}
+			share_title = share_title.replace(/<[^>]*?>/g, '');
+
+			return {
+				title: share_title,
+				query: 'id=' + that.swiperPostId + '&fph=1&from_user=' + that.$store.state.userInfo.id + '&tenant=' +
+					that.global__tenant__.tenant_id,
+				imageUrl: share_img
+			};
+		},
+		onPullDownRefresh: function() {
+			uni.stopPullDownRefresh();
+		},
+		methods: {
+			progressDotTouchmove(event) {
+				// console.log(event, 'eeeeeeeee')
+				// const currentX = event.touches[0].pageX; 
+				// const dragDistance = currentX - this.startX;
+				// this.progressBarWidth = Math.max(0, Math.min(this.totalWidth, this.progressBarWidth +
+				// 	dragDistance)); 
+				// this.startX = currentX; 
+			},
+			progressDotTouchstart(event) {
+				// this.startX = event.touches[0].pageX; 
+
+				// console.log(event, 'eeeeeeeee')
+			},
+			progressDotTouchend(event) {
+				// console.log(event, 'eeeeeeeee')
+				// const currentX = event.changedTouches[0].pageX; 
+				// const dragDistance = currentX - this.startX; 
+				// const draggedTime = this.calculateDraggedTime(dragDistance);
+
+			},
+			calculateDraggedTime(dragDistance) {
+				const ratio = dragDistance / this.totalWidth;
+				const draggedTime = ratio * this.totalDuration;
+				return draggedTime;
+			},
+			timeupdate(e) {
+				// console.log(e.detail.duration, 'e')
+				let total = e.detail.duration;
+				let current = e.detail.currentTime;
+				this.progressInnerWidth = Math.floor((current / total) * 750);
+			},
+			swiperToNext() {
+				// 切换到下一个视频
+				// this.swiperCurrent = (this.swiperCurrent + 1) % this.displaySwiperList.length;
+				//  // 确保索引不会超出范围
+				//  if (this.swiperCurrent >= this.displaySwiperList.length) {
+				//     this.swiperCurrent = 0;
+				//   }
+				this.swiperCurrent++;
+				// 如果当前索引超过了视频列表长度，则将当前索引重置为0
+				// if (this.swiperCurrent >= this.displaySwiperList.length) {
+				if (this.swiperCurrent >= 3) {
+					this.swiperCurrent = 0;
+				}
+				console.log('three', this.swiperCurrent)
+			},
+			changed(event) {
+				if(this.commentPopupShow){
+					return false;
+				}
+				this.progressInnerWidth = 0;
+				console.log(event, 'swiper滑动')
+				let {
+					current,
+					source
+				} = event.detail;
+				console.log(source, 'source')
+				let postsLength = this.posts.length;
+				this.changeIndex = current;
+				if (this.displayIndex - current == 2 || this.displayIndex - current == -1) {
+					this.originIndex = this.originIndex + 1 == postsLength ? 0 : this.originIndex + 1;
+					this.displayIndex = this.displayIndex + 1 == 3 ? 0 : this.displayIndex + 1;
+					this.initSwiperData(this.originIndex);
+					this.num++
+					if (this.num + 5 >= this.posts.length) {
+						this.getPageID()
+					}
+				} else if (this.displayIndex - current == -2 || this.displayIndex - current == 1) {
+					this.originIndex = this.originIndex - 1 == -1 ? postsLength - 1 : this.originIndex - 1;
+					this.displayIndex = this.displayIndex - 1 == -1 ? 2 : this.displayIndex - 1;
+					this.initSwiperData(this.originIndex);
+
+					if (this.num > 0) {
+						this.num--
+					}
+				}
+				// this.playon = true
+				// this.videoContext.play();
+				this.swiperCurrent = current;
+
+			},
+			nextVideo() {
+				if(this.commentPopupShow){
+					return false;
+				}
+				// let current = JSON.parse(JSON.stringify(this.swiperCurrent));
+				// let postsLength = this.posts.length;
+				// this.changeIndex++
+				// if (this.displayIndex - current == 2 || this.displayIndex - current == -1) {
+				// 	this.originIndex = this.originIndex + 1 == postsLength ? 0 : this.originIndex + 1;
+				// 	this.displayIndex = this.displayIndex + 1 == 3 ? 0 : this.displayIndex + 1;
+				// 	this.initSwiperData(this.originIndex);
+				// 	this.num++
+				// 	if (this.num + 5 >= this.posts.length) {
+				// 		this.getPageID()
+				// 	}
+				// } else if (this.displayIndex - current == -2 || this.displayIndex - current == 1) {
+				// 	this.originIndex = this.originIndex - 1 == -1 ? postsLength - 1 : this.originIndex - 1;
+				// 	this.displayIndex = this.displayIndex - 1 == -1 ? 2 : this.displayIndex - 1;
+				// 	this.initSwiperData(this.originIndex);
+
+				// 	if (this.num > 0) {
+				// 		this.num--
+				// 	}
+				// }
+
+				// this.playon = true
+				// // this.changeIndex = (this.changeIndex + 1) % this.displaySwiperList.length;
+				// // if (this.changeIndex === 0) {
+				// // 	this.initSwiperData(this.originIndex);
+				// // }
+				// // this.swiperToNext();
+				this.progressInnerWidth = 0;
+				this.swiperCurrent++;
+				if (this.swiperCurrent == 3) {
+					this.swiperCurrent = 0;
+				}
+				console.log(this.swiperCurrent)
+				// this.$nextTick(() => {
+				// 	this.videoContext = uni.createVideoContext('videoBox')
+				// 	// console.log(this.videoContext, 'this.videoContext')
+				// 	this.videoContext.play();
+				// })
+
+				// 播放视频逻辑
+				this.playon = true;
+				this.$nextTick(() => {
+					this.videoContext = uni.createVideoContext('videoBox');
+					this.videoContext.play();
+				});
+
+
+
+			},
+			toGoodDetail() {
+				let that = this;
+				if (that.swiperPostId && that.swiperPostId > 0) {
+					for (let i = 0; i < that.posts.length; i++) {
+						if (that.posts[i].id == that.swiperPostId) {
+							if (that.posts[i].goods && that.posts[i].goods.length > 0) {
+								if (that.posts[i].goods[0].id > 0) {
+									uni.wen.toUrl(3, that.posts[i].goods[0].id);
+								} else {
+									uni.showToast({
+										title: '商品id参数错误',
+										icon: 'none'
+									})
+								}
+							}
+							break;
+						}
+					}
+				} else {
+					uni.showToast({
+						title: '参数错误',
+						icon: 'none'
+					})
+				}
+			},
+			shutCommentPopupShow() {
+				let that = this;
+				that.commentPopupShow = !that.commentPopupShow;
+			},
+			//视频单击事件
+			videoClick() {
+				var that = this
+				that.playon ? that.videoContext.pause() : that.videoContext.play();
+				that.playon = !that.playon;
+			},
+			//喜欢
+			dbclick(e) { //双击事件
+				console.log(e)
+				const _this = this;
+				_this.playon ? _this.videoContext.pause() : _this.videoContext.play();
+				_this.playon = !_this.playon;
+			},
+			tapfooter(action, post_id, index, user_id = 0, comment_count = 0) {
+				let that = this;
+				if (action == 1) {
+					that.tapShare({
+						'post_id': post_id,
+						'index': index
+					});
+				} else if (action == 2) {
+					that.taplikes({
+						'post_id': post_id,
+						'index': index
+					});
+				} else if (action == 3) {
+					that.tapCollect({
+						'post_id': post_id,
+						'index': index
+					});
+				} else if (action == 4) {
+					that.shutCommentPopupShow();
+					that.tapComments({
+						'post_id': post_id,
+						'comment_count': comment_count
+					});
+				} else if (action == 5) {
+					that.tapGiveCoin({
+						'post_id': post_id,
+						'index': index
+					});
+				} else if (action == 6) {
+					that.tapReward({
+						'userid': user_id,
+						'post_id': post_id,
+						'index': index
+					});
+				}
+			},
+			toSliderUrl(type, id) {
+				let that = this;
+				uni.wen.toUrl(type, id, that);
+			},
+			// 唱片、静音
+			changpian() {
+				var that = this
+				that.videomuted = !that.videomuted
+				uni.showToast({
+					title: that.videomuted ? "静音" : '播放',
+					duration: 1000
+				})
+			},
+
+			getPageID() {
+				// 页面id  随机
+				// var pageID = parseInt(Math.random() * (0 - 100 + 1) + 100)
+				// console.log(pageID)
+				this.getVideoList(this.page)
+			},
+			/* 获取视频数据 */
+			getVideoList(pageID) {
+				var that = this;
+				uni.wen.util.request(uni.wen.api.ApiRootUrl + 'posts/video/slide', {
+					firstVideo: that.firstVideo,
+					page: pageID,
+					isCircle: that.isCircle,
+					// type: that.type,
+					// plate_id: that.plateId
+				}).then(function(res) {
+
+
+					if (res.status) {
+
+						if (res.data.current_page != pageID) {
+							return false;
+						}
+
+						let data = res.data;
+
+						if (data.data && data.data.length > 0) {
+							that.posts = that.posts.concat(data.data);
+							that.page = data.current_page;
+							// args.loadmoreShow = false;
+							// args.isLastPage = false;
+						} else {
+							// args.isLastPage = true;
+						}
+						// args.topicload = false;
+
+						if (that.flag) {
+							that.flag = false
+							that.initSwiperData(0)
+						}
+
+					} else {
+						uni.showToast({
+							title: res.message,
+							icon: 'none',
+							duration: 1500
+						});
+					}
+
+				});
+			},
+
+			initSwiperData(originIndex = this.originIndex) {
+				let postsLength = this.posts.length;
+				let displayList = [];
+				displayList[this.displayIndex] = this.posts[originIndex];
+				this.swiperPostId = this.posts[originIndex].id;
+				// console.log(this.swiperPostId);
+				displayList[this.displayIndex - 1 == -1 ? 2 : this.displayIndex - 1] = this.posts[originIndex - 1 == -
+					1 ? postsLength - 1 : originIndex - 1];
+				displayList[this.displayIndex + 1 == 3 ? 0 : this.displayIndex + 1] = this.posts[originIndex + 1 ==
+					postsLength ? 0 : originIndex + 1];
+				this.displaySwiperList = displayList;
+			},
+		}
+	}
+</script>
+
+<style lang="scss">
+	.mini-icon {
+		font-family: mini-icon;
+	}
+
+	.left-back-icon {
+		color: #ffffff;
+		font-size: $uni-font-size-base;
+	}
+
+	.swiper {
+		width: 750rpx;
+		background: #000;
+	}
+
+	.swiper-item {
+		width: 750rpx;
+	}
+
+	.video {
+		width: 750rpx;
+		position: relative;
+	}
+
+	.video-text {
+		position: absolute;
+		margin-left: 32rpx;
+		width: 580rpx;
+		bottom: 200rpx;
+		z-index: 9999;
+	}
+
+	.goods {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.goods-item {
+		color: #fff;
+		background: rgba(255, 255, 255, 0.1);
+		padding: 14rpx 22rpx;
+		font-size: $uni-font-size-medium;
+		border-radius: 15rpx;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		max-width: 450rpx;
+		margin-bottom: 20rpx;
+		box-sizing: border-box;
+	}
+
+	.username {
+		color: #fff;
+	}
+
+	.caozuolei {
+		position: absolute;
+		display: flex;
+		width: 46px;
+		height: 400px;
+		right: 10px;
+		bottom: 12vh;
+		flex-direction: column;
+		justify-content: space-between;
+		z-index: 9999999;
+	}
+
+	.operateBox {
+		width: 90rpx;
+		height: 90rpx;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.operateImg.mini-icon {
+		margin-bottom: 5rpx;
+		font-size: 50rpx;
+		color: #ffffff !important;
+	}
+
+	.operateImg.mini-icon.mini-xihuan-shixin {
+		color: #ffffff !important;
+	}
+
+	.operateImg.mini-icon.mini-xihuan-shixin.yes {
+		color: $uni-color-love !important;
+	}
+
+	.operateImg.mini-icon.mini-shoucang-shixin1 {
+		color: #ffffff !important;
+	}
+
+	.operateImg.mini-icon.mini-shoucang-shixin1.yes {
+		color: $uni-color-collected !important;
+	}
+
+	.operateBox.changpian {
+		transform: scale(0.7);
+	}
+
+	.changpian {
+		border-radius: 90rpx;
+		border: 3rpx solid #ffffff;
+		transform: rotate(0deg);
+
+		transition-property: transform;
+		transition-duration: 5s;
+		transition-timing-function: linear;
+	}
+
+	.changpingimg {
+		width: 75rpx;
+		height: 75rpx;
+		border-radius: 75rpx;
+	}
+
+	.playBoximg {
+		width: 120rpx;
+		height: 120rpx;
+	}
+
+	.playboxPlus {
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.playBox {
+		width: 120rpx;
+		height: 120rpx;
+		position: absolute;
+	}
+
+	.tips {
+		width: 560rpx;
+		font-size: $uni-font-size-sm-base;
+		color: #ffffff;
+	}
+
+	.own-header-img {
+		width: 90rpx;
+		height: 130rpx;
+		/* border: 3px solid #fff; */
+		border-radius: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+	}
+
+	.own-header-img-box {
+		width: 90rpx;
+		height: 90rpx;
+		border-radius: 90rpx;
+		border: 3px solid #fff;
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.own-header-img-src {
+		width: 75rpx;
+		height: 75rpx;
+		border-radius: 90rpx;
+	}
+
+	.follow {
+		width: 40rpx;
+		height: 40rpx;
+		font-size: 40rpx;
+		border-radius: 100%;
+		position: absolute;
+		color: #ff3067;
+		bottom: 0;
+		background-color: #ffffff;
+		border-radius: 50%;
+	}
+
+	@keyframes rotate {
+		from {
+			transform: rotate(0deg);
+		}
+
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	.rotate-animation {
+		// transform: rotate(360deg);
+		/* #ifndef APP-NVUE */
+		animation-name: rotate;
+		animation-duration: 5s;
+		animation-timing-function: linear;
+		/* #endif */
+	}
+
+	.dialog_container {
+		position: fixed;
+		bottom: 0;
+		width: 750rpx;
+		@include background_color(page-box-background-color);
+		transform: translateY(150%);
+		transition: transform 0.2s ease;
+		z-index: 99999999;
+		border-top-right-radius: $uni-border-radius-lg-er;
+		border-top-left-radius: $uni-border-radius-lg-er;
+		/* #ifndef APP-NVUE */
+		padding-bottom: env(safe-area-inset-bottom);
+		/* #endif */
+		opacity: 0;
+	}
+
+	.dialog_container {
+		transform: translateY(0);
+		opacity: 1;
+	}
+
+	.dialog_conent {
+		border-top-right-radius: 24rpx;
+		border-top-left-radius: 24rpx;
+		display: flex;
+		align-items: center;
+		@include background_color(page-box2-background-color);
+		flex-direction: column;
+	}
+
+	.dialog_box_title {
+		width: 710rpx;
+		/* #ifndef APP-NVUE */
+		margin: 0 auto;
+		/* #endif */
+		/* #ifdef APP-NVUE */
+		margin-left: 20rpx;
+		margin-right: 20rpx;
+		/* #endif */
+		height: 80rpx;
+		font-size: $uni-font-size-base;
+		color: #333333;
+		font-weight: 500;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+	}
+
+	.mini-shanchu2.close-icon {
+		position: absolute;
+		right: 0;
+		font-size: 42rpx;
+		color: #666666;
+	}
+
+	.viedo-progress-warp {
+		position: fixed;
+		bottom: 15px;
+		// top: 100px;
+		z-index: 999;
+		left: 0;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		height: 20rpx;
+		width: 750rpx;
+		// background: red;
+
+		.video-progress {
+			height: 10rpx;
+			width: 750rpx;
+			background: rgba(255, 255, 255, 0.3);
+
+		}
+
+		.progress-inner {
+			position: absolute;
+			left: 0;
+			top: 2px;
+			// top: 50%;
+			// transform: translateY(-50%);
+			width: 0;
+			height: 10rpx;
+			background: #ffffff;
+		}
+
+		.progress-dot {
+			position: absolute;
+			top: 0;
+			left: 50px;
+			width: 20rpx;
+			height: 20rpx;
+			border-radius: 50%;
+			background: #ffffff;
+		}
+	}
+</style>

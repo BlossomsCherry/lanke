@@ -1,0 +1,7 @@
+.sph-wrapper {
+    display: inline-flex;
+}
+
+.sph-wrapper .sph-inner{
+	
+}

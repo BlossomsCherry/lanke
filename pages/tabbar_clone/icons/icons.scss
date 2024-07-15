@@ -1,0 +1,80 @@
+$item-icon-height: 100rpx;
+$item-icon-img-height: 40rpx;
+
+.icons-page-content{
+	width: 750rpx;
+	.split-line{
+		@include background_color(page-body-background-color);
+		width: 100%;
+	}
+	.icon-item{
+		width: 100%;
+		@include background_color(page-box-background-color);
+		height: $item-icon-height;
+		.inner{
+			width: 100%;
+			display: flex;
+			box-sizing: border-box;
+			margin: auto;
+			.left{
+				display: flex;
+				.icon{
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					margin-right: 20rpx;
+					margin-left: 20rpx;
+					._image{
+						width: $item-icon-img-height;
+						height: $item-icon-img-height;
+					}
+				}
+			}
+			.right{
+				display: flex;
+				justify-content: space-between;
+				width: 100%;
+				box-sizing: border-box;
+				.name{
+					line-height: $item-icon-height;
+					@include color(color-darkest);
+					font-size: $uni-font-size-medium;
+				}
+				.you-icon{
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					margin-right: 20rpx;
+					.mini-youjiantou{
+						font-size: $uni-font-size-base;
+						@include color(color-lighter-er-dark);
+					}
+				}
+				
+			}
+		}
+	}
+	.icon-item.border-type-2{
+		border-top: 1px solid;
+		border-bottom: 1px solid;
+		@include border_color(border-color-box-item-background-color);
+	}
+	.icon-item.border-type-1{
+		border-top: 1px solid;
+		@include border_color(border-color-box-item-background-color);
+		.right{
+			border-bottom: 1px solid;
+			@include border_color(border-color-box-item-background-color);
+		}
+	}
+	.icon-item.border-type-3{
+		border-bottom: 1px solid;
+		@include border_color(border-color-box-item-background-color);
+	}
+	.icon-item.border-type-4{
+		.right{
+			border-bottom: 1px solid;
+			@include border_color(border-color-box-item-background-color);
+		}
+	}
+}

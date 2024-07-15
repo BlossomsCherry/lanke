@@ -1,0 +1,15 @@
+/* #ifndef APP-NVUE */
+@import '@/pagesZ/static/icon/iconfont.css';
+/* #endif */
+
+.mini-icon-z {
+    font-style: normal !important;
+	/* #ifdef APP-NVUE */
+	display: flex;
+	/* #endif */
+	/* #ifndef APP-PLUS */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	/* #endif */
+}

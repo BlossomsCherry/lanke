@@ -1,0 +1,61 @@
+<view class="tabbar-mask" wx:if="{{ showPopup }}" bindtap="shutPopup"></view>
+<view class="tab-bar" style="{{ 'background: ' + background + ' height:90rpx;' }}">
+    <view bindtap="switchTab"
+        class="{{item.isMidButton!=null&&item.isMidButton==true?'tab-bar-item-center':'tab-bar-item'}}"
+        data-index="{{index}}" data-url="{{item.pagePath}}" wx:for="{{list}}" wx:key="index">
+        <view class="tab-bar-public" wx:if="{{item.isMidButton!=null&&item.isMidButton==true}}">
+            <view class="tab-bar-public-background">
+                <image class="tab-bar-public-icon" src="{{item.iconPath}}"></image>
+            </view>
+        </view>
+        <view wx:else>
+            <view wx:if="{{ item.pagePath == '/pages/tabbar/notice/notice' && sysMessageCount > 0 }}" class="tab-bar-badge">{{ sysMessageCount }}</view>
+            <image class="tab-bar-item-image" src="{{selected===index?item.selectedIconPath:item.iconPath}}"></image>
+            <view class="tab-bar-item-view" style="color:{{selected===index?selectColor:color}}; font-weight: {{selected===index?600:500}};">{{item.text}}</view>
+        </view>
+    </view>
+</view>
+<view class="{{ showPopup ? 'mid-publish-popup show' : 'mid-publish-popup' }}" style="{{ 'background-color: '+ popupStyle.bgcolor +';' }}">
+    <view class="content-wrapper" wx:if="{{ popup && popup.button }}">
+        <view class="title" style="{{ 'color: ' + popupStyle.fontColor + ';' }}">{{ popupTip }}</view>
+
+        <view class="push-note-btn-wrapper" bindtap="navigateTo" data-url="{{popup.button.first.path}}" wx:if="{{popup.button.first.text1 && popup.button.first.text1.length > 0}}">
+            <view class="title">{{ popup.button.first.text1 }}</view>
+            <view class="sub-title">{{ popup.button.first.text2 }}</view>
+        </view>
+
+        <view class="push-row-wrapper">
+            <view class="item-wrapper" bindtap="navigateTo" data-url="{{popup.button.second.path}}" wx:if="{{ popup.button.second.text &&  popup.button.second.text.length > 0 }}" style="{{ 'background-color: '+ popupStyle.itemBgcolor +';color: ' + popupStyle.fontColor + ';' }}">
+                <image class="item-push-icon" src="{{popup.button.second.icon}}" mode="aspectFill"/>
+                <view class="title">{{popup.button.second.text}}</view>
+            </view>
+
+            <view class="item-wrapper" bindtap="navigateTo" data-url="{{popup.button.third.path}}" wx:if="{{ popup.button.third.text &&  popup.button.third.text.length > 0 }}" style="{{ 'background-color: '+ popupStyle.itemBgcolor +';color: ' + popupStyle.fontColor + ';' }}">
+                <image class="item-push-icon" src="{{popup.button.third.icon}}" mode="aspectFill"/>
+                <view class="title">{{popup.button.third.text}}</view>
+            </view>
+
+            <view class="item-wrapper" bindtap="navigateTo" data-url="{{popup.button.fourth.path}}" wx:if="{{ popup.button.fourth.text &&  popup.button.fourth.text.length > 0 }}" style="{{ 'background-color: '+ popupStyle.itemBgcolor +';color: ' + popupStyle.fontColor + ';' }}">
+                <image class="item-push-icon" src="{{popup.button.fourth.icon}}" mode="aspectFill"/>
+                <view class="title">{{popup.button.fourth.text}}</view>
+            </view>
+        </view>
+
+        <view class="inspiration-rank-wrapper">
+            <view class="title" style="{{ 'color: ' + popupStyle.fontColor + ';' }}">{{ popup.hot.title }}</view>
+            <view class="sub-title" style="{{ 'color: ' + popupStyle.fontColor + ';' }}">{{ popup.hot.desc }}</view>
+            <view class="rank-list-wrapper">
+                <view class="rank-item-wrapper" wx:for="{{popup.hot.list}}" wx:key="index"  bindtap="navigateTo" data-url="{{ '/pages/creat/index/creat?tag_id=' + item.id + '&tags_name=' + item.tags_name }}" style="{{ 'background-color: '+ popupStyle.itemBgcolor +';color: ' + popupStyle.fontColor + ';' }}">
+                    <view>NO.{{ index + 1 }}</view>
+                    <view>{{ item.tags_name }}</view>
+                    <!-- <view class="right-city">成都</view> -->
+                </view>
+            </view>
+        </view>
+		<view class="close">
+			<view class="push-close-icon" bindtap="shutPopup" style="{{ 'background-color: '+ popupStyle.itemBgcolor +';color: ' + popupStyle.fontColor + ';' }}">
+				×
+			</view>
+		</view>
+    </view>
+</view>

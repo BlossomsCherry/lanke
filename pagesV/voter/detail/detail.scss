@@ -1,0 +1,353 @@
+.voter-detail-page{
+	width: 750rpx;
+	min-height: 100vh;
+	padding-bottom: env(safe-area-inset-bottom);
+	.voter-deital-gap{
+		height: 20rpx;
+	}
+	.inner{
+		width: 710rpx;
+		margin: auto;
+		.page_item{
+			border-radius: 20rpx;
+			overflow: hidden;
+		}
+	}
+	.master-view{
+		height: 80rpx;
+		display: flex;
+		._image{
+			height: 80rpx;
+			width: 80rpx;
+			border-radius: 50%;
+		}
+		.text-box{
+			margin-left: 20rpx;
+			justify-content: center;
+			._text{
+				
+			}
+		}
+		
+	}
+	.head-card{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		.part1{
+			padding: 20rpx;
+			box-sizing: border-box;
+			.title{
+				text-align: center;
+				font-weight: bold;
+				@include color(color-dark);
+			}
+			.count-wrap{
+				display: flex;
+				justify-content: space-between;
+				margin-top: 30rpx;
+				.count-box{
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					.num{
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						.n{
+							font-size: 20px;
+							font-weight: bold;
+						}
+						.unit{
+							font-size: 15px;
+							@include color(color-dark);
+						}
+					}
+					.count-name{
+						@include color(color-light-dark);
+					}
+				}
+			}
+		}
+		.counter-down{
+			display: flex;
+			justify-content: center;
+			padding: 20rpx;
+			box-sizing: border-box;
+			.counter-tip{
+				@include color(color-darkest);
+			}
+			.show_time{
+				.time_box{
+					@include background_color(page-box-background-color);
+					padding: 0 6rpx;
+					border-radius: 10rpx;
+					margin: 0 4rpx;
+					min-width: 44rpx;
+					min-height: 50rpx;
+					line-height: 50rpx;
+					text-align: center;
+					font-weight: bold;
+					font-size: $uni-font-size-medium;
+					@include color(color-darkest);
+				}
+				.time_unit{
+					@include color(color-light-dark);
+				}
+			}
+		}
+	}
+	
+	.player-list-wrap{
+		display: flex;
+		flex-wrap: wrap;
+		.player-item{
+			width: 350rpx;
+			@include background_color(page-box-background-color);
+			margin-bottom: 30rpx;
+			border-radius: $uni-border-radius-base;
+			overflow: hidden;
+			.cover{
+				width: 350rpx;
+				height: 400rpx;
+				background-position: center;
+				background-size: cover;
+			}
+			.info{
+				padding: 10rpx;
+				box-sizing: border-box;
+				.name{
+					@include color(color-dark);
+					font-size: $uni-font-size-base;
+					margin: 18rpx 0;
+				}
+				.button-box{
+					display: flex;
+					justify-content: space-between;
+					.num{
+						white-space: nowrap;
+						height: 50rpx;
+						line-height: 50rpx;
+						font-size: $uni-font-size-base;
+						font-weight: bold;
+					}
+					.btn{
+						width: 180rpx;
+						height: 50rpx;
+						line-height: 50rpx;
+						text-align: center;
+						font-size: $uni-font-size-sm-base;
+						border-radius: $uni-border-radius-sm;
+					}
+				}
+			}
+			
+		}
+		.player-item:nth-child(2n-1){
+			margin-right: 10rpx;
+		}
+	}
+	
+	
+	.ranking{
+		width: 710rpx;
+		border-radius: 20rpx;
+		margin: auto;
+		box-sizing: border-box;
+		padding: 20rpx;
+		
+		.rangking-title{
+			display: flex;
+			font-size: 14px;
+			@include color(color-lighter-dark);
+			height: 50rpx;
+			line-height: 50rpx;
+			
+			text{
+				display: block;
+				width: 100rpx;
+				text-align: center;
+				
+				&:nth-child(2){
+					box-sizing: border-box;
+					padding-left: 20rpx;
+					text-align: left;
+					width: calc(100% - 200rpx);
+				}
+			}
+		}
+		
+		.ranking-list-item{
+			height: 110rpx;
+			display: flex;
+			align-items: center;
+			font-size: 14px;
+			border-bottom: 1px solid #f0f0f0;
+		
+			.ranking-list-number{
+				width: 100rpx;
+				@include color(color-lighter-er-dark);
+				display: flex;
+				justify-content: center;
+				
+				image{
+					width: 50rpx;
+					height: 50rpx;
+				}
+			}
+			
+			.ranking-list-score{
+				display: block;
+				width: 100rpx;
+				color: #E28935;
+				font-size: 16px;
+				text-align: center;
+			}
+			
+			.ranking-list-nickname{
+				display: flex;
+				align-items: center;
+				width: calc(100% - 200rpx);
+				box-sizing: border-box;
+				padding-left: 20rpx;
+				
+				._image{
+					width: 80rpx;
+					height: 80rpx;
+					border-radius: 50%;
+					margin-right: 20rpx;
+				}
+				
+				._text{
+					width: auto;
+					@include color(color-light-dark);
+				}
+			}
+		}
+	}
+	
+	.brief-wrap{
+		width: 710rpx;
+		border-radius: 20rpx;
+		margin: auto;
+		box-sizing: border-box;
+		padding: 20rpx;
+		.title{
+			@include color(color-dark);
+			font-size: $uni-font-size-medium;
+			font-weight: bold;
+			line-height: 50rpx;
+			border-left: 6rpx solid;
+			text-indent: 16rpx;
+			margin-bottom: 20rpx;
+		}
+		.line{
+			@include color(color-light-dark);
+			font-size: $uni-font-size-base;
+			margin-bottom: 10rpx;
+		}
+	}
+	
+	.bottom-btns{
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		display: flex;
+		.inner{
+			width: 710rpx;
+			margin: auto;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			height: 120rpx;
+			padding-bottom: env(safe-area-inset-bottom);
+			.center-box{
+				display: flex;
+				justify-content: space-between;
+				.normal-btn{
+					display: flex;
+					flex-direction: column;
+					height: 80rpx;
+					.icon{
+						justify-content: center;
+						height: 40rpx;
+					}
+					._text{
+						white-space: nowrap;
+						height: 40rpx;
+						line-height: 40rpx;
+						text-align: center;
+						font-size: $uni-font-size-sm-base;
+						@include color(color-light-dark);
+					}
+				}
+				.large-btn{
+					width: 100%;
+					border-radius: 300rpx;
+					text-align: center;
+					height: 80rpx;
+					line-height: 80rpx;
+					font-size: $uni-font-size-base;
+				}
+			}
+			
+		}
+		
+	}
+	
+}
+
+.ballot-wrap{
+	width: 750rpx;
+	border-top-right-radius: $uni-border-radius-lg-er;
+	border-top-left-radius: $uni-border-radius-lg-er;
+	/* #ifndef APP-NVUE */
+		box-sizing: border-box;
+	/* #endif */
+	padding: 20rpx 0 40rpx;
+	.inner{
+		width: $page-content-body-width;
+		/* #ifndef APP-NVUE */
+		padding-bottom: env(safe-area-inset-bottom);
+		margin: auto;
+		/* #endif */
+		/* #ifdef APP-NVUE */
+		margin-left: 20rpx;
+		margin-right: 20rpx;
+		/* #endif */
+	
+		.title{
+			width: 100%;
+			@include color(color-lighter-er-dark);
+			position: relative;
+			text-align: center;
+			margin-bottom: 20rpx;
+			.mini-icon{
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+		}
+		.content{
+			min-height: 400rpx;
+			.input-wrap{
+				@include background_color(page-box-background-color);
+				justify-content: space-between;
+				padding: 16rpx;
+				box-sizing: border-box;
+				border-radius: $uni-border-radius-base;
+				._text{
+					height: 60rpx;
+					line-height: 60rpx;
+				}
+			}
+			.ballot-tip{
+				font-size: $uni-font-size-sm-base;
+				color: #333333;
+				margin-top: 5rpx;
+			}
+		}
+		
+	}
+}

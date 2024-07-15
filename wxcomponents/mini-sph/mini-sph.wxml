@@ -1,0 +1,22 @@
+<view class="sph-wrapper">
+    <channel-video
+			wx:if="{{ type == 'video' }}"
+            class="sph-inner video"
+            feed-id="{{ feedId }}"
+            feed-token="{{ feedToken }}"
+            finder-user-name="{{ finderUserName }}"
+            autoplay="{{ autoplay }}"
+            loop="{{ loop }}"
+            muted="{{ muted }}"
+            object-fit="contain"
+			style="{{ styles }}"
+			>
+    </channel-video>
+	<channel-live
+		wx:if="{{ type == 'live' }}"
+		class="sph-inner live"
+		feed-id="{{ feedId }}"
+		finder-user-name="{{ finderUserName }}"
+		style="{{ styles }}">
+	</channel-live>
+</view>

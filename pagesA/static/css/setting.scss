@@ -1,0 +1,61 @@
+.box {
+	width: 750rpx;
+	padding-bottom: env(safe-area-inset-bottom);
+	.setting-desc{
+		width: $page-content-body-width;
+		margin: auto;
+		.row{
+			padding: 24rpx 20rpx;
+			font-size: $uni-font-size-base;
+			@include color(color-lightest-dark);
+			box-sizing: border-box;
+		}
+	}
+	.setting-box {
+		width: $page-content-body-width;
+		margin: auto;
+		@include background_color(page-box-background-color);
+		border-radius: 26rpx;
+		.row{
+			display: flex;
+			padding: 24rpx 20rpx;
+			height: 90rpx;
+			line-height: 41rpx;
+			font-size: $uni-font-size-base;
+			@include color(color-light-dark);
+			box-sizing: border-box;
+			justify-content: space-between;
+			.mini-youjiantou{
+				@include color(color-lighter-er-dark);
+			}
+			.right{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				.tip{
+					@include color(color-lighter-er-dark);
+				}
+				._switch{
+					transform: scale(0.6) translateX(32rpx);
+					
+				}
+				._picker_tip{
+					@include color(color-lighter-er-dark);
+				}
+			}
+		}
+		.line{
+			width: 100%;
+			// height: 1rpx;
+			@include background_color(page-lighter-line-background-color);
+		}
+	}
+	.setting-box.shutLogin{
+		.left{
+			color: #ff5f5c;
+			width: 100%;
+			text-align: center;
+		}
+		
+	}
+}

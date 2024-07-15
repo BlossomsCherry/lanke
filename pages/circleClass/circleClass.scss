@@ -1,0 +1,405 @@
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+.container {
+    width: 750rpx;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.nav-box {
+    width: 100%;
+     height: 90rpx;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 0 10rpx;
+     box-sizing: border-box;
+     line-height: 90rpx;
+     position: relative;
+}
+
+.search-box {
+    width: 580rpx;
+    height: 60rpx;
+    @include background_color(page-box-item-background-color);
+    border: 1px solid;
+	@include border_color(border-color-box-item-background-color);
+    border-radius: $uni-border-radius-base;
+    display: flex;
+    align-items: center;
+}
+
+.search-box .icon {
+    width: 38rpx;
+    height: 38rpx;
+    margin: 0 15rpx 0 20rpx;
+}
+
+.search-box .input {
+    width: 428rpx;
+    font-size: $uni-font-size-sm-base;
+    display: flex;
+    align-items: center;
+}
+
+.placeholder {
+    margin-top: 4rpx;
+    font-size: $uni-font-size-sm;
+    @include color(color-lightest-dark);
+}
+
+.add-box {
+    margin-left: 20rpx;
+    width: 130rpx;
+    height: 60rpx;
+    border: 1px solid;
+    border-radius: 10rpx;
+    font-size: $uni-font-size-sm-base;
+    display: flex;
+    justify-content: center;
+	@include border_color(border-color-light-dark);
+	@include color(color-dark);
+}
+
+.addimage {
+    width: 32rpx;
+    // height: 32rpx;
+    margin-right: 10rpx;
+	display: inline;
+	font-size: $uni-font-size-lg;
+	@include color(color-dark);
+}
+
+.set-heigth {
+    position: relative;
+    width: 100%;
+    flex: 1;
+}
+
+.containers {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    @include color(color-lightest-dark);
+    display: flex;
+	@include background_color(page-box-item-background-color);
+}
+
+.nav_left {
+    width: 160rpx;
+    text-align: center;
+    position: relative;
+    border-right: 1px solid;
+	@include border_color(border-color-box-item-background-color);
+}
+
+.nav_left .nav_left_items {
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: $uni-font-size-sm;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav_left_items:last-child {
+    margin-bottom: 20rpx !important;
+}
+
+.nav_left .nav_left_items.active {
+    color: $uni-color-primary;
+    font-weight: bold;
+    position: relative;
+}
+
+.nav_left .nav_left_items.active:after {
+    content: '';
+    display: block;
+    width: 6rpx;
+    height: 20rpx;
+    background: $uni-color-primary;
+    border-radius: 6rpx;
+    position: absolute;
+    left: 8rpx;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.4s ease;
+}
+
+.nav_right {
+    flex: 1;
+    box-sizing: border-box;
+    @include background_color(page-box-background-color);
+    padding-top: 0rpx;
+    display: flex;
+}
+
+.right-items {
+    position: absolute;
+    height: 100%;
+}
+
+.right-items .item-lists:nth-child(3n-1) {
+    margin: 0 24rpx 24rpx 24rpx;
+}
+
+.right-items .item-lists:nth-child(3n-2) {
+    margin: 0 0rpx 24rpx 24rpx;
+}
+
+.right-items .item-lists:nth-child(3n) {
+    margin: 0 0rpx 24rpx 0rpx;
+}
+
+.nav_left_box {
+    position: absolute;
+    height: 100%;
+}
+
+.area-club {
+    width: 100%;
+    height: 160rpx;
+    display: flex;
+    margin-top: 40rpx;
+    position: relative;
+}
+
+.area-club:last-child {
+    margin-bottom: 50rpx !important;
+}
+
+.area-club .image {
+    width: 96rpx;
+    height: 96rpx;
+    // border-radius: 50%;
+    margin-left: 30rpx;
+    margin-right: 16rpx;
+}
+
+.s-img {
+    margin-left: 40rpx !important;
+    margin-right: 40rpx !important;
+}
+
+.area-club-info {
+    height: 160rpx;
+}
+
+.area-club-name {
+    font-size: $uni-font-size-base;
+    @include color(color-light-dark);
+    width: 420rpx;
+    white-space: nowrap;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+	position: relative;
+}
+
+.area-club-name image {
+    width: 38rpx;
+    height: 38rpx;
+    margin-right: 8rpx;
+}
+.area-club-name .mini-icon{
+	color: $uni-color-primary;font-size: $uni-font-size-medium;margin-right: 10rpx;
+}
+.w-w {
+    width: 520rpx !important;
+}
+
+.area-club-creater {
+    height: 50rpx;
+    display: flex;
+    align-items: center;
+    font-size: $uni-font-size-sm;
+    ._text{
+		@include color(color-light-dark);
+	}
+}
+
+.shu {
+    width: 3rpx;
+    height: 18rpx;
+    background: $uni-color-primary;
+    margin: 0 10rpx;
+}
+
+.mt-6 {
+    font-size: $uni-font-size-sm;
+    @include color(color-lightest-dark);
+    margin: 6rpx 0;
+    width: 420rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+button {
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+    background-color: transparent;
+}
+
+button::after {
+    content: none;
+}
+.empty-view {
+    margin-left: -200rpx;
+}
+
+.swiper-container {
+    position: relative;
+    padding: 20rpx 0;
+}
+
+.swiperload {
+    position: relative;
+    padding: 0 30rpx 30rpx 30rpx;
+}
+
+.swiper-container .banners {
+    height: 200rpx !important;
+}
+
+.swiper-container .banner__image {
+    width: 530rpx;
+    height: 200rpx;
+    border-radius: $uni-border-radius-sm;
+    transition: all 300ms ease-in;
+    // -webkit-transform: scale(0.95);
+    // transform: scale(0.95);
+    // box-shadow: 0 12rpx 40rpx 0 rgba(0, 0, 0, 0.06);
+    animation: fadeIn 1s ease;
+    @include background_color(page-body-background-color);
+}
+
+.swiper-container .banner__image--active {
+    // -webkit-transform: scale(1);
+    // transform: scale(1);
+}
+
+.swiper-container .indicators {
+    position: absolute;
+    bottom: 50rpx;
+    left: 70rpx;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+}
+
+.swiper-container .indicator {
+    width: 10rpx;
+    height: 8rpx;
+    margin-right: 10rpx;
+    border-radius: 3rpx;
+    background-color: #ffffff60;
+    transition: all 300ms ease-in;
+}
+
+.swiper-container .indicator-active {
+    width: 30rpx;
+    border-radius: 5rpx;
+    @include background_color(page-box-background-color);
+}
+
+.vip-box {
+    width: 560rpx;
+    height: 610rpx;
+    border-radius: 30rpx;
+    @include background_color(page-box-background-color);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.vip-box-image {
+    position: absolute;
+    top: -150rpx;
+    width: 400rpx;
+    height: 400rpx;
+}
+
+.vip-box-conent-text {
+    width: 480rpx;
+    height: 120rpx;
+    font-size: $uni-font-size-base;
+    color: $uni-color-primary;
+    line-height: 40rpx;
+}
+
+.vip-box-conent-text p {
+    font-size: $uni-font-size-sm;
+    padding: 4rpx 12rpx;
+    border-radius: 8rpx;
+    @include color(color-darkest);
+    @include background_color(page-box-item-background-color);
+    font-weight: bold;
+}
+
+.vip-box-btn {
+    margin-top: 40rpx;
+    width: 300rpx;
+    height: 80rpx;
+    border-radius: 80rpx;
+    font-size: $uni-font-size-base;
+    font-weight: bold;
+    background: $uni-color-follow;
+    color: $uni-color-follow-font;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 10%);
+}
+
+.vip-box-conent {
+    padding-bottom: 30rpx;
+    display: flex;
+    align-items: center;
+}
+
+.vip-box-conent {
+    font-size: $uni-font-size-sm;
+    @include color(color-lightest-dark);
+}
+
+.vip-box-conent .countdown-blue {
+    width: 50rpx;
+    height: 40rpx;
+    background: none;
+    font-size: $uni-font-size-base;
+    color: #ff6d6d;
+    font-weight: bold;
+    margin: 20rpx 8rpx;
+    border-bottom: 5rpx solid $uni-color-primary;
+}
+
+.vip-box-conent .countdown-text {
+    font-size: $uni-font-size-sm;
+    color: #ff6d6d;
+    font-weight: bold;
+}
+.move_to_circle {
+    position: absolute;
+    right: 0;
+    padding: 2rpx 20rpx;
+    font-size: 25rpx;
+    border-radius: 10rpx;
+    color: $uni-color-primary;
+    font-weight: 600;
+}

@@ -1,0 +1,172 @@
+$tabs-height: 80rpx;
+
+.sales-page-content{
+	width: 750rpx;
+	.inner{
+		width: $page-content-body-width;
+		margin: auto;
+	}
+	.tabs{
+		@include background_color(page-box-background-color);
+		height: $tabs-height;
+		.tabs-inner{
+			display: flex;
+			.tab-item{
+				flex: 1;
+				display: flex;
+				justify-content: center;
+				._text{
+					text-align: center;
+					line-height: $tabs-height;
+					position: relative;
+					font-size: $uni-font-size-base;
+					@include color(color-lighter-er-dark);
+				}
+			}
+			.tab-item.active{
+				._text{
+					@include color(color-dark);
+				}
+				._text::after{
+					content: '';
+					background-color: $uni-color-primary;
+					height: 8rpx;
+					width: 30rpx;
+					position: absolute;
+					bottom: 0;
+					left: 50%;
+					transform: translateX(-50%);
+					border-radius: 20rpx;
+				}
+			}
+		}
+	}
+	
+	.tab-content{
+		@include background_color(page-box-background-color);
+	}
+	.tab-0{
+		.list-item{
+			display: flex;
+			justify-content: space-between;
+			padding: 30rpx 0;
+			.label{
+				@include color(color-light-dark);
+				font-size: $uni-font-size-base;
+			}
+			.value{
+				min-width: 500rpx;
+				max-width: 500rpx;
+				._input{
+					@include color(color-light-dark);
+					font-size: $uni-font-size-base;
+				}
+				._textarea{
+					@include color(color-light-dark);
+					font-size: $uni-font-size-base;
+					min-height: 300rpx;
+					@include background_color(page-body-background-color);
+					width: 490rpx;
+					padding: 20rpx;
+					box-sizing: border-box;
+					border-radius: 10rpx;
+				}
+				.placeholder{
+					font-size: $uni-font-size-base;
+					@include color(color-lighter-er-dark);
+				}
+			}
+			
+		}
+		.line{
+			height: 1rpx;
+			width: 100%;
+			@include background_color(page-lighter-line-background-color);
+		}
+	}
+	
+	.btn0{
+		margin: 30rpx auto 0;
+		background-color: $uni-color-follow;
+		color: $uni-color-follow-font;
+		font-size: $uni-font-size-base;
+		// font-weight: bold;
+		width: $page-content-body-width;
+		height: 80rpx;
+		line-height: 80rpx;
+		text-align: center;
+		border-radius: 10rpx;
+		overflow: hidden;
+		box-sizing: border-box;
+	}
+	.btn0.no{
+		opacity: 0.8;
+	}
+	
+	.tab-1{
+		.tip{
+			padding-top: 30rpx;
+			font-size: $uni-font-size-sm-base;
+			@include color(color-lighter-er-dark);
+		}
+		.way{
+			padding: 100rpx 0;
+			.title{
+				font-size: $uni-font-size-base;
+				@include color(color-light-dark);
+			}
+		}
+		.way.way1{
+			.code-wrap{
+				display: flex;
+				justify-content: space-between;
+				margin-top: 30rpx;
+				.code{
+					height: 80rpx;
+					._input{
+						height: 80rpx;
+						width: 500rpx;
+						font-size: $uni-font-size-base;
+						@include color(color-light-dark);
+						@include background_color(page-body-background-color);
+						padding-left: 20rpx;
+						box-sizing: border-box;
+					}
+				}
+				.btn1{
+					background-color: $uni-color-follow;
+					color: $uni-color-follow-font;
+					font-size: $uni-font-size-base;
+					// font-weight: bold;
+					width: 200rpx;
+					height: 80rpx;
+					line-height: 80rpx;
+					text-align: center;
+					border-radius: 10rpx;
+					overflow: hidden;
+					box-sizing: border-box;
+				}
+			}
+		}
+		.way.way2{
+			.btn2{
+				margin: 30rpx auto 0;
+				background-color: $uni-color-follow;
+				color: $uni-color-follow-font;
+				font-size: $uni-font-size-base;
+				// font-weight: bold;
+				width: $page-content-body-width;
+				height: 80rpx;
+				line-height: 80rpx;
+				text-align: center;
+				border-radius: 10rpx;
+				overflow: hidden;
+				box-sizing: border-box;
+			}
+			.btn2.no{
+				opacity: 0.8;
+			}
+		}
+	}
+	
+}

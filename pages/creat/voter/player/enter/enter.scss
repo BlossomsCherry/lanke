@@ -1,0 +1,148 @@
+.enter-voter-page{
+	width: 750rpx;
+	.inner{
+		width: 710rpx;
+		margin: auto;
+		padding-bottom: env(safe-area-inset-bottom);
+		.page-c-block-gap{
+			height: 20rpx;
+			display: block;
+		}
+		.push-btn{
+			background-color: $uni-color-follow;
+			color: $uni-color-follow-font;
+			text-align: center;
+			display: block;
+			padding: 18rpx 0;
+			border-radius: 100rpx;
+			font-size: $uni-font-size-sm-base;
+		}
+		.page-item{
+			@include background_color(page-box-background-color);
+			padding: 20rpx;
+			box-sizing: border-box;
+			.page-title{
+				border-left: 6rpx solid $uni-color-primary;
+				height: 40rpx;
+				line-height: 40rpx;
+				text-indent: 10rpx;
+				margin-bottom: 20rpx;
+				@include color(color-darkest);
+			}
+			.input_wrap, .datepicker_wrap, .switch-wrap{
+				display: flex;
+				justify-content: space-between;
+				border-bottom: 1px solid;
+				@include border_color(border-color-lighter-line-background-color);
+				padding: 20rpx 0;
+				.title-box{
+					.title{
+						font-size: $uni-font-size-base;
+						@include color(color-dark);
+					}
+					.required{
+						color: red;
+						font-weight: bold;
+						margin-left: 10rpx;
+					}
+				}
+				.input-box{
+					._input{
+						font-size: $uni-font-size-base;
+					}
+				}
+				.datepicker-box{
+					display: flex;
+					._text{
+						font-size: $uni-font-size-base;
+						@include color(color-light-dark);
+					}
+					._text.placeholder{
+						@include color(color-lightest-est-dark);
+					}
+					.mini-youjiantou{
+						font-size: $uni-font-size-base;
+						display: inline-flex;
+						@include color(color-lightest-est-dark);
+					}
+				}
+				.switch-box{
+					
+				}
+			}
+			.textarea_wrap{
+				padding: 20rpx 0;
+				.title-box{
+					.title{
+						font-size: $uni-font-size-base;
+					}
+					.required{
+						color: red;
+						font-weight: bold;
+						margin-left: 10rpx;
+					}
+				}
+				.textarea-box{
+					display: block;
+					margin-top: 10rpx;
+					._textarea{
+						font-size: $uni-font-size-base;
+					}
+				}
+				.uploade-box{
+					display: block;
+					margin-top: 10rpx;
+				}
+				.uploade-video-box{
+					display: block;
+					margin-top: 10rpx;
+					.media-video{
+						position: relative;
+						width: 400rpx;
+						height: 300rpx;
+						display: flex;
+						flex-direction: row;
+						justify-content: flex-start;
+						align-items: center;
+						box-sizing: border-box;
+						.picture-delete {
+						  position: absolute;
+						  top: 10rpx;
+						  right: 8rpx;
+						  width: 40rpx;
+						  height: 40rpx;
+						  border-radius: 500rpx;
+						  z-index: 99;
+						  color: red;
+						  background: rgba(255, 255, 255, 0.7);
+						}
+						.video-source {
+						  width: 400rpx;
+						  height: 300rpx;
+						  border-radius: 8rpx;
+						  animation: fadeIn 1s ease;
+						}
+						.placeholder-video{
+							width: 400rpx;height: 300rpx;
+							@include background_color(page-gray-background-color);
+							border-radius: 8rpx;
+							display: flex;
+							flex-direction: column;
+							justify-content: center;
+							animation: fadeIn 1s ease;
+							.box{
+								transform: scale(0.75);
+								.tip{
+									@include color(color-dark-gray);
+									text-align: center;
+									font-size: $uni-font-size-base;
+									margin-bottom: 10rpx;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

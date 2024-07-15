@@ -1,0 +1,92 @@
+.mini-page-body{
+	@include background_color(page-box-item4-background-color);
+}
+.voter-list-page{
+	width: 750rpx;
+	.sticky_wrap{
+		@include background_color(page-box-item4-background-color);
+		width: 710rpx;
+		padding: 0 20rpx;
+		.voter_head_search {
+	
+		}
+		.voter_head_tabs{
+			transform: translateX(-18rpx);
+			padding-bottom: 10rpx;
+		}
+	}
+	.inner{
+		width: $page-content-body-width;
+		margin: auto;
+		.voter_head_list {
+			.box {
+				@include background_color(page-box-background-color);
+				display: flex;
+				flex-direction: column;
+				margin-bottom: 40rpx;
+				border-radius: $uni-border-radius-lg;
+				overflow: hidden;
+				box-sizing: border-box;
+				.bg-img{
+					background-size: cover;
+					height: 300rpx;
+				}
+				.info{
+					display: flex;
+					flex-direction: column;
+					padding: 20rpx;
+					box-sizing: border-box;
+					// border-bottom: 1px solid;
+					// border-left: 1px solid;
+					// border-right: 1px solid;
+					// @include border_color(border-color-lightest-est-dark);
+					box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.6);
+					.title{
+						margin-bottom: 16rpx;
+						font-size: $uni-font-size-lg;
+						@include color(color-darkest);
+						.mini-zhiding1{
+							display: inline;
+							font-size: $uni-font-size-lg;
+							@include color(color-primary);
+							margin-right: 6rpx;
+						}
+					}
+					.count{
+						display: flex;
+						align-items: center;
+						margin-bottom: 10rpx;
+						.mini-shuxian{
+							margin: 0 10rpx;
+							transform: scale(1.6);
+						}
+						.mini-icon2, .mini-icon{
+							font-size: $uni-font-size-sm-base;
+							display: inline-flex;
+							@include color(color-lightest-est-dark);
+						}
+						.text{
+							margin-left: 10rpx;
+							font-size: $uni-font-size-sm-base;
+							@include color(color-lightest-est-dark);
+						}
+					}
+					.time{
+						display: flex;
+						align-items: center;
+						.mini-icon2{
+							font-size: $uni-font-size-sm-base;
+							display: inline-flex;
+							@include color(color-lightest-est-dark);
+						}
+						.text{
+							margin-left: 10rpx;
+							font-size: $uni-font-size-sm-base;
+							@include color(color-lightest-est-dark);
+						}
+					}
+				}
+			}
+		}
+	}
+}

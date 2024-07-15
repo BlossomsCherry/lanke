@@ -1,0 +1,50 @@
+@import '@/pagesA/static/css/setting.scss';
+.desc {
+    @include color(color-light-dark);
+    font-size: $uni-font-size-base;
+}
+.intro_page_url {
+    font-size: 12px;
+	@include color(color-lighter-er-dark);
+    margin: 10px;
+	text-align: center;
+}
+.logo-wrap{
+	padding-top: 200rpx;
+	text-align: center;
+	@include background_color(page-body-background-color);
+	.img {
+	    margin: auto;
+	    width: 120rpx;
+	    height: 120rpx;
+	    border-radius: 18rpx;
+	}
+}
+.version {
+    margin-top: 20rpx;
+    font-size: $uni-font-size-sm;
+    @include color(color-darkest);
+	text-align: center;
+}
+
+.box-content {
+    margin-top: 40rpx;
+    font-size: $uni-font-size-base;
+    @include color(color-light-dark);
+	text-align: center;
+}
+
+.copyright-information {
+    z-index: 9;
+    font-size: $uni-font-size-sm;
+    @include color(color-lightest-dark);
+	margin: 40rpx;
+	text-align: center;
+}
+
+.account {
+    margin: 50rpx auto;
+    width: 300px;
+    border-radius: 8rpx;
+	text-align: center;
+}

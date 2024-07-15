@@ -1,0 +1,4 @@
+.user-used-page-content{
+	@include background_color(page-box-background-color);
+	min-height: 100vh;
+}

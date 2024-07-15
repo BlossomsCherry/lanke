@@ -1,0 +1,227 @@
+@mixin dflex() {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	@mixin dflexsb() {
+		@include dflex();
+		justify-content: space-between;
+	}
+
+	@mixin dflexsa() {
+		@include dflex();
+		justify-content: space-around;
+	}
+	.content {
+
+		// 吸顶激活
+		.topfixedActive {
+			width: 100%;
+			padding: 0 25rpx;
+			position: fixed;
+			/* 顶部导航栏还有其他盒子 使用  */
+			left: 0;
+			background: #fff;
+			z-index: 9;
+			box-sizing: border-box;
+		}
+
+		// 顶部提示通知功能模块信息
+		.topInfo {
+			padding: 14rpx 30rpx;
+			box-sizing: border-box;
+			background: #fff;
+			min-height: 300rpx;
+			border-bottom: 1rpx solid #ccc;
+
+			.moduleList {
+				padding: 40rpx 8rpx 14rpx 8rpx;
+				box-sizing: border-box;
+				@include dflex();
+				justify-content: flex-start;
+				flex-wrap: wrap;
+
+				.item {
+					@include dflex();
+					width: 20%;
+					margin: 0 0 30rpx 0;
+					flex-direction: column;
+
+					.moduleImg {
+						width: 58rpx;
+						height: 58rpx;
+					}
+
+					.moduleText {
+						font-size: $uni-font-size-sm;
+						color: #333;
+						margin-top: 10rpx;
+					}
+				}
+			}
+		}
+
+		// 需要吸顶的筛选数据
+		.tagTop {
+			background: #fff;
+			padding: 10rpx 30rpx 10rpx 30rpx;
+			box-sizing: border-box;
+			top: 0rpx;
+
+			.filterTab {
+				height: 70rpx;
+				width: 100%;
+				@include dflex();
+
+				.item {
+					width: 25%;
+					padding: 0rpx 30rpx;
+					box-sizing: border-box;
+					@include dflexsb();
+					font-size: $uni-font-size-sm-base;
+					color: #333;
+
+					&.active {
+						color: #ec613e;
+					}
+				}
+			}
+		}
+
+		// 数据列表
+		.wrap {
+			padding: 10rpx 26rpx 10rpx 26rpx;
+			box-sizing: border-box;
+		}
+
+		// 直播提示
+		.directTV {
+			position: fixed;
+			bottom: 100rpx;
+			right: -10rpx;
+			padding: 16rpx 30rpx;
+			box-sizing: border-box;
+			border-radius: 36rpx;
+			background: #fff;
+			font-size: $uni-font-size-sm;
+			color: #333;
+			font-weight: 600;
+			@include dflex();
+			box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+		}
+
+		// 弹窗筛选内容
+		.scrollBox {
+			box-sizing: border-box;
+			display: flex;
+
+			.scrollView {
+				flex: 1;
+				height: 450rpx;
+				overflow-y: scroll;
+				padding: 0rpx 20rpx;
+				box-sizing: border-box;
+				border-right: .5rpx solid #f2f2f2;
+
+				.option {
+					padding: 20rpx;
+					text-align: center;
+					cursor: pointer;
+					user-select: none;
+					transition: background-color 0.3s, color 0.3s;
+					font-size: $uni-font-size-sm;
+					@include dflexsa();
+				}
+
+				.selected {
+					color: #ec613e;
+					// background-color: #f4f4f4;
+					// border-left: 4rpx solid #ec613e;
+				}
+
+				.selectedSon {
+					color: #ec613e;
+				}
+			}
+		}
+
+		// 按钮
+		.btnList {
+			@include dflex();
+			width: 80%;
+			margin: 34rpx 10% 26rpx 10%;
+		}
+
+		// 价格
+		.cj-slider {
+			width: 80%;
+			margin: 30rpx auto;
+
+			.cj-slide__text {
+				text-align: center;
+				padding: 20rpx 0 30rpx 0;
+			}
+		}
+
+		.priceBox {
+			width: 100%;
+
+			.item {
+				font-size: $uni-font-size-sm-base;
+				width: 100%;
+				margin: 24rpx 0;
+				@include dflex();
+
+				&.active {
+					color: #ec613e;
+					font-weight: 600;
+				}
+			}
+		}
+
+		// 选择的模块
+		.fileBox {
+			height: 650rpx;
+			overflow-y: scroll;
+			padding: 0rpx 20rpx;
+			box-sizing: border-box;
+			border-right: .5rpx solid #f2f2f2;
+
+			.title {
+				margin: 24rpx 0 30rpx 24rpx;
+				font-size: $uni-font-size-sm-base;
+				letter-spacing: 4rpx;
+				color: #333;
+			}
+
+			.box {
+				@include dflex();
+				justify-content: flex-start;
+				flex-wrap: wrap;
+				padding: 20rpx 30rpx;
+				box-sizing: border-box;
+
+				.item {
+					width: 30.2%;
+					margin: 0 30rpx 30rpx 0;
+					padding: 8rpx 10rpx;
+					min-height: 66rpx;
+					box-sizing: border-box;
+					@include dflex();
+					background-color: #f6f6f6;
+					font-size: $uni-font-size-sm;
+					color: #333;
+
+					&:nth-child(3n) {
+						margin-right: 0 !important;
+					}
+
+					&.active {
+						background: #fcefec;
+						color: #ec613e;
+					}
+				}
+			}
+		}
+	}

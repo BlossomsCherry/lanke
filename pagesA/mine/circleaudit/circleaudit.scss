@@ -1,0 +1,126 @@
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.right-items {
+    position: absolute;
+    height: 100%;
+}
+
+.area-club {
+    width: 720rpx;
+    margin-left: 30rpx;
+    height: 200rpx;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid;
+	@include border_color(border-color-box-item-background-color);
+}
+
+.area-club:last-child {
+    margin-bottom: 50rpx !important;
+}
+
+.area-club .image {
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.area-club-info {
+    margin-left: 30rpx;
+    width: 400rpx;
+}
+
+.area-club-name {
+    font-size: $uni-font-size-base;
+    @include color(color-light-dark);
+    width: 100%;
+    white-space: nowrap;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.area-club-creater {
+    display: flex;
+    align-items: center;
+    font-size: $uni-font-size-sm;
+    color: $uni-color-primary;
+	._text{
+		@include color(color-light-dark);
+	}
+}
+
+.shu {
+    width: 3rpx;
+    height: 18rpx;
+    background: $uni-color-primary;
+    margin: 0 10rpx;
+}
+
+.mt-6 {
+    font-size: $uni-font-size-sm;
+    @include color(color-lightest-dark);
+    margin: 6rpx 0;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.editor-box {
+    margin-left: 40rpx;
+    width: 120rpx;
+    height: 120rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.btn {
+    width: 120rpx;
+    height: 50rpx;
+    font-size: 22rpx;
+    font-weight: 500;
+    border-radius: $uni-border-radius-lg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.s {
+    border: 1px solid $uni-color-primary;
+    background: $uni-color-follow;
+    color: $uni-color-follow-font;
+}
+
+.k {
+    border: 1px solid $uni-color-primary;
+    @include background_color(page-box-background-color);
+    color: $uni-color-primary;
+}
+
+.loading {
+    text-align: center;
+}
+
+.loading image {
+    width: 80rpx;
+    height: 80rpx;
+    margin: 40rpx 0rpx;
+}
+
+.empty-view {
+    margin-top: 100rpx;
+}

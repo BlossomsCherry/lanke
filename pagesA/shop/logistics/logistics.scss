@@ -1,0 +1,31 @@
+.container-top {
+    margin: 30rpx auto;
+    width: 670rpx;
+    height: 200rpx;
+    border-radius: 30rpx;
+    font-size: 42rpx;
+    font-weight: bold;
+    color: #ffffff;
+    background: $uni-color-shop-primary;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.t2 {
+    margin-top: 10rpx;
+    font-size: $uni-font-size-sm-base;
+}
+
+.container-box {
+    margin: 0 auto;
+    width: 650rpx;
+    padding: 30rpx 10rpx;
+    border-radius: 30rpx;
+    @include background_color(page-box-background-color);
+}
+
+.empty-view {
+    padding-bottom: 30px;
+}

@@ -1,0 +1,38 @@
+.vote-template-list-page{
+	width: 750rpx;
+	.inner{
+		width: 710rpx;
+		margin: auto;
+		.template-list-wrap{
+			display: flex;
+			flex-wrap: wrap;
+			.template-item{
+				width: 350rpx;
+				@include background_color(page-box-background-color);
+				margin-bottom: 30rpx;
+				.cover{
+					width: 350rpx;
+				}
+				.name{
+					@include color(color-light-dark);
+					font-size: $uni-font-size-sm-base;
+					margin: 10rpx 0;
+				}
+				.button-box{
+					display: flex;
+					.btn{
+						width: 350rpx;
+						height: 60rpx;
+						background-color: $uni-color-follow;
+						color: $uni-color-follow-font;
+						line-height: 60rpx;
+						text-align: center;
+					}
+				}
+			}
+			.template-item:nth-child(2n-1){
+				margin-right: 10rpx;
+			}
+		}
+	}
+}

@@ -1,0 +1,4 @@
+.album-page-content{
+	min-height: 100vh;
+	@include background_color(page-box-background-color);
+}

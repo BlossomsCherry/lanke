@@ -1,0 +1,171 @@
+@import '@/pages/template/circle.scss';
+@import '@/pages/template/user.scss';
+
+.panel-overlay{
+	display: none;
+	opacity: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,.6);
+	z-index: 999998;
+}
+.panel-overlay.active{
+	display: block;
+	opacity: 1;
+}
+.sidebar{
+	z-index: 999999;
+	position: fixed;
+	width: 520rpx;
+	height: 100vh;
+	@include background_color(page-box-background-color);
+	left: -520rpx;
+	top: 0;
+	transition: left 0.3s ease-in-out;
+	/* #ifdef H5 */
+	padding: 40rpx 60rpx calc( 20rpx + env(safe-area-inset-bottom) );
+	/* #endif */
+	/* #ifndef H5 */
+	padding: 120rpx 60rpx calc( 20rpx + env(safe-area-inset-bottom) );
+	/* #endif */
+	box-sizing: border-box;
+	justify-content: space-between;
+	._scroll-view{
+		/* #ifdef H5 */
+		height: calc( 100vh - 250rpx );
+		/* #endif */
+		/* #ifndef H5 */
+		height: calc( 100vh - 360rpx );
+		/* #endif */
+		.list{
+			.item{
+				margin-bottom: 50rpx;
+				.line {
+				    @include background_color(page-lighter-line-background-color);
+				    height: 1rpx;
+				    width: 100%;
+				}
+				.icon{
+					@include color(color-light-dark);
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					font-size: $uni-font-size-medium;
+					.left-icon{
+						margin-right: 20rpx;
+					}
+				}
+				._text{
+					@include color(color-light-dark);
+					font-size: $uni-font-size-medium;
+					letter-spacing: 2rpx;
+				}
+			}
+		}
+	}
+	.icons{
+		width: 400rpx;
+		justify-content: space-between;
+		box-sizing: border-box;
+		.item{
+			display: inline-flex;
+			text-align: center;
+			.icon{
+				margin: auto;
+				@include background_color(page-body-background-color);
+				border-radius: 50%;
+				width: 80rpx;
+				height: 80rpx;
+				line-height: 80rpx;
+				text-align: center;
+				margin-bottom: 20rpx;
+				.mini-icon{
+					@include color(color-light-dark);
+					font-size: 40rpx;
+				}
+			}
+			._text{
+				font-size: $uni-font-size-sm-base;
+				@include color(color-light-dark);
+			}
+			
+		}
+	}
+}
+.sidebar.active{
+	left: 0;
+}
+
+
+
+.android{
+	.user-name-sub-box{
+		.user-account-box,.ip_address {
+			font-weight: 100;
+		}
+		.mini-icon{
+			font-weight: 100;
+			
+		}
+	}
+}
+
+
+
+.vip-img {
+    width: 500rpx;
+    height: 500rpx;
+}
+
+.like-box {
+    width: 500rpx;
+    height: 380rpx;
+    @include background_color(page-box-background-color);
+    border-radius: 30rpx;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.like-box image {
+    position: absolute;
+    top: -120rpx;
+    width: 400rpx;
+    height: 400rpx;
+    animation: fadeIn 0.1s ease;
+}
+
+.like-box view {
+    font-size: 48rpx;
+    font-weight: bold;
+    color: $uni-color-primary;
+    height: 90rpx;
+}
+
+.like-box text {
+    font-size: $uni-font-size-sm-base;
+    @include color(color-lightest-dark);
+    height: 45rpx;
+    max-width: 450rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.badge {
+    position: absolute;
+    top: 0;
+    left: 32px;
+    width: 18rpx;
+    height: 18rpx;
+    border-radius: 50%;
+    background: #ff5f5c;
+}
+
+
+

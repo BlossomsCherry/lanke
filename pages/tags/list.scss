@@ -1,0 +1,105 @@
+.box {
+    width: 690rpx;
+    margin: 0 auto;
+}
+
+.box-top {
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10rpx;
+}
+
+.box-top-title {
+    font-size: $uni-font-size-base;
+    @include color(color-light-dark);
+    display: flex;
+    align-items: center;
+}
+
+.box-top-title .des {
+    font-size: $uni-font-size-sm;
+    @include color(color-lightest-dark);
+    margin-left: 10rpx;
+}
+
+.box-top-etn {
+    width: 90rpx;
+    height: 55rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $uni-font-size-sm;
+    font-weight: 500;
+    background: $uni-color-follow;
+    color: $uni-color-follow-font;
+    border-radius: 8rpx;
+}
+
+.box-plate {
+    display: flex;
+    position: relative;
+    flex: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.box-plate-coent {
+    position: relative;
+    padding: 0 40rpx;
+    margin-bottom: 20rpx;
+    margin-right: 16rpx;
+    height: 70rpx;
+    display: flex;
+    align-items: center;
+    border-radius: 500rpx;
+    font-size: $uni-font-size-base;
+    @include color(color-light-dark);
+	@include background_color(page-box-item-background-color);
+    animation: fadeIn 0.6s ease;
+}
+
+.add {
+    background: #fff !important;
+    border: 1px dashed;
+	@include border_color(border-color-box-item-background-color);
+}
+
+.audio-img {
+    position: absolute;
+    padding: 20rpx;
+    width: 30rpx;
+    height: 30rpx;
+    top: -30rpx;
+    right: -30rpx;
+}
+
+.cor {
+    color: $uni-text-color-grey !important;
+}
+.empty-wrap{
+	width: 750rpx;
+	text-align: center;
+}
+// @keyframes shock {
+// 	0% {
+// 		margin-left: 0px;
+// 		margin-right: 1px;
+// 		margin-top: 0px;
+// 	}
+// 	100% {
+// 		margin-left: 1px;
+// 		margin-right: 0px;
+// 		margin-top: 1px;
+// 	}
+// }
+// .shock{
+// 	animation-delay: 0s;
+// 	animation-name: shock;
+// 	animation-duration: .3s;
+// 	animation-iteration-count: infinite;
+// 	animation-direction: normal;
+// 	animation-timing-function: linear;
+// }

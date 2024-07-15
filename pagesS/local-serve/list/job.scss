@@ -1,0 +1,300 @@
+@mixin dflex() {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	@mixin dflexsb() {
+		@include dflex();
+		justify-content: space-between;
+	}
+
+	@mixin dflexsa() {
+		@include dflex();
+		justify-content: space-around;
+	}
+	.content {
+		background: #f7f7f7;
+		height: 100%;
+		padding: 24rpx 0 0 0;
+	
+		.topFixedBox {
+			height: 100rpx;
+			width: 100%;
+			background: #fff;
+			padding: 0rpx 24rpx;
+			box-sizing: border-box;
+			position: fixed;
+			@include dflexsb();
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 99;
+	
+			.add {
+				width: 100rpx;
+				height: 100%;
+				@include dflexsb();
+				margin-right: 20rpx;
+			}
+	
+			.ipt {
+				height: 90rpx;
+				flex: 1;
+				@include dflex();
+			}
+		}
+	
+		// 吸顶激活
+		.topfixedActive {
+			padding: 0 20rpx;
+			position: fixed;
+			/* 顶部导航栏还有其他盒子 使用  */
+			left: 0;
+			right: 0;
+			background: #fff;
+			z-index: 9;
+			box-sizing: border-box;
+		}
+	
+		// 顶部提示通知功能模块信息
+		.topInfo {
+			margin: 100rpx 24rpx 24rpx 24rpx;
+			padding: 0rpx 20rpx;
+			box-sizing: border-box;
+			background: #fff;
+			border-radius: 18rpx;
+		}
+	
+		// banner广告位
+		.banner {
+			margin: 24rpx;
+			padding: 26rpx;
+			box-sizing: border-box;
+			background: #fff;
+			border-radius: 18rpx;
+			min-height: 300rpx;
+			@include dflex();
+			justify-content: flex-start;
+			align-items: center;
+			flex-wrap: wrap;
+	
+			.item {
+				width: 48%;
+				margin-right: 4%;
+				border-radius: 20rpx;
+				background: #fff;
+				padding: 20rpx;
+				box-sizing: border-box;
+				background-image: linear-gradient(to right, #fef8d4 0%, #fdf3b5 100%);
+				margin-bottom: 26rpx;
+				position: relative;
+				min-height: 120rpx;
+	
+				.title,
+				.tip {
+					position: absolute;
+					top: 26rpx;
+					left: 30rpx;
+					font-size: $uni-font-size-sm-base;
+					font-weight: 600;
+					color: #333;
+					z-index: 999;
+				}
+	
+				.tip {
+					top: 70rpx;
+					font-size: 22rpx;
+					color: #909090;
+				}
+	
+				/deep/.u-icon {
+					position: absolute;
+					right: 24rpx;
+					bottom: 0rpx;
+					z-index: 99;
+				}
+	
+				&:nth-child(even) {
+					margin-right: 0 !important;
+				}
+	
+				&:nth-child(1) {
+					background-image: linear-gradient(to right, #f0f7fe 0%, #e5edfd 100%);
+				}
+	
+				&:nth-child(2) {
+					background-image: linear-gradient(to right, #f3fef9 0%, #e7fef4 100%);
+				}
+	
+				&:nth-child(3) {
+					background-image: linear-gradient(to right, #fdf6e9 0%, #fceddc 100%);
+				}
+			}
+		}
+	
+		// 需要吸顶的筛选数据
+		.tagTop {
+			background: #fff;
+			top: 100rpx;
+			margin: 0 24rpx 24rpx 24rpx;
+			padding: 0 0 14rpx 0;
+			border-radius: 18rpx 18rpx 0 0;
+			box-sizing: border-box;
+	
+			.sonTab {
+				@include dflexsb();
+				padding: 4rpx 10rpx;
+				box-sizing: border-box;
+				margin: 10rpx 0;
+	
+				.sonLeft {
+					flex: 1;
+					@include dflex();
+					justify-content: flex-start;
+					align-items: center;
+	
+					.sonItem {
+						padding: 6rpx 18rpx;
+						box-sizing: border-box;
+						background: #e8e8e8;
+						border-radius: 8rpx;
+						margin-right: 14rpx;
+						font-size: $uni-font-size-sm;
+						color: #909090;
+	
+						&.active {
+							background: #fceeea;
+							color: #ec764e;
+						}
+					}
+				}
+	
+				.sonRight {
+					width: 120rpx;
+					@include dflex();
+					font-size: $uni-font-size-sm-base !important;
+				}
+			}
+		}
+	
+		// 数据列表
+		.wrap {
+			padding: 10rpx 24rpx 10rpx 24rpx;
+			box-sizing: border-box;
+		}
+	
+		// 弹窗筛选内容
+		.scrollBox {
+			box-sizing: border-box;
+			display: flex;
+	
+			.scrollView {
+				flex: 1;
+				height: 500rpx;
+				overflow-y: scroll;
+				padding: 0rpx 20rpx;
+				box-sizing: border-box;
+	
+				.option {
+					padding: 20rpx;
+					text-align: center;
+					cursor: pointer;
+					user-select: none;
+					transition: background-color 0.3s, color 0.3s;
+					font-size: $uni-font-size-sm;
+					@include dflexsa();
+				}
+	
+				.selected {
+					color: #ec613e;
+					background-color: #f4f4f4;
+					border-left: 4rpx solid #ec613e;
+				}
+	
+				.selectedSon {
+					color: #ec613e;
+				}
+			}
+		}
+	
+		// 弹窗内其他样式
+		.readyCheck {
+			@include dflex();
+			justify-content: flex-start;
+			align-items: center;
+			width: 100%;
+			padding: 24rpx;
+			box-sizing: border-box;
+			height: 100rpx;
+	
+			.tip {
+				@include dflex();
+				font-size: $uni-font-size-sm-base;
+				color: #333;
+				width: 140rpx;
+				border-right: 1rpx solid #717171;
+			}
+	
+			.rc {
+				flex: 1;
+				margin: 0 24rpx;
+				height: 100%;
+				@include dflex();
+				justify-content: flex-start;
+				flex-wrap: nowrap;
+				overflow-x: scroll;
+	
+				.item {
+					background: #f9ded6;
+					padding: 6rpx 8rpx;
+					box-sizing: border-box;
+					color: #ec613e;
+					font-size: 22rpx;
+					@include dflexsa();
+					margin-right: 10rpx;
+					border-radius: 30rpx;
+					border: 1rpx solid #ec63e;
+					min-width: 160rpx;
+	
+					text {
+						margin-right: 4rpx;
+					}
+				}
+			}
+		}
+	
+		// 按钮
+		.btnList {
+			@include dflexsb();
+		}
+	}
+	
+	.scroll-list {
+		@include flex(column);
+	
+		&__line {
+			@include flex;
+			margin-top: 10px;
+	
+			&__item {
+				margin-right: 15px;
+	
+				&__image {
+					width: 61px;
+					height: 48px;
+				}
+	
+				&__text {
+					margin-top: 5px;
+					color: #333;
+					font-size: 12px;
+					text-align: center;
+				}
+	
+				&--no-margin-right {
+					margin-right: 0;
+				}
+			}
+		}
+	}

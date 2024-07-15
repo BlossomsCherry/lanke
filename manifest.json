@@ -1,0 +1,231 @@
+
+        {
+    "name" : "岚客丨DISCOVER",
+    "appid" : "__UNI__F5C2520",
+    "description" : "新兴生活方式的内容兴趣社区",
+    "versionName" : "1.2.1.2",
+    "versionCode" : 1,
+    "transformPx" : false,
+    "app-plus" : {
+        "usingComponents" : true,
+        "darkmode" : true,
+        "nvueStyleCompiler" : "uni-app",
+        "compilerVersion" : 3,
+        "compatible": {
+			"ignoreVersion": true
+		},
+        "splashscreen" : {
+            "alwaysShowBeforeRender" : false,
+            "waiting" : true,
+            "autoclose" : true,
+            "delay" : 0
+        },
+        "screenOrientation" : [
+            "portrait-primary",
+            "portrait-secondary",
+            "landscape-primary",
+            "landscape-secondary"
+        ],
+        "modules" : {
+            "OAuth" : {},
+            "Payment" : {},
+            "VideoPlayer" : {},
+            "Share" : {},
+            "Geolocation" : {},
+            "Maps" : {},
+            "Camera" : {},
+            "Record" : {},
+            "Push" : {},
+            "Barcode" : {}
+        },
+        "safearea" : {
+            "bottom" : {
+                "offset" : "none"
+            }
+        },
+        "distribute" : {
+            "android" : {
+                "permissions" : [
+                    "<uses-feature android:name=\"android.hardware.camera\"/>",
+                    "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
+                    "<uses-permission android:name=\"android.permission.CAMERA\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
+                    "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>",
+                    "<uses-permission android:name=\"android.permission.INSTALL_PACKAGES\"/>",
+                    "<uses-permission android:name=\"android.permission.INTERNET\"/>",
+                    "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
+                    "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
+                    "<uses-permission android:name=\"android.permission.REQUEST_INSTALL_PACKAGES\"/>",
+                    "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+                    "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
+                ],
+                "schemes" : "lankeapp",
+                "abiFilters" : [ "armeabi-v7a", "arm64-v8a", "x86" ],
+                "minSdkVersion" : 21,
+				"targetSdkVersion" : 31
+            },
+            "ios" : {
+                "dSYMs" : false,
+                "urltypes" : "lankeapp",
+                "privacyDescription" : {
+                    "NSPhotoLibraryUsageDescription" : "用于发布笔记时选取图片",
+                    "NSPhotoLibraryAddUsageDescription" : "用于保存生成的海报等",
+                    "NSCameraUsageDescription" : "扫一扫，发布笔记选择图片，视频等",
+                    "NSMicrophoneUsageDescription" : "录音，聊天时发送语音文件",
+                    "NSUserTrackingUsageDescription" : "请放心，开启权限不会获取您在其他站点的隐私信息，该权限仅用于标识设备并保障服务安全与提示浏览体验",
+                    "NSLocationWhenInUseUsageDescription" : "用于发布笔记时添加位置，让更多的同地域的人看见你的笔记",
+                    "NSLocationAlwaysAndWhenInUseUsageDescription" : "用于发布笔记时添加位置，让更多的同地域的人看见你的笔记",
+                    "NSSpeechRecognitionUsageDescription" : "聊天时发布语音",
+                    "NSLocationAlwaysUsageDescription" : "用于定位，获取附件的笔记"
+                },
+                "capabilities" : {
+                    "entitlements" : {
+                        "com.apple.developer.associated-domains" : [ "applinks:www.lanke.pro" ]
+                    }
+                },
+                "idfa" : true
+            },
+            "sdkConfigs" : {
+                "oauth" : {
+                    "weixin" : {
+                        "appid" : "",
+                        "UniversalLinks" : "https://www.lanke.pro/sdksample/"
+                    },
+                    "apple" : {}
+                },
+                "payment" : {
+                    "weixin" : {
+                        "__platform__" : [ "ios", "android" ],
+                        "appid" : "",
+                        "UniversalLinks" : "https://www.lanke.pro/sdksample/"
+                    },
+                    "appleiap" : {},
+                    "alipay" : {
+                        "__platform__" : [ "ios", "android" ]
+                    }
+                },
+                "ad" : {},
+                "share" : {
+                    "weixin" : {
+                        "appid" : "",
+                        "UniversalLinks" : "https://www.lanke.pro/sdksample/"
+                    }
+                },
+                "geolocation" : {
+                    "amap" : {
+                        "__platform__" : [ "ios", "android" ],
+                        "appkey_ios" : "923409364d8f642ec3940c1a70788c0c",
+                        "appkey_android" : "1c943d491ac75b9ba008739366dbaace"
+                    },
+                    "system" : {
+                        "__platform__" : [ "ios", "android" ]
+                    }
+                },
+                "maps" : {
+                    "amap" : {
+                        "appkey_ios" : "923409364d8f642ec3940c1a70788c0c",
+                        "appkey_android" : "1c943d491ac75b9ba008739366dbaace"
+                    }
+                },
+                "push" : {
+                    "unipush" : {}
+                }
+            },
+            "icons" : {
+                "android" : {
+                    "hdpi" : "unpackage/res/icons/72x72.png",
+                    "xhdpi" : "unpackage/res/icons/96x96.png",
+                    "xxhdpi" : "unpackage/res/icons/144x144.png",
+                    "xxxhdpi" : "unpackage/res/icons/192x192.png"
+                },
+                "ios" : {
+                    "appstore" : "unpackage/res/icons/1024x1024.png",
+                    "ipad" : {
+                        "app" : "unpackage/res/icons/76x76.png",
+                        "app@2x" : "unpackage/res/icons/152x152.png",
+                        "notification" : "unpackage/res/icons/20x20.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "proapp@2x" : "unpackage/res/icons/167x167.png",
+                        "settings" : "unpackage/res/icons/29x29.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "spotlight" : "unpackage/res/icons/40x40.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png"
+                    },
+                    "iphone" : {
+                        "app@2x" : "unpackage/res/icons/120x120.png",
+                        "app@3x" : "unpackage/res/icons/180x180.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "notification@3x" : "unpackage/res/icons/60x60.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "settings@3x" : "unpackage/res/icons/87x87.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png",
+                        "spotlight@3x" : "unpackage/res/icons/120x120.png"
+                    }
+                }
+            },
+            "splashscreen" : {
+                "useOriginalMsgbox" : true
+            }
+        }
+    },
+    "quickapp" : {},
+    "mp-weixin" : {
+        "darkmode" : true,
+        "appid" : "wx7d35f5910d79b7d3",
+        "setting" : {
+            "urlCheck" : false
+        },
+        "usingComponents" : true,
+        "permission" : {
+            "scope.userLocation" : {
+                "desc" : "你的位置信息将用于小程序位置接口的效果展示"
+            }
+        },
+        "plugins" : {},
+        "requiredBackgroundModes" : [ "audio", "location" ],
+        "optimization" : {
+            "subPackages" : true
+        },
+        "requiredPrivateInfos": [
+		    "getLocation",
+		    "onLocationChange",
+		    "startLocationUpdateBackground",
+		    "chooseAddress",
+		    "chooseLocation"
+		],
+        "singlePage" : {
+            "navigationBarFit" : "float"
+        },
+        "componentPlaceholder" : {
+			"my-toast": "view",
+			"hover-ball": "view",
+            "mp-html" : "view",
+            "mini-upload-img" : "view"
+        }
+    },
+    "mp-alipay" : {
+        "usingComponents" : true
+    },
+    "mp-baidu" : {
+        "usingComponents" : true
+    },
+    "mp-toutiao" : {
+        "usingComponents" : true
+    },
+    "uniStatistics" : {
+        "enable" : false
+    },
+    "vueVersion" : "2"
+}
+
+        
