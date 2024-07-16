@@ -27,7 +27,24 @@
           v-if="user.is_authentication == 1"
         ></i>
 
-        <view class="gender-icon">
+        <!-- <view class="gender-icon"> -->
+
+        <!-- </view> -->
+      </view>
+
+      <view class="user-view">
+        <view class="user-name" @tap.stop.prevent="toSliderUrl(4, user.id)">
+          <text :class="'user-nick-text ' + (user.honor ? 'has-honor' : '')">{{
+            user.user_name
+          }}</text>
+          <!-- <i
+            class="header-label gender-m-icon mini-icon mini-xingbienan"
+            v-if="user.gender == 1"
+          ></i>
+          <i
+            class="header-label gender-w-icon mini-icon mini-xingbienv"
+            v-if="user.gender == 2"
+          ></i> -->
           <image
             src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/62.svg"
             v-if="user.gender == 1"
@@ -36,16 +53,6 @@
             src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/61.svg"
             v-if="user.gender == 2"
           ></image>
-        </view>
-      </view>
-
-      <view class="user-view">
-        <view class="user-name" @tap.stop.prevent="toSliderUrl(4, user.id)">
-          <text :class="'user-nick-text ' + (user.honor ? 'has-honor' : '')">{{
-            user.user_name
-          }}</text>
-          <!-- <i class="header-label gender-m-icon mini-icon mini-xingbienan" v-if="user.gender == 1"></i>
-						<i class="header-label gender-w-icon mini-icon mini-xingbienv" v-if="user.gender == 2"></i> -->
           <i
             class="header-label official-icon mini-icon mini-renzhengguanli1"
             v-if="user.is_official == 1"
@@ -170,18 +177,6 @@
         margin-right: 22rpx;
         position: relative;
 
-        .gender-icon {
-          position: absolute;
-          bottom: 0;
-          right: 0;
-          width: 24rpx;
-          height: 24rpx;
-          image {
-            width: 100%;
-            height: 100%;
-          }
-        }
-
         .user-avatar-image {
           height: 68rpx;
           width: 68rpx;
@@ -218,18 +213,26 @@
       .user-view {
         display: flex;
         flex-direction: column;
+        justify-content: center;
         overflow: hidden;
+
+        image {
+          margin-left: 10rpx;
+          width: 24rpx;
+          height: 24rpx;
+        }
       }
 
       .user-name {
         display: flex;
+        margin-bottom: 5rpx;
         align-items: center;
         justify-content: flex-start;
       }
 
       .user-nick-text {
         max-width: 315rpx;
-        height: 40rpx;
+        // height: 40rpx;
         font-size: $uni-font-size-base;
         font-weight: bold;
         @include color(color-light-dark);

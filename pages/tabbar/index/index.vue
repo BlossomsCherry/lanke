@@ -866,12 +866,12 @@
                                     <image
                                       class="gender"
                                       v-if="user_item.gender == 1"
-                                      src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/62.png"
+                                      src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/62.svg"
                                     ></image>
                                     <image
                                       class="gender"
                                       v-if="user_item.gender == 2"
-                                      src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/61.png"
+                                      src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/61.svg"
                                     ></image>
                                     <!-- </view> -->
                                   </view>

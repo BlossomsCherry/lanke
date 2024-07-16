@@ -139,7 +139,7 @@
 
 .new-circle-class {
   display: flex;
-  padding: 20rpx 20rpx 40rpx 20rpx;
+  padding: 80rpx 20rpx 40rpx 20rpx;
   flex-direction: column;
   justify-content: center;
   row-gap: 24rpx;
@@ -354,6 +354,7 @@
     display: flex;
     padding: 22rpx 0;
     column-gap: 20rpx;
+    overflow-y: hidden;
     overflow-x: scroll;
 
     .user-item {
@@ -375,7 +376,6 @@
         width: 56rpx;
         height: 56rpx;
         border-radius: 100rpx;
-        // overflow: hidden;
 
         image {
           width: 100%;
@@ -387,8 +387,8 @@
           position: absolute;
           right: 0;
           bottom: 0;
-          width: 16rpx;
-          height: 16rpx;
+          width: 20rpx;
+          height: 20rpx;
         }
       }
 
