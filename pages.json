@@ -1,2244 +1,1956 @@
 {
-        "pages": [
-        
-            {
-			"path": "pages/tabbar/index/index",
-			"style": {
-				"navigationStyle": "custom",
-				"enablePullDownRefresh": true,
-				"navigationBarTextStyle": "black",
-				"componentPlaceholder": {
-					"user-info": "view",
-					"post-content": "view",
-					"post-footer": "view",
-					"comment-scroll": "view",
-					"comment-form": "view",
-					"single-item": "view",
-					"post-share": "view",
-		            "scroll-nav": "view"
-				}
-			}
-		},
-        
-        //#ifdef APP-PLUS
-		{
-			"path": "pages/guide/guide",
-			"style": {
-				"enablePullDownRefresh": false,
-                "navigationStyle": "custom",
-                "app-plus": {
-                  "contentAdjust": false,
-                  "bounce": "none"
-                },
-                "componentPlaceholder": {
+  "pages": [
+    {
+      "path": "pages/tabbar/index/index",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": true,
+        "navigationBarTextStyle": "black",
+        "componentPlaceholder": {
+          "user-info": "view",
+          "post-content": "view",
+          "post-footer": "view",
+          "comment-scroll": "view",
+          "comment-form": "view",
+          "single-item": "view",
+          "post-share": "view",
+          "scroll-nav": "view"
+        }
+      }
+    },
 
-                }
-			}
-		},
-		// #endif
-        
-        {
-			"path": "pages/tabbar/bureau/bureau",
-			"style": {
-                "navigationBarTitleText": "",
-                "navigationStyle": "custom",
-                "enablePullDownRefresh": true,
-                "componentPlaceholder": {
-
-                }
-			}
-		},
-        
-        {
-            "path": "pages/tabbar/notice/notice",
-            "style": {
-                "navigationStyle": "custom",
-                "backgroundColor": "#ffffff",
-                "enablePullDownRefresh": true,
-                "componentPlaceholder": {
-                }
-            }
+    //#ifdef APP-PLUS
+    {
+      "path": "pages/guide/guide",
+      "style": {
+        "enablePullDownRefresh": false,
+        "navigationStyle": "custom",
+        "app-plus": {
+          "contentAdjust": false,
+          "bounce": "none"
         },
-        
-        {
-			"path": "pages/tabbar/mine/mine",
-			"style": {
-				"navigationBarTextStyle": "black",
-                "navigationStyle": "custom",
-                "enablePullDownRefresh": true,
-                "componentPlaceholder": {
-                  "user-info": "view",
-                  "post-content": "view",
-                  "post-footer": "view",
-                  "comment-scroll": "view",
-                  "comment-form": "view",
-                  "single-item": "view",
-                  "post-share": "view"
-                }
-			}
-		},
-        
-        {
-			"path": "pages/tabbar/add/add",
-			"style": {
-                "navigationBarTitleText": "",
-				"navigationBarTextStyle": "black",
-				"navigationStyle": "custom",
-				"disableScroll": true,
-                "componentPlaceholder": {
-
-                }
-			}
-		},
-        
-        {
-			"path": "pages/pc-login/index",
-			"style": {
-				"navigationBarTitleText": "",
-                "componentPlaceholder": {
-                }
-			}
-		},
-        {
-			"path": "pages/template/test",
-			"style": {
-				"navigationBarTitleText": "",
-                "componentPlaceholder": {
-                }
-			}
-		}
-            ],"subPackages": [
-        
-        {
-          "root": "pages/tabbar_clone",
-          "pages": [
-            {
-              "path": "shop/shop",
-              "style": {
-                "navigationBarTextStyle": "black",
-                "navigationStyle": "custom",
-                "enablePullDownRefresh": true,
-                "componentPlaceholder": {
-                    "scroll-nav": "view"
-                }
-              }
-            }
-            ,
-            {
-              "path": "circle/circle",
-              "style": {
-                "navigationStyle": "custom",
-                "enablePullDownRefresh": true,
-                "componentPlaceholder": {
-                  "user-info": "view",
-                  "post-content": "view",
-                  "post-footer": "view",
-                  "comment-scroll": "view",
-                  "comment-form": "view",
-                  "single-item": "view",
-                  "post-share": "view",
-                  "scroll-nav": "view"
-                }
-              }
-            }
-            ,
-            {
-                "path": "adopt/adopt",
-                "style": {
-                    "navigationBarTextStyle": "black",
-                    "enablePullDownRefresh": true,
-                    "navigationStyle": "custom",
-                    "componentPlaceholder": {
-                        "pet-adoption-home": "view",
-                        "pet-adoption-home-navbar": "view"
-                    }
-                }
-            }
-            ,
-            {
-                "path": "voter/voter",
-                "style": {
-                    "enablePullDownRefresh": true,
-                    "navigationStyle": "custom",
-                    "enablePullDownRefresh": true,
-                    "componentPlaceholder": {
-
-                    }
-                }
-            }
-            ,
-            {
-                "path": "icons/icons",
-                "style": {
-                    "navigationStyle": "custom",
-                    "enablePullDownRefresh": true,
-                    "componentPlaceholder": {
-
-                    }
-                }
-            }
-            ,
-            {
-                "path": "exhibit/exhibit",
-                "style": {
-                    "navigationStyle": "custom",
-                    "enablePullDownRefresh": true,
-                    "componentPlaceholder": {
-
-                    }
-                }
-            }
-            ,
-            {
-                "path": "schedule/schedule",
-                "style": {
-                    "navigationBarTextStyle": "black",
-                    "enablePullDownRefresh": true,
-                    "navigationStyle": "custom",
-                    "componentPlaceholder": {
-
-                    }
-                }
-            }
-            ,
-            {
-                "path": "used/used",
-                "style": {
-                    "navigationBarTitleText": "",
-                    "navigationStyle": "custom",
-                    "enablePullDownRefresh": true,
-                    "componentPlaceholder": {
-
-                    }
-                }
-            }
-            ,
-            {
-                "path": "circleClass/circleClass",
-                "style": {
-                    "navigationBarTitleText": "广场",
-                    "navigationStyle": "custom",
-                    "componentPlaceholder": {
-                    }
-                }
-            }
-            ,
-            {
-              "path": "category/category",
-              "style": {
-                "navigationBarTitleText": "商品分类",
-                "navigationStyle": "custom",
-                "componentPlaceholder": {
-
-                }
-              }
-            }
-            ]
-        },
-        
-        {
-			"root": "pages/common",
-			"pages": [
-                {
-                  "path": "tenants",
-                  "style": {
-                    "navigationStyle": "custom",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "img",
-                  "style": {
-                    "navigationStyle": "custom",
-                    "navigationBarTitleText": "图片预览",
-                    "enablePullDownRefresh": false,
-                    "navigationBarTextStyle": "white",
-                    "navigationBarBackgroundColor": "#000000",
-                    "backgroundColor": "#000000",
-                    "app-plus": {
-                      "animationType": "fade-in",
-                      "animationDuration": 300
-                    },
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "report",
-                  "style": {
-                    "navigationBarTitleText": "举报",
-                    "navigationStyle": "custom",
-                    "enablePullDownRefresh": false,
-                    "backgroundColor": "#FFFFFF",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "login",
-                  "style": {
-                    "navigationBarTextStyle": "black",
-                    "navigationStyle": "custom",
-                    "enablePullDownRefresh": false,
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "phone",
-                  "style": {
-                    "navigationBarTextStyle": "black",
-                    "navigationStyle": "custom",
-                    "enablePullDownRefresh": false,
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-					"path": "video",
-					"style": {
-						"navigationStyle": "custom",
-						"enablePullDownRefresh": false,
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-                {
-                  "path": "search",
-                  "style": {
-                    "navigationStyle": "custom",
-                    "navigationBarTitleText": "",
-                    "componentPlaceholder": {
-                      "user-info": "view",
-                      "post-content": "view",
-                      "post-footer": "view",
-                      "comment-scroll": "view",
-                      "comment-form": "view",
-                      "single-item": "view",
-                      "post-share": "view"
-
-                    }
-                  }
-                },
-                {
-                  "path": "help",
-                  "style": {
-                    "navigationBarTitleText": "帮助",
-                    "enablePullDownRefresh": false,
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "clause",
-                  "style": {
-                    "navigationBarTitleText": "",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-					"path": "table",
-					"style": {
-						"navigationBarTitleText": "",
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-				{
-					"path": "city",
-					"style": {
-						"navigationBarTitleText": "",
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				}
-			]
-		},
-        
-        {
-			"root": "contrib",
-			"pages": [
-                {
-                  "path": "test/test",
-                  "style": {
-                    "navigationBarTitleText": "",
-                    "enablePullDownRefresh": false,
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                }
-			]
-		},
-        
-        {
-			"root": "pages/creat",
-			"pages": [
-				{
-					"path": "index/index",
-					"style": {
-						"navigationBarTitleText": "发笔记",
-						"navigationStyle": "custom",
-						"enablePullDownRefresh": false,
-						"app-plus": {
-							"pullToRefresh": {
-								"support": false,
-								"style": "circle",
-								"offset": "45px"
-							}
-						},
-						"componentPlaceholder": {
-                            "mini-upload-img": "view",
-							"dom-video": "view"
-						}
-					}
-				},
-				{
-					"path": "index/creat",
-					"style": {
-						"navigationBarTitleText": "发笔记",
-						"navigationStyle": "custom",
-						"enablePullDownRefresh": false,
-						"app-plus": {
-							"pullToRefresh": {
-								"support": false,
-								"style": "circle",
-								"offset": "45px"
-							}
-						},
-						"componentPlaceholder": {
-							"mini-upload-img": "view",
-							"dom-video": "view"
-						}
-					}
-				},
-				{
-					"path": "index/video",
-					"style": {
-						"navigationBarTitleText": "上传视频",
-						"enablePullDownRefresh": false,
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-							"dom-video": "view"
-						}
-					}
-				},
-				{
-					"path": "voter/player/enter/enter",
-					"style": {
-						"navigationBarTitleText": "参与选票",
-						"enablePullDownRefresh": false,
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-							"mini-upload-img": "view",
-							"dom-video": "view"
-						}
-					}
-				},
-				{
-					"path": "index/creat2",
-					"style": {
-						"navigationBarTitleText": "发笔记",
-						"navigationStyle": "custom",
-						"enablePullDownRefresh": false,
-						"app-plus": {
-							"pullToRefresh": {
-								"support": false,
-								"style": "circle",
-								"offset": "45px"
-							}
-						},
-						"componentPlaceholder": {
-							"mini-upload-img": "view",
-							"dom-video": "view"
-						}
-					}
-				},
-				{
-					"path": "circle/circle",
-					"style": {
-						"navigationBarTitleText": "选择圈子",
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-				{
-					"path": "goods/goods",
-					"style": {
-						"navigationBarTitleText": "选择商品",
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-				{
-					"path": "tags/tags",
-					"style": {
-						"navigationBarTitleText": "",
-						"componentPlaceholder": {
-
-						}
-					}
-				}
-			]
-		},
-        
-        {
-			"root": "pagesA",
-			"pages": [
-				{
-                  "path": "mine/address/address",
-                  "style": {
-                    "navigationBarTitleText": "收货地址",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "mine/signtask/index",
-                  "style": {
-                    "navigationBarTitleText": "",
-                    // "navigationBarTextStyle": "black",
-                    "navigationStyle": "custom",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "mine/earnings/earnings",
-                  "style": {
-                    "navigationBarTitleText": "我的钱包",
-                    "navigationStyle": "custom",
-                    "enablePullDownRefresh": true,
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-					"path": "mine/earnings/inspire",
-					"style": {
-						"navigationBarTitleText": "激励支持",
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-				{
-					"path": "mine/earnings/inspire-rank",
-					"style": {
-						"navigationBarTitleText": "激励排行榜",
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-						    "user-info": "view"
-						}
-					}
-				},
-                {
-                  "path": "mine/order/order",
-                  "style": {
-                    "navigationBarBackgroundColor": "#fafafa",
-                    "navigationBarTitleText": "支付消费记录",
-                    "navigationStyle": "custom",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "mine/certification/certification",
-                  "style": {
-                    "navigationBarTitleText": "认证信息",
-                    "navigationStyle": "custom",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "mine/circleaudit/circleaudit",
-                  "style": {
-                    "navigationBarTitleText": "管理我的圈子",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "mine/editmine/editmine",
-                  "style": {
-                    "navigationBarTitleText": "个人信息",
-                    "navigationStyle": "custom",
-                    "backgroundColor": "#ffffff",
-                    "navigationBarBackgroundColor": "#ffffff",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-					"path": "mine/editmine/accountbind",
-					"style": {
-						"navigationBarTitleText": "第三方账号",
-						"navigationStyle": "custom",
-						"backgroundColor": "#ffffff",
-						"navigationBarBackgroundColor": "#ffffff",
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-                {
-                  "path": "mine/lv/lv",
-                  "style": {
-                    "navigationBarTitleText": "等级说明",
-                    "navigationStyle": "custom",
-                    "backgroundColor": "#ffffff",
-                    "navigationBarBackgroundColor": "#ffffff",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "mine/members/members",
-                  "style": {
-                    "navigationStyle": "custom",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "mine/about/about",
-                  "style": {
-                    "navigationBarTextStyle": "black",
-                    "navigationStyle": "custom",
-                    "enablePullDownRefresh": false,
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "mine/follow/follow",
-                  "style": {
-                    "navigationBarTitleText": "",
-                    "navigationStyle": "custom",
-                    "enablePullDownRefresh": true,
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "mine/users/users",
-                  "style": {
-                    "navigationBarTitleText": "",
-                    "navigationStyle": "custom",
-                    "enablePullDownRefresh": true,
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "mine/earnings/ranking",
-                  "style": {
-                    "navigationBarTitleText": "余额排行榜",
-                    "navigationStyle": "custom",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "mine/earnings/recharge",
-                  "style": {
-                    "navigationBarTitleText": "",
-                    "enablePullDownRefresh": true,
-                    "navigationStyle": "custom",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "mine/played/played",
-                  "style": {
-                    "navigationBarTitleText": "我的马甲",
-                    "navigationStyle": "custom",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "mine/admin/index",
-                  "style": {
-                    "navigationBarTitleText": "管理端",
-                    "navigationStyle": "custom",
-                    "componentPlaceholder": {
-
-                        "scroll-nav": "view"
-                    }
-                  }
-                },
-                {
-                  "path": "mine/logoff/logoff",
-                  "style": {
-                    "navigationBarTitleText": "账号注销",
-                    "navigationStyle": "custom",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "mine/qrcode/qrcode",
-                  "style": {
-                    "navigationBarTitleText": "名片",
-                    "navigationStyle": "custom",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "mine/admin/imgs",
-                  "style": {
-                    "navigationBarTitleText": "人工检测",
-                    "enablePullDownRefresh": true,
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "mine/paycode/paycode",
-                  "style": {
-                    "navigationBarTitleText": "支付密码",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-					"path": "mine/paycode/forget",
-					"style": {
-						"navigationBarTitleText": "忘记支付密码",
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-                {
-                  "path": "mine/invite/invite",
-                  "style": {
-                    "navigationBarTitleText": "我的团队",
-                    "navigationStyle": "custom",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-					"path": "mine/invite/qr",
-					"style": {
-						"navigationBarTitleText": "我的二维码",
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-				{
-					"path": "mine/privacy/privacy",
-					"style": {
-						"navigationBarTitleText": "隐私设置",
-						"enablePullDownRefresh": false,
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-				{
-					"path": "mine/privacy/collect",
-					"style": {
-						"navigationBarTitleText": "收藏隐私设置",
-						"enablePullDownRefresh": false,
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-				{
-					"path": "mine/privacy/follow",
-					"style": {
-						"navigationBarTitleText": "关注与粉丝列表",
-						"enablePullDownRefresh": false,
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-				{
-					"path": "mine/privacy/recomuser",
-					"style": {
-						"navigationBarTitleText": "推荐可能认识的人",
-						"enablePullDownRefresh": false,
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-				{
-					"path": "mine/privacy/personal",
-					"style": {
-						"navigationBarTitleText": "个性化选项",
-						"enablePullDownRefresh": false,
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-				{
-					"path": "mine/privacy/ad",
-					"style": {
-						"navigationBarTitleText": "程序化广告设置",
-						"enablePullDownRefresh": false,
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-				{
-					"path": "mine/diy/diy",
-					"style": {
-						"navigationBarTitleText": "界面自定义",
-						"enablePullDownRefresh": false,
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-                {
-                  "path": "mine/shield/shield",
-                  "style": {
-                    "navigationBarTitleText": "屏蔽设置",
-                    "enablePullDownRefresh": false,
-                    "navigationStyle": "custom",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "mine/shield/users",
-                  "style": {
-                    "navigationBarTitleText": "用户列表",
-                    "enablePullDownRefresh": true,
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "mine/shield/posts",
-                  "style": {
-                    "navigationBarTitleText": "不喜欢的笔记",
-                    "enablePullDownRefresh": true,
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "mine/theme/theme",
-                  "style": {
-                    "navigationBarTitleText": "屏蔽设置",
-                    "enablePullDownRefresh": false,
-                    "navigationStyle": "custom",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-					"path": "mine/visit/visit",
-					"style": {
-						"navigationBarTitleText": "浏览记录",
-						"enablePullDownRefresh": false,
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-                {
-					"path": "mine/realname/realname",
-					"style": {
-						"navigationBarTitleText": "实名认证",
-						"enablePullDownRefresh": false,
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-                {
-                  "path": "circle/creat/index",
-                  "style": {
-                    "navigationBarTitleText": "",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "mine/settings/settings",
-                  "style": {
-                    "navigationBarTitleText": "设置",
-                    "enablePullDownRefresh": false,
-                    "navigationStyle": "custom",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-					"path": "shop/list/list",
-					"style": {
-						"navigationBarTitleText": "商品筛选",
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-				{
-					"path": "shop/apply/apply",
-					"style": {
-						"navigationBarTitleText": "店铺入驻",
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-				{
-					"path": "shop/contact/contact",
-					"style": {
-						"navigationBarTitleText": "经营地址",
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-                {
-                  "path": "shop/cart/cart",
-                  "style": {
-                    "navigationBarTitleText": "购物袋",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-					"path": "shop/shop/shop",
-					"style": {
-						"navigationBarTitleText": "店铺",
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-				{
-					"path": "shop/shop/credent",
-					"style": {
-						"navigationBarTitleText": "店铺资质",
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-                {
-                  "path": "shop/order/order",
-                  "style": {
-                    "navigationBarTitleText": "SHOP订单",
-                    "navigationStyle": "custom",
-                    "enablePullDownRefresh": true,
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "shop/goods-details/goods-details",
-                  "style": {
-                    "navigationBarTextStyle": "black",
-                    "navigationStyle": "custom",
-                    "enablePullDownRefresh": false,
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "shop/goods-classify/goods-classify",
-                  "style": {
-                    "navigationStyle": "custom",
-                    "navigationBarTitleText": "SHOP分类",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "shop/place-order/place-order",
-                  "style": {
-                    "navigationBarTitleText": "订单确认",
-                    "navigationStyle": "custom",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "shop/logistics/logistics",
-                  "style": {
-                    "navigationBarTitleText": "物流信息",
-                    "navigationStyle": "custom",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "shop/goods-details/posts",
-                  "style": {
-                    "navigationBarTitleText": "相关笔记",
-                    "componentPlaceholder": {
-                      "user-info": "view",
-                      "post-content": "view",
-                      "post-footer": "view",
-                      "comment-scroll": "view",
-                      "comment-form": "view",
-                      "single-item": "view",
-                      "post-share": "view"
-
-                    }
-                  }
-                },
-                {
-					"path": "attestation/attestation",
-					"style": {
-						"navigationStyle": "custom"
-					}
-				},
-				{
-					"path": "attestation/notice",
-					"style": {
-						"navigationStyle": "custom"
-					}
-				},
-				{
-					"path": "attestation/modality",
-					"style": {
-						"navigationStyle": "custom"
-					}
-				},
-				{
-					"path": "attestation/byemail",
-					"style": {
-						"navigationStyle": "custom"
-					}
-				},
-				{
-					"path": "attestation/byschoolcard",
-					"style": {
-						"navigationStyle": "custom"
-					}
-				}
-			]
-		},
-        
-        {
-			"root": "pagesB",
-			"pages": [
-				{
-                  "path": "playbill/goodsPoster",
-                  "style": {
-                    "navigationBarTitleText": "商品海报",
-                    "enablePullDownRefresh": false,
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "playbill/userPoster",
-                  "style": {
-                    "navigationBarTitleText": "分享海报",
-                    "enablePullDownRefresh": false,
-                    "navigationStyle": "custom",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "playbill/circleShare",
-                  "style": {
-                    "navigationStyle": "custom",
-                    "navigationBarTitleText": "",
-                    "enablePullDownRefresh": false,
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "playbill/postPoster2",
-                  "style": {
-                    "navigationStyle": "custom",
-                    "navigationBarTitleText": "",
-                    "enablePullDownRefresh": false,
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "luckdraw/luckdraw",
-                  "style": {
-                    "navigationStyle": "custom",
-                    "navigationBarTitleText": "抽奖",
-                    "app-plus": {
-                      "scrollIndicator": "none"
-                    },
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "tabs/tabs",
-                  "style": {
-                    "navigationBarTitleText": "",
-                    "app-plus": {
-                      "scrollIndicator": "none"
-                    },
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "menus/menus",
-                  "style": {
-                    "navigationBarTitleText": "",
-                    "navigationStyle": "custom",
-                    "app-plus": {
-                      "scrollIndicator": "none"
-                    },
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "steps/steps",
-                  "style": {
-                    "navigationStyle": "custom",
-                    "navigationBarTitleText": "",
-                    "app-plus": {
-                      "scrollIndicator": "none"
-                    },
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "compare/compare",
-                  "style": {
-                    "navigationBarTitleText": "授权说明",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "qrcode/qrcode",
-                  "style": {
-                    "navigationStyle": "custom",
-                    "navigationBarTitleText": "",
-                    "app-plus": {
-                      "scrollIndicator": "none"
-                    },
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                }
-			]
-		},
-        
-        {
-			"root": "pagesC",
-			"pages": [
-				{
-                  "path": "realtime/post",
-                  "style": {
-                    "navigationBarTitleText": "热帖排行榜",
-                    "enablePullDownRefresh": true,
-                    "navigationStyle": "custom",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "redirect/redirect",
-                  "style": {
-                    "navigationBarTitleText": "",
-                    "navigationStyle": "custom",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "video/slide",
-                  "style": {
-                    "enablePullDownRefresh": false,
-                    "navigationBarTitleText": "",
-                    "navigationStyle": "custom",
-                    "app-plus": {
-                        "pullToRefresh": {
-                            "support": false,
-                            "style": "circle",
-                            "offset": "45px"
-                        }
-                    },
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "promotion/post",
-                  "style": {
-                    "navigationBarTitleText": "笔记推广",
-                    "enablePullDownRefresh": true,
-                    "navigationStyle": "custom",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                }
-			]
-		},
-        
-        {
-			"root": "pagesD",
-			"pages": [
-			 ]
-		},
-        
-        {
-			"root": "pagesE",
-			"pages": [
-				{
-                  "path": "test/test",
-                  "style": {
-                    "navigationBarTextStyle": "black",
-                    "navigationStyle": "custom",
-                    "enablePullDownRefresh": true,
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                }
-			 ]
-		},
-        
-        {
-			"root": "pagesN",
-			"pages": [
-				{
-					"path": "note/index/index",
-					"style": {
-						"navigationBarTitleText": "",
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				}
-			]
-		},
-        
-        {
-          "root": "pagesP",
-          "pages": [
-            {
-              "path": "pet-adoption/index/index",
-              "style": {
-                "navigationBarTitleText": "",
-                "navigationStyle": "custom",
-                "componentPlaceholder": {
-
-                }
-              }
-            },
-            {
-              "path": "pet-adoption/pet-filter/index",
-              "style": {
-                "navigationBarTitleText": "筛选",
-                "componentPlaceholder": {
-
-                }
-              }
-            },
-            {
-              "path": "pet-adoption/push-adoption/index",
-              "style": {
-                "navigationBarTitleText": "发布领养",
-                "enablePullDownRefresh": false,
-                "navigationStyle": "custom",
-                "componentPlaceholder": {
-                  "mini-upload-img": "view",
-                  "dom-video": "view"
-                }
-              }
-            },
-            {
-              "path": "pet-adoption/details/index",
-              "style": {
-                "navigationBarTitleText": "领养详情",
-                "navigationStyle": "custom",
-                "componentPlaceholder": {
-
-                }
-              }
-            },
-            {
-              "path": "pet-adoption/blacklist/index",
-              "style": {
-                "navigationBarTitleText": "失信人举报和查询",
-                "componentPlaceholder": {
-
-                }
-              }
-            },
-            {
-              "path": "pet-adoption/report-push/index",
-              "style": {
-                "navigationBarTitleText": "发布举报",
-                "componentPlaceholder": {
-
-                }
-              }
-            },
-            {
-              "path": "pet-adoption/report-details/index",
-              "style": {
-                "navigationBarTitleText": "举报详情",
-                "componentPlaceholder": {
-
-                }
-              }
-            },
-            {
-              "path": "pet-adoption/blacklist-search/index",
-              "style": {
-                "navigationBarTitleText": "查询",
-                "componentPlaceholder": {
-
-                }
-              }
-            },
-            {
-              "path": "pet-adoption/adoptive-user-info-gather/index",
-              "style": {
-                "navigationBarTitleText": "领养人信息采集",
-                "componentPlaceholder": {
-
-                }
-              }
-            },
-            {
-              "path": "pet-adoption/pet-common-list/index",
-              "style": {
-                "navigationBarTitleText": "宠物通用列表",
-                "componentPlaceholder": {
-
-                }
-              }
-            },
-            {
-              "path": "pet-adoption/city-index-list/index",
-              "style": {
-                "navigationBarTitleText": "选择城市",
-                "componentPlaceholder": {
-
-                }
-              }
-            }
-          ]
-        },
-        
-        {
-			"root": "pagesS",
-			"pages": [
-				{
-					"path": "sellers/sales/sales",
-					"style": {
-						"navigationBarTitleText": "我的卖出",
-						"navigationStyle": "custom",
-						"enablePullDownRefresh": true,
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-				{
-					"path": "sellers/deliver/deliver",
-					"style": {
-						"navigationBarTitleText": "商品发货",
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-				{
-					"path": "sellers/selfpick/selfpick",
-					"style": {
-						"navigationBarTitleText": "自提-用户",
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-				{
-					"path": "sellers/guarantee/guarantee",
-					"style": {
-						"navigationBarTitleText": "店铺保证金",
-						"navigationStyle": "custom",
-						"enablePullDownRefresh": true,
-						"componentPlaceholder": {
-
-						}
-					}
-				}
-			 ]
-		},
-        
-        {
-			"root": "pagesU",
-			"pages": [
-				{
-					"path": "points-mall/list/index",
-					"style": {
-						"navigationBarTitleText": "积分商城",
-						"enablePullDownRefresh": false,
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-				{
-					"path": "points-mall/group-goods-list/index",
-					"style": {
-						"navigationBarTitleText": "全部商品",
-						"enablePullDownRefresh": false,
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-				{
-					"path": "used-mall/home/index",
-					"style": {
-						"navigationBarTitleText": "",
-						"navigationStyle": "custom",
-						"enablePullDownRefresh": true,
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-				{
-					"path": "used-mall/detail/index",
-					"style": {
-						"navigationBarTitleText": "",
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-				{
-					"path": "used-mall/issue/index",
-					"style": {
-						"navigationBarTitleText": "",
-						"navigationStyle": "custom",
-						"enablePullDownRefresh": false,
-						"componentPlaceholder": {
-						    "mini-upload-img": "view"
-						}
-					}
-				},
-				{
-					"path": "used-mall/search/search",
-					"style": {
-						"navigationBarTitleText": "",
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-				{
-					"path": "used-mall/mine/published/published",
-					"style": {
-						"navigationBarTitleText": "",
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				}
-			 ]
-		},
-        
-        {
-			"root": "pagesV",
-			"pages": [
-				{
-					"path": "voter/detail/detail",
-					"style": {
-						"navigationBarTitleText": "选票详情",
-						"enablePullDownRefresh": false,
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-						    "mp-html": "view"
-						}
-					}
-				},
-				{
-					"path": "voter/list/list",
-					"style": {
-						"navigationBarTitleText": "选票列表",
-						"enablePullDownRefresh": false,
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-				{
-					"path": "voter/detail/player",
-					"style": {
-						"navigationBarTitleText": "选手展示",
-						"enablePullDownRefresh": false,
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-				{
-					"path": "voter/template/list/list",
-					"style": {
-						"navigationBarTitleText": "模板中心",
-						"enablePullDownRefresh": false,
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-				{
-					"path": "voter/creat/creat",
-					"style": {
-						"navigationBarTitleText": "发布选票",
-						"enablePullDownRefresh": false,
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-							"l-clipper": "view",
-							"banner-editor": "view"
-						}
-					}
-				}
-			]
-		},
-		
-        {
-			"root": "pagesZ",
-			"pages": [
-				{
-					"path": "organize-bureau/index/index",
-					"style": {
-						"navigationBarTitleText": "",
-						"navigationStyle": "custom",
-						"enablePullDownRefresh": true
-					}
-				},
-				{
-					"path": "organize-bureau/details/index",
-					"style": {
-						"navigationBarTitleText": "",
-						"navigationStyle": "custom",
-						"enablePullDownRefresh": true,
-						"componentPlaceholder": {
-							"mp-html": "view"
-						}
-					}
-				},
-				{
-					"path": "organize-bureau/join/index",
-					"style": {
-						"navigationBarTitleText": "确认加入",
-						"navigationStyle": "custom"
-					}
-				},
-				{
-					"path": "organize-bureau/settle-in/index",
-					"style": {
-						"navigationBarTitleText": "",
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-							"l-clipper": "view"
-						}
-					}
-				},
-				{
-					"path": "organize-bureau/push/creat",
-					"style": {
-						"navigationStyle": "custom",
-						"navigationBarTitleText": "",
-						"componentPlaceholder": {
-							"mini-upload-img": "view"
-						}
-					}
-				},
-				{
-					"path": "organize-bureau/push/team",
-					"style": {
-						"navigationBarTitleText": ""
-					}
-				},
-				{
-					"path": "organize-bureau/push/userInfo",
-					"style": {
-						"navigationStyle": "custom",
-						"navigationBarTitleText": "",
-						"componentPlaceholder": {
-							"mini-upload-img": "view"
-						}
-					}
-				},
-				{
-					"path": "organize-bureau/my-list/index",
-					"style": {
-						"navigationBarTitleText": "我的组局",
-						"navigationStyle": "custom"
-					}
-				},
-				{
-					"path": "organize-bureau/album/album",
-					"style": {
-						"navigationBarTitleText": "活动图集",
-						"navigationStyle": "custom"
-					}
-				},
-				{
-					"path": "organize-bureau/album/detail",
-					"style": {
-						"navigationBarTitleText": "图集",
-						"navigationStyle": "custom"
-					}
-				},
-				{
-					"path": "organize-bureau/club/club",
-					"style": {
-						"navigationBarTitleText": "俱乐部主页",
-						"navigationStyle": "custom"
-					}
-				},
-				{
-					"path": "organize-bureau/club/setting",
-					"style": {
-						"navigationBarTitleText": "俱乐部设置",
-						"navigationStyle": "custom"
-					}
-				}
-			]
-		},
-        
-        {
-			"root": "pages/sticky",
-			"pages": [
-				{
-                  "path": "sticky",
-                  "style": {
-                    "navigationBarTextStyle": "black",
-                    "navigationStyle": "custom",
-                    "enablePullDownRefresh": true,
-                    "componentPlaceholder": {
-                      "user-info": "view",
-                      "post-content": "view",
-                      "post-footer": "view",
-                      "comment-scroll": "view",
-                      "comment-form": "view",
-                      "single-item": "view",
-                      "post-share": "view"
-
-                    }
-                  }
-                }
-			]
-		},
-        
-        {
-			"root": "pages/circleClass",
-			"pages": [
-				{
-                  "path": "circleClass",
-                  "style": {
-                    "navigationStyle": "custom",
-                    "navigationBarTitleText": "所有圈子",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                }
-			]
-		},
-        
-        {
-			"root": "pages/article",
-			"pages": [
-				{
-                  "path": "article",
-                  "style": {
-                    "navigationBarTitleText": "热门话题",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                }
-			]
-		},
-        
-        {
-			"root": "pages/message",
-			"pages": [
-				{
-                  "path": "detail/detail",
-                  "style": {
-                    "navigationBarTitleText": "聊天详情",
-                    "navigationBarBackgroundColor": "#fafafa",
-                    "navigationStyle": "custom",
-                    "app-plus": {
-                      "softinputNavBar": "none",
-                      "bounce": "none"
-                    },
-                    "componentPlaceholder": {
-                      "user-info": "view"
-
-                    }
-                  }
-                },
-                {
-                  "path": "likeAndfav/likeAndfav",
-                  "style": {
-                    "navigationBarTitleText": "赞和收藏",
-                    "navigationStyle": "custom",
-                    "enablePullDownRefresh": true,
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "comment/comment",
-                  "style": {
-                    "navigationBarTitleText": "评论和充电",
-                    "navigationStyle": "custom",
-                    "enablePullDownRefresh": true,
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "notice/notice",
-                  "style": {
-                    "navigationBarTitleText": "收到的通知",
-                    "navigationStyle": "custom",
-                    "enablePullDownRefresh": true,
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "activityList/activityList",
-                  "style": {
-                    "navigationBarTitleText": "活动",
-                    "navigationStyle": "custom",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                }
-			]
-		},
-        
-        {
-			"root": "pages/circle",
-			"pages": [
-				{
-                  "path": "circleaudit",
-                  "style": {
-                    "navigationBarTitleText": "审贴",
-                    "componentPlaceholder": {
-                      "user-info": "view",
-                      "post-content": "view",
-                      "post-footer": "view",
-                      "comment-scroll": "view",
-                      "comment-form": "view",
-                      "single-item": "view",
-                      "post-share": "view"
-
-                    }
-                  }
-                },
-                {
-                  "path": "list",
-                  "style": {
-                    "navigationBarTextStyle": "black",
-                    "navigationStyle": "custom",
-                    "enablePullDownRefresh": true,
-                    "componentPlaceholder": {
-                      "user-info": "view",
-                      "post-content": "view",
-                      "post-footer": "view",
-                      "comment-scroll": "view",
-                      "comment-form": "view",
-                      "single-item": "view",
-                      "post-share": "view"
-
-                    }
-                  }
-                }
-			]
-		},
-        
-        {
-			"root": "pages/rank",
-			"pages": [
-				{
-					"path": "rank",
-					"style": {
-						"navigationBarTitleText": "全站排行榜",
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-							"user-info": "view"
-						}
-					}
-				}
-			]
-		},
-        
-        {
-			"root": "pages/tags",
-			"pages": [
-				{
-                  "path": "list",
-                  "style": {
-                    "navigationStyle": "custom",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "tags",
-                  "style": {
-                    "navigationBarTextStyle": "black",
-                    "navigationStyle": "custom",
-                    "enablePullDownRefresh": true,
-                    "componentPlaceholder": {
-                      "user-info": "view",
-                      "post-content": "view",
-                      "post-footer": "view",
-                      "comment-scroll": "view",
-                      "comment-form": "view",
-                      "single-item": "view",
-                      "post-share": "view"
-
-                    }
-                  }
-                }
-			]
-		},
-        
-        {
-			"root": "pages/help",
-			"pages": [
-				{
-                  "path": "feedbackIndex/feedbackIndex",
-                  "style": {
-                    "navigationBarTitleText": "意见反馈",
-                    "enablePullDownRefresh": false,
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "feedbackList/feedbackList",
-                  "style": {
-                    "navigationBarTitleText": "意见反馈",
-                    "enablePullDownRefresh": false,
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "feedback/feedback",
-                  "style": {
-                    "navigationBarTitleText": "意见反馈",
-                    "enablePullDownRefresh": false,
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "helpDetail/helpDetail",
-                  "style": {
-                    "navigationBarTitleText": "帮助详情",
-                    "enablePullDownRefresh": false,
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                },
-                {
-                  "path": "feedbackDetail/feedbackDetail",
-                  "style": {
-                    "navigationBarTitleText": "反馈详情",
-                    "enablePullDownRefresh": false,
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                }
-			]
-		},
-        
-        {
-			"root": "pages/pay",
-			"pages": [
-                {
-                  "path": "pay-order",
-                  "style": {
-                    "navigationBarTitleText": "支付",
-                    "componentPlaceholder": {
-
-                    }
-                  }
-                }
-			]
-		},
-        
-        {
-			"root": "pages/wallpaper",
-			"pages": [
-				{
-					"path": "index",
-					"style": {
-						"navigationBarTextStyle": "black",
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-				{
-					"path": "collected",
-					"style": {
-						"navigationBarTextStyle": "black",
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-				{
-					"path": "creat",
-					"style": {
-						"navigationBarTextStyle": "black",
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-						    "mini-upload-img": "view"
-						}
-					}
-				},
-				{
-					"path": "list",
-					"style": {
-						"navigationBarTextStyle": "black",
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				},
-				{
-					"path": "detail",
-					"style": {
-						"navigationBarTextStyle": "white",
-						"navigationStyle": "custom",
-						"componentPlaceholder": {
-
-						}
-					}
-				}
-			]
-		},
-        
-        {
-			"root": "pages/web-view",
-			"pages": [
-                {
-                    "path": "index",
-                    "style": {
-                        "enablePullDownRefresh": false,
-                        "navigationBarTextStyle": "black",
-                        "navigationBarTitleText": "岚客丨DISCOVER",
-                        "app-plus": {
-                            "pullToRefresh": {
-                                "support": false,
-                                "style": "circle",
-                                "offset": "45px"
-                            }
-                        },
-                        "componentPlaceholder": {
-
-                        }
-                    }
-                }
-			]
-		},
-        
-        {
-			"root": "pages/user",
-			"pages": [
-				{
-                  "path": "user",
-                  "style": {
-                    "navigationBarTextStyle": "black",
-                    "navigationStyle": "custom",
-                    "enablePullDownRefresh": true,
-                    "componentPlaceholder": {
-                      "user-info": "view",
-                      "post-content": "view",
-                      "post-footer": "view",
-                      "comment-scroll": "view",
-                      "comment-form": "view",
-                      "single-item": "view",
-                      "post-share": "view"
-                    }
-                  }
-                },
-                {
-					"path": "used/used",
-					"style": {
-						"navigationBarTextStyle": "black",
-						"navigationStyle": "custom",
-						"enablePullDownRefresh": true,
-						"componentPlaceholder": {}
-					}
-				}
-			]
-		},
-        
-        {
-			"root": "pagesX/mayi/movie",
-			"plugins": {
-				"mayi-movie": {
-					"version": "1.0.22",
-					"provider": "wx459759608c80cf98"
-				}
-			},
-			"pages": [{
-				"path": "test",
-				"style": {
-					"navigationBarTitleText": "",
-					"navigationStyle": "custom",
-					"componentPlaceholder": {
-
-					}
-				}
-			}]
-		}
-        
-            ],
-    // #ifdef MP
-    "tabBar": {
-        "custom": true,
-        "borderStyle": "white",
-        "color": "#000000",
-        "selectedColor": "#000000",
-		"backgroundColor": "#ffffff",
-		"height": "46px",
-        "list": [
-                    {
-                    "pagePath": "pages/tabbar/index/index",
-                    "text": "",
-                    "iconPath": "static/tabbar/11.png",
-                    "selectedIconPath": "static/tabbar/1.png"
-                    },
-                    {
-                    "pagePath": "pages/tabbar/bureau/bureau",
-                    "text": "",
-                    "iconPath": "static/tabbar/22.png",
-                    "selectedIconPath": "static/tabbar/2.png"
-                    },
-                    {
-                    "pagePath": "pages/tabbar/add/add",
-                    "text": "",
-                    "iconPath": "static/tabbar/33.png",
-                    "selectedIconPath": "static/tabbar/3.png"
-                    },
-                    {
-                    "pagePath": "pages/tabbar/notice/notice",
-                    "text": "",
-                    "iconPath": "static/tabbar/44.png",
-                    "selectedIconPath": "static/tabbar/4.png"
-                    },
-                    {
-                    "pagePath": "pages/tabbar/mine/mine",
-                    "text": "",
-                    "iconPath": "static/tabbar/55.png",
-                    "selectedIconPath": "static/tabbar/5.png"
-                    }]
+        "componentPlaceholder": {}
+      }
     },
     // #endif
-	// #ifdef APP || H5
-	"tabBar": {
-        "borderStyle": "white",
-        "color": "#000000",
-        "selectedColor": "#000000",
-		"backgroundColor": "#ffffff",
-		"height": "46px",
-        "list": [
-                    {
-                    "pagePath": "pages/tabbar/index/index",
-                    "text": "",
-                    "iconPath": "static/tabbar/11.png",
-                    "selectedIconPath": "static/tabbar/1.png"
-                    },
-                    {
-                    "pagePath": "pages/tabbar/bureau/bureau",
-                    "text": "",
-                    "iconPath": "static/tabbar/22.png",
-                    "selectedIconPath": "static/tabbar/2.png"
-                    },
-                    {
-                    "pagePath": "pages/tabbar/add/add",
-                    "text": "",
-                    "iconPath": "static/tabbar/33.png",
-                    "selectedIconPath": "static/tabbar/3.png"
-                    },
-                    {
-                    "pagePath": "pages/tabbar/notice/notice",
-                    "text": "",
-                    "iconPath": "static/tabbar/44.png",
-                    "selectedIconPath": "static/tabbar/4.png"
-                    },
-                    {
-                    "pagePath": "pages/tabbar/mine/mine",
-                    "text": "",
-                    "iconPath": "static/tabbar/55.png",
-                    "selectedIconPath": "static/tabbar/5.png"
-                    }]
-        
+
+    {
+      "path": "pages/tabbar/bureau/bureau",
+      "style": {
+        "navigationBarTitleText": "",
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": true,
+        "componentPlaceholder": {}
+      }
     },
-	// #endif
-    
-        "permission": {
-		"scope.userLocation": {
-			"desc": "你的位置信息将用于小程序位置接口的效果展示"
-		}
-	},
-	"requiredBackgroundModes": [
-		"audio",
-		"location"
-	],
-	"sitemapLocation": "sitemap.json",
-	"globalStyle":
-	{
-		"navigationBarTitleText": "",
-		"enablePullDownRefresh": false,
-		"onReachBottomDistance": 300,
-		"navigationBarTextStyle": "black",
-		"navigationBarBackgroundColor": "#f8f8f8",
-		"backgroundColor": "#fafafa",
-		"backgroundColorTop": "#fafafa",
-		"backgroundColorBottom": "#fafafa",
-        "app-plus": {
-            "pullToRefresh": {
-                "support": true,
-                "style": "circle",
-                "offset": "50px"
+
+    {
+      "path": "pages/tabbar/notice/notice",
+      "style": {
+        "navigationStyle": "custom",
+        "backgroundColor": "#ffffff",
+        "enablePullDownRefresh": true,
+        "componentPlaceholder": {}
+      }
+    },
+
+    {
+      "path": "pages/tabbar/mine/mine",
+      "style": {
+        "navigationBarTextStyle": "black",
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": true,
+        "componentPlaceholder": {
+          "user-info": "view",
+          "post-content": "view",
+          "post-footer": "view",
+          "comment-scroll": "view",
+          "comment-form": "view",
+          "single-item": "view",
+          "post-share": "view"
+        }
+      }
+    },
+
+    {
+      "path": "pages/tabbar/add/add",
+      "style": {
+        "navigationBarTitleText": "",
+        "navigationBarTextStyle": "black",
+        "navigationStyle": "custom",
+        "disableScroll": true,
+        "componentPlaceholder": {}
+      }
+    },
+
+    {
+      "path": "pages/pc-login/index",
+      "style": {
+        "navigationBarTitleText": "",
+        "componentPlaceholder": {}
+      }
+    },
+    {
+      "path": "pages/template/test",
+      "style": {
+        "navigationBarTitleText": "",
+        "componentPlaceholder": {}
+      }
+    }
+  ],
+  "subPackages": [
+    {
+      "root": "pages/tabbar_clone",
+      "pages": [
+        {
+          "path": "shop/shop",
+          "style": {
+            "navigationBarTextStyle": "black",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": true,
+            "componentPlaceholder": {
+              "scroll-nav": "view"
             }
+          }
+        },
+        {
+          "path": "circle/circle",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": true,
+            "componentPlaceholder": {
+              "user-info": "view",
+              "post-content": "view",
+              "post-footer": "view",
+              "comment-scroll": "view",
+              "comment-form": "view",
+              "single-item": "view",
+              "post-share": "view",
+              "scroll-nav": "view"
+            }
+          }
+        },
+        {
+          "path": "adopt/adopt",
+          "style": {
+            "navigationBarTextStyle": "black",
+            "enablePullDownRefresh": true,
+            "navigationStyle": "custom",
+            "componentPlaceholder": {
+              "pet-adoption-home": "view",
+              "pet-adoption-home-navbar": "view"
+            }
+          }
+        },
+        {
+          "path": "voter/voter",
+          "style": {
+            "enablePullDownRefresh": true,
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": true,
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "icons/icons",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": true,
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "exhibit/exhibit",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": true,
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "schedule/schedule",
+          "style": {
+            "navigationBarTextStyle": "black",
+            "enablePullDownRefresh": true,
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "used/used",
+          "style": {
+            "navigationBarTitleText": "",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": true,
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "circleClass/circleClass",
+          "style": {
+            "navigationBarTitleText": "广场",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "category/category",
+          "style": {
+            "navigationBarTitleText": "商品分类",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
         }
-        // #ifdef MP-WEIXIN
-        ,"usingComponents": {
-          "mini-sph": "/wxcomponents/mini-sph/mini-sph"
+      ]
+    },
+
+    {
+      "root": "pages/common",
+      "pages": [
+        {
+          "path": "tenants",
+          "style": {
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "img",
+          "style": {
+            "navigationStyle": "custom",
+            "navigationBarTitleText": "图片预览",
+            "enablePullDownRefresh": false,
+            "navigationBarTextStyle": "white",
+            "navigationBarBackgroundColor": "#000000",
+            "backgroundColor": "#000000",
+            "app-plus": {
+              "animationType": "fade-in",
+              "animationDuration": 300
+            },
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "report",
+          "style": {
+            "navigationBarTitleText": "举报",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "backgroundColor": "#FFFFFF",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "login",
+          "style": {
+            "navigationBarTextStyle": "black",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "phone",
+          "style": {
+            "navigationBarTextStyle": "black",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "video",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "search",
+          "style": {
+            "navigationStyle": "custom",
+            "navigationBarTitleText": "",
+            "componentPlaceholder": {
+              "user-info": "view",
+              "post-content": "view",
+              "post-footer": "view",
+              "comment-scroll": "view",
+              "comment-form": "view",
+              "single-item": "view",
+              "post-share": "view"
+            }
+          }
+        },
+        {
+          "path": "help",
+          "style": {
+            "navigationBarTitleText": "帮助",
+            "enablePullDownRefresh": false,
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "clause",
+          "style": {
+            "navigationBarTitleText": "",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "table",
+          "style": {
+            "navigationBarTitleText": "",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "city",
+          "style": {
+            "navigationBarTitleText": "",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
         }
-        // #endif
-	}
-        
+      ]
+    },
+
+    {
+      "root": "contrib",
+      "pages": [
+        {
+          "path": "test/test",
+          "style": {
+            "navigationBarTitleText": "",
+            "enablePullDownRefresh": false,
+            "componentPlaceholder": {}
+          }
         }
+      ]
+    },
+
+    {
+      "root": "pages/creat",
+      "pages": [
+        {
+          "path": "index/index",
+          "style": {
+            "navigationBarTitleText": "发笔记",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "app-plus": {
+              "pullToRefresh": {
+                "support": false,
+                "style": "circle",
+                "offset": "45px"
+              }
+            },
+            "componentPlaceholder": {
+              "mini-upload-img": "view",
+              "dom-video": "view"
+            }
+          }
+        },
+        {
+          "path": "index/creat",
+          "style": {
+            "navigationBarTitleText": "发笔记",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "app-plus": {
+              "pullToRefresh": {
+                "support": false,
+                "style": "circle",
+                "offset": "45px"
+              }
+            },
+            "componentPlaceholder": {
+              "mini-upload-img": "view",
+              "dom-video": "view"
+            }
+          }
+        },
+        {
+          "path": "index/video",
+          "style": {
+            "navigationBarTitleText": "上传视频",
+            "enablePullDownRefresh": false,
+            "navigationStyle": "custom",
+            "componentPlaceholder": {
+              "dom-video": "view"
+            }
+          }
+        },
+        {
+          "path": "voter/player/enter/enter",
+          "style": {
+            "navigationBarTitleText": "参与选票",
+            "enablePullDownRefresh": false,
+            "navigationStyle": "custom",
+            "componentPlaceholder": {
+              "mini-upload-img": "view",
+              "dom-video": "view"
+            }
+          }
+        },
+        {
+          "path": "index/creat2",
+          "style": {
+            "navigationBarTitleText": "发笔记",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "app-plus": {
+              "pullToRefresh": {
+                "support": false,
+                "style": "circle",
+                "offset": "45px"
+              }
+            },
+            "componentPlaceholder": {
+              "mini-upload-img": "view",
+              "dom-video": "view"
+            }
+          }
+        },
+        {
+          "path": "circle/circle",
+          "style": {
+            "navigationBarTitleText": "选择圈子",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "goods/goods",
+          "style": {
+            "navigationBarTitleText": "选择商品",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "tags/tags",
+          "style": {
+            "navigationBarTitleText": "",
+            "componentPlaceholder": {}
+          }
+        }
+      ]
+    },
+
+    {
+      "root": "pagesA",
+      "pages": [
+        {
+          "path": "mine/address/address",
+          "style": {
+            "navigationBarTitleText": "收货地址",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/signtask/index",
+          "style": {
+            "navigationBarTitleText": "",
+            // "navigationBarTextStyle": "black",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/earnings/earnings",
+          "style": {
+            "navigationBarTitleText": "我的钱包",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": true,
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/earnings/inspire",
+          "style": {
+            "navigationBarTitleText": "激励支持",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/earnings/inspire-rank",
+          "style": {
+            "navigationBarTitleText": "激励排行榜",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {
+              "user-info": "view"
+            }
+          }
+        },
+        {
+          "path": "mine/order/order",
+          "style": {
+            "navigationBarBackgroundColor": "#fafafa",
+            "navigationBarTitleText": "支付消费记录",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/certification/certification",
+          "style": {
+            "navigationBarTitleText": "认证信息",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/circleaudit/circleaudit",
+          "style": {
+            "navigationBarTitleText": "管理我的圈子",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/editmine/editmine",
+          "style": {
+            "navigationBarTitleText": "个人信息",
+            "navigationStyle": "custom",
+            "backgroundColor": "#ffffff",
+            "navigationBarBackgroundColor": "#ffffff",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/editmine/accountbind",
+          "style": {
+            "navigationBarTitleText": "第三方账号",
+            "navigationStyle": "custom",
+            "backgroundColor": "#ffffff",
+            "navigationBarBackgroundColor": "#ffffff",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/lv/lv",
+          "style": {
+            "navigationBarTitleText": "等级说明",
+            "navigationStyle": "custom",
+            "backgroundColor": "#ffffff",
+            "navigationBarBackgroundColor": "#ffffff",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/members/members",
+          "style": {
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/about/about",
+          "style": {
+            "navigationBarTextStyle": "black",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/follow/follow",
+          "style": {
+            "navigationBarTitleText": "",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": true,
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/users/users",
+          "style": {
+            "navigationBarTitleText": "",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": true,
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/earnings/ranking",
+          "style": {
+            "navigationBarTitleText": "余额排行榜",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/earnings/recharge",
+          "style": {
+            "navigationBarTitleText": "",
+            "enablePullDownRefresh": true,
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/played/played",
+          "style": {
+            "navigationBarTitleText": "我的马甲",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/admin/index",
+          "style": {
+            "navigationBarTitleText": "管理端",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {
+              "scroll-nav": "view"
+            }
+          }
+        },
+        {
+          "path": "mine/logoff/logoff",
+          "style": {
+            "navigationBarTitleText": "账号注销",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/qrcode/qrcode",
+          "style": {
+            "navigationBarTitleText": "名片",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/admin/imgs",
+          "style": {
+            "navigationBarTitleText": "人工检测",
+            "enablePullDownRefresh": true,
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/paycode/paycode",
+          "style": {
+            "navigationBarTitleText": "支付密码",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/paycode/forget",
+          "style": {
+            "navigationBarTitleText": "忘记支付密码",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/invite/invite",
+          "style": {
+            "navigationBarTitleText": "我的团队",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/invite/qr",
+          "style": {
+            "navigationBarTitleText": "我的二维码",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/privacy/privacy",
+          "style": {
+            "navigationBarTitleText": "隐私设置",
+            "enablePullDownRefresh": false,
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/privacy/collect",
+          "style": {
+            "navigationBarTitleText": "收藏隐私设置",
+            "enablePullDownRefresh": false,
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/privacy/follow",
+          "style": {
+            "navigationBarTitleText": "关注与粉丝列表",
+            "enablePullDownRefresh": false,
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/privacy/recomuser",
+          "style": {
+            "navigationBarTitleText": "推荐可能认识的人",
+            "enablePullDownRefresh": false,
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/privacy/personal",
+          "style": {
+            "navigationBarTitleText": "个性化选项",
+            "enablePullDownRefresh": false,
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/privacy/ad",
+          "style": {
+            "navigationBarTitleText": "程序化广告设置",
+            "enablePullDownRefresh": false,
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/diy/diy",
+          "style": {
+            "navigationBarTitleText": "界面自定义",
+            "enablePullDownRefresh": false,
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/shield/shield",
+          "style": {
+            "navigationBarTitleText": "屏蔽设置",
+            "enablePullDownRefresh": false,
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/shield/users",
+          "style": {
+            "navigationBarTitleText": "用户列表",
+            "enablePullDownRefresh": true,
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/shield/posts",
+          "style": {
+            "navigationBarTitleText": "不喜欢的笔记",
+            "enablePullDownRefresh": true,
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/theme/theme",
+          "style": {
+            "navigationBarTitleText": "屏蔽设置",
+            "enablePullDownRefresh": false,
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/visit/visit",
+          "style": {
+            "navigationBarTitleText": "浏览记录",
+            "enablePullDownRefresh": false,
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/realname/realname",
+          "style": {
+            "navigationBarTitleText": "实名认证",
+            "enablePullDownRefresh": false,
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "circle/creat/index",
+          "style": {
+            "navigationBarTitleText": "",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "mine/settings/settings",
+          "style": {
+            "navigationBarTitleText": "设置",
+            "enablePullDownRefresh": false,
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "shop/list/list",
+          "style": {
+            "navigationBarTitleText": "商品筛选",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "shop/apply/apply",
+          "style": {
+            "navigationBarTitleText": "店铺入驻",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "shop/contact/contact",
+          "style": {
+            "navigationBarTitleText": "经营地址",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "shop/cart/cart",
+          "style": {
+            "navigationBarTitleText": "购物袋",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "shop/shop/shop",
+          "style": {
+            "navigationBarTitleText": "店铺",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "shop/shop/credent",
+          "style": {
+            "navigationBarTitleText": "店铺资质",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "shop/order/order",
+          "style": {
+            "navigationBarTitleText": "SHOP订单",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": true,
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "shop/goods-details/goods-details",
+          "style": {
+            "navigationBarTextStyle": "black",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "shop/goods-classify/goods-classify",
+          "style": {
+            "navigationStyle": "custom",
+            "navigationBarTitleText": "SHOP分类",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "shop/place-order/place-order",
+          "style": {
+            "navigationBarTitleText": "订单确认",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "shop/logistics/logistics",
+          "style": {
+            "navigationBarTitleText": "物流信息",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "shop/goods-details/posts",
+          "style": {
+            "navigationBarTitleText": "相关笔记",
+            "componentPlaceholder": {
+              "user-info": "view",
+              "post-content": "view",
+              "post-footer": "view",
+              "comment-scroll": "view",
+              "comment-form": "view",
+              "single-item": "view",
+              "post-share": "view"
+            }
+          }
+        },
+        {
+          "path": "attestation/attestation",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "attestation/notice",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "attestation/modality",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "attestation/byemail",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "attestation/byschoolcard",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        }
+      ]
+    },
+
+    {
+      "root": "pagesB",
+      "pages": [
+        {
+          "path": "playbill/goodsPoster",
+          "style": {
+            "navigationBarTitleText": "商品海报",
+            "enablePullDownRefresh": false,
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "playbill/userPoster",
+          "style": {
+            "navigationBarTitleText": "分享海报",
+            "enablePullDownRefresh": false,
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "playbill/circleShare",
+          "style": {
+            "navigationStyle": "custom",
+            "navigationBarTitleText": "",
+            "enablePullDownRefresh": false,
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "playbill/postPoster2",
+          "style": {
+            "navigationStyle": "custom",
+            "navigationBarTitleText": "",
+            "enablePullDownRefresh": false,
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "luckdraw/luckdraw",
+          "style": {
+            "navigationStyle": "custom",
+            "navigationBarTitleText": "抽奖",
+            "app-plus": {
+              "scrollIndicator": "none"
+            },
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "tabs/tabs",
+          "style": {
+            "navigationBarTitleText": "",
+            "app-plus": {
+              "scrollIndicator": "none"
+            },
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "menus/menus",
+          "style": {
+            "navigationBarTitleText": "",
+            "navigationStyle": "custom",
+            "app-plus": {
+              "scrollIndicator": "none"
+            },
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "steps/steps",
+          "style": {
+            "navigationStyle": "custom",
+            "navigationBarTitleText": "",
+            "app-plus": {
+              "scrollIndicator": "none"
+            },
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "compare/compare",
+          "style": {
+            "navigationBarTitleText": "授权说明",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "qrcode/qrcode",
+          "style": {
+            "navigationStyle": "custom",
+            "navigationBarTitleText": "",
+            "app-plus": {
+              "scrollIndicator": "none"
+            },
+            "componentPlaceholder": {}
+          }
+        }
+      ]
+    },
+
+    {
+      "root": "pagesC",
+      "pages": [
+        {
+          "path": "realtime/post",
+          "style": {
+            "navigationBarTitleText": "热帖排行榜",
+            "enablePullDownRefresh": true,
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "redirect/redirect",
+          "style": {
+            "navigationBarTitleText": "",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "video/slide",
+          "style": {
+            "enablePullDownRefresh": false,
+            "navigationBarTitleText": "",
+            "navigationStyle": "custom",
+            "app-plus": {
+              "pullToRefresh": {
+                "support": false,
+                "style": "circle",
+                "offset": "45px"
+              }
+            },
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "promotion/post",
+          "style": {
+            "navigationBarTitleText": "笔记推广",
+            "enablePullDownRefresh": true,
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        }
+      ]
+    },
+
+    {
+      "root": "pagesD",
+      "pages": []
+    },
+
+    {
+      "root": "pagesE",
+      "pages": [
+        {
+          "path": "test/test",
+          "style": {
+            "navigationBarTextStyle": "black",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": true,
+            "componentPlaceholder": {}
+          }
+        }
+      ]
+    },
+
+    {
+      "root": "pagesN",
+      "pages": [
+        {
+          "path": "note/index/index",
+          "style": {
+            "navigationBarTitleText": "",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        }
+      ]
+    },
+
+    {
+      "root": "pagesP",
+      "pages": [
+        {
+          "path": "pet-adoption/index/index",
+          "style": {
+            "navigationBarTitleText": "",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "pet-adoption/pet-filter/index",
+          "style": {
+            "navigationBarTitleText": "筛选",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "pet-adoption/push-adoption/index",
+          "style": {
+            "navigationBarTitleText": "发布领养",
+            "enablePullDownRefresh": false,
+            "navigationStyle": "custom",
+            "componentPlaceholder": {
+              "mini-upload-img": "view",
+              "dom-video": "view"
+            }
+          }
+        },
+        {
+          "path": "pet-adoption/details/index",
+          "style": {
+            "navigationBarTitleText": "领养详情",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "pet-adoption/blacklist/index",
+          "style": {
+            "navigationBarTitleText": "失信人举报和查询",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "pet-adoption/report-push/index",
+          "style": {
+            "navigationBarTitleText": "发布举报",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "pet-adoption/report-details/index",
+          "style": {
+            "navigationBarTitleText": "举报详情",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "pet-adoption/blacklist-search/index",
+          "style": {
+            "navigationBarTitleText": "查询",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "pet-adoption/adoptive-user-info-gather/index",
+          "style": {
+            "navigationBarTitleText": "领养人信息采集",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "pet-adoption/pet-common-list/index",
+          "style": {
+            "navigationBarTitleText": "宠物通用列表",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "pet-adoption/city-index-list/index",
+          "style": {
+            "navigationBarTitleText": "选择城市",
+            "componentPlaceholder": {}
+          }
+        }
+      ]
+    },
+
+    {
+      "root": "pagesS",
+      "pages": [
+        {
+          "path": "sellers/sales/sales",
+          "style": {
+            "navigationBarTitleText": "我的卖出",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": true,
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "sellers/deliver/deliver",
+          "style": {
+            "navigationBarTitleText": "商品发货",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "sellers/selfpick/selfpick",
+          "style": {
+            "navigationBarTitleText": "自提-用户",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "sellers/guarantee/guarantee",
+          "style": {
+            "navigationBarTitleText": "店铺保证金",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": true,
+            "componentPlaceholder": {}
+          }
+        }
+      ]
+    },
+
+    {
+      "root": "pagesU",
+      "pages": [
+        {
+          "path": "points-mall/list/index",
+          "style": {
+            "navigationBarTitleText": "积分商城",
+            "enablePullDownRefresh": false,
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "points-mall/group-goods-list/index",
+          "style": {
+            "navigationBarTitleText": "全部商品",
+            "enablePullDownRefresh": false,
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "used-mall/home/index",
+          "style": {
+            "navigationBarTitleText": "",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": true,
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "used-mall/detail/index",
+          "style": {
+            "navigationBarTitleText": "",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "used-mall/issue/index",
+          "style": {
+            "navigationBarTitleText": "",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "componentPlaceholder": {
+              "mini-upload-img": "view"
+            }
+          }
+        },
+        {
+          "path": "used-mall/search/search",
+          "style": {
+            "navigationBarTitleText": "",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "used-mall/mine/published/published",
+          "style": {
+            "navigationBarTitleText": "",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        }
+      ]
+    },
+
+    {
+      "root": "pagesV",
+      "pages": [
+        {
+          "path": "voter/detail/detail",
+          "style": {
+            "navigationBarTitleText": "选票详情",
+            "enablePullDownRefresh": false,
+            "navigationStyle": "custom",
+            "componentPlaceholder": {
+              "mp-html": "view"
+            }
+          }
+        },
+        {
+          "path": "voter/list/list",
+          "style": {
+            "navigationBarTitleText": "选票列表",
+            "enablePullDownRefresh": false,
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "voter/detail/player",
+          "style": {
+            "navigationBarTitleText": "选手展示",
+            "enablePullDownRefresh": false,
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "voter/template/list/list",
+          "style": {
+            "navigationBarTitleText": "模板中心",
+            "enablePullDownRefresh": false,
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "voter/creat/creat",
+          "style": {
+            "navigationBarTitleText": "发布选票",
+            "enablePullDownRefresh": false,
+            "navigationStyle": "custom",
+            "componentPlaceholder": {
+              "l-clipper": "view",
+              "banner-editor": "view"
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "root": "pagesZ",
+      "pages": [
+        {
+          "path": "organize-bureau/index/index",
+          "style": {
+            "navigationBarTitleText": "",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": true
+          }
+        },
+        {
+          "path": "organize-bureau/details/index",
+          "style": {
+            "navigationBarTitleText": "",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": true,
+            "componentPlaceholder": {
+              "mp-html": "view"
+            }
+          }
+        },
+        {
+          "path": "organize-bureau/join/index",
+          "style": {
+            "navigationBarTitleText": "确认加入",
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "organize-bureau/settle-in/index",
+          "style": {
+            "navigationBarTitleText": "",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {
+              "l-clipper": "view"
+            }
+          }
+        },
+        {
+          "path": "organize-bureau/push/creat",
+          "style": {
+            "navigationStyle": "custom",
+            "navigationBarTitleText": "",
+            "componentPlaceholder": {
+              "mini-upload-img": "view"
+            }
+          }
+        },
+        {
+          "path": "organize-bureau/push/team",
+          "style": {
+            "navigationBarTitleText": ""
+          }
+        },
+        {
+          "path": "organize-bureau/push/userInfo",
+          "style": {
+            "navigationStyle": "custom",
+            "navigationBarTitleText": "",
+            "componentPlaceholder": {
+              "mini-upload-img": "view"
+            }
+          }
+        },
+        {
+          "path": "organize-bureau/my-list/index",
+          "style": {
+            "navigationBarTitleText": "我的组局",
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "organize-bureau/album/album",
+          "style": {
+            "navigationBarTitleText": "活动图集",
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "organize-bureau/album/detail",
+          "style": {
+            "navigationBarTitleText": "图集",
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "organize-bureau/club/club",
+          "style": {
+            "navigationBarTitleText": "俱乐部主页",
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "organize-bureau/club/setting",
+          "style": {
+            "navigationBarTitleText": "俱乐部设置",
+            "navigationStyle": "custom"
+          }
+        }
+      ]
+    },
+
+    {
+      "root": "pages/sticky",
+      "pages": [
+        {
+          "path": "sticky",
+          "style": {
+            "navigationBarTextStyle": "black",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": true,
+            "componentPlaceholder": {
+              "user-info": "view",
+              "post-content": "view",
+              "post-footer": "view",
+              "comment-scroll": "view",
+              "comment-form": "view",
+              "single-item": "view",
+              "post-share": "view"
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "root": "pages/circleClass",
+      "pages": [
+        {
+          "path": "circleClass",
+          "style": {
+            "navigationStyle": "custom",
+            "navigationBarTitleText": "所有圈子",
+            "componentPlaceholder": {}
+          }
+        }
+      ]
+    },
+
+    {
+      "root": "pages/article",
+      "pages": [
+        {
+          "path": "article",
+          "style": {
+            "navigationBarTitleText": "热门话题",
+            "componentPlaceholder": {}
+          }
+        }
+      ]
+    },
+
+    {
+      "root": "pages/message",
+      "pages": [
+        {
+          "path": "detail/detail",
+          "style": {
+            "navigationBarTitleText": "聊天详情",
+            "navigationBarBackgroundColor": "#fafafa",
+            "navigationStyle": "custom",
+            "app-plus": {
+              "softinputNavBar": "none",
+              "bounce": "none"
+            },
+            "componentPlaceholder": {
+              "user-info": "view"
+            }
+          }
+        },
+        {
+          "path": "likeAndfav/likeAndfav",
+          "style": {
+            "navigationBarTitleText": "赞和收藏",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": true,
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "comment/comment",
+          "style": {
+            "navigationBarTitleText": "评论和充电",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": true,
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "notice/notice",
+          "style": {
+            "navigationBarTitleText": "收到的通知",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": true,
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "activityList/activityList",
+          "style": {
+            "navigationBarTitleText": "活动",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        }
+      ]
+    },
+
+    {
+      "root": "pages/circle",
+      "pages": [
+        {
+          "path": "circleaudit",
+          "style": {
+            "navigationBarTitleText": "审贴",
+            "componentPlaceholder": {
+              "user-info": "view",
+              "post-content": "view",
+              "post-footer": "view",
+              "comment-scroll": "view",
+              "comment-form": "view",
+              "single-item": "view",
+              "post-share": "view"
+            }
+          }
+        },
+        {
+          "path": "list",
+          "style": {
+            "navigationBarTextStyle": "black",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": true,
+            "componentPlaceholder": {
+              "user-info": "view",
+              "post-content": "view",
+              "post-footer": "view",
+              "comment-scroll": "view",
+              "comment-form": "view",
+              "single-item": "view",
+              "post-share": "view"
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "root": "pages/rank",
+      "pages": [
+        {
+          "path": "rank",
+          "style": {
+            "navigationBarTitleText": "全站排行榜",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {
+              "user-info": "view"
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "root": "pages/tags",
+      "pages": [
+        {
+          "path": "list",
+          "style": {
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "tags",
+          "style": {
+            "navigationBarTextStyle": "black",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": true,
+            "componentPlaceholder": {
+              "user-info": "view",
+              "post-content": "view",
+              "post-footer": "view",
+              "comment-scroll": "view",
+              "comment-form": "view",
+              "single-item": "view",
+              "post-share": "view"
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "root": "pages/help",
+      "pages": [
+        {
+          "path": "feedbackIndex/feedbackIndex",
+          "style": {
+            "navigationBarTitleText": "意见反馈",
+            "enablePullDownRefresh": false,
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "feedbackList/feedbackList",
+          "style": {
+            "navigationBarTitleText": "意见反馈",
+            "enablePullDownRefresh": false,
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "feedback/feedback",
+          "style": {
+            "navigationBarTitleText": "意见反馈",
+            "enablePullDownRefresh": false,
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "helpDetail/helpDetail",
+          "style": {
+            "navigationBarTitleText": "帮助详情",
+            "enablePullDownRefresh": false,
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "feedbackDetail/feedbackDetail",
+          "style": {
+            "navigationBarTitleText": "反馈详情",
+            "enablePullDownRefresh": false,
+            "componentPlaceholder": {}
+          }
+        }
+      ]
+    },
+
+    {
+      "root": "pages/pay",
+      "pages": [
+        {
+          "path": "pay-order",
+          "style": {
+            "navigationBarTitleText": "支付",
+            "componentPlaceholder": {}
+          }
+        }
+      ]
+    },
+
+    {
+      "root": "pages/wallpaper",
+      "pages": [
+        {
+          "path": "index",
+          "style": {
+            "navigationBarTextStyle": "black",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "collected",
+          "style": {
+            "navigationBarTextStyle": "black",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "creat",
+          "style": {
+            "navigationBarTextStyle": "black",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {
+              "mini-upload-img": "view"
+            }
+          }
+        },
+        {
+          "path": "list",
+          "style": {
+            "navigationBarTextStyle": "black",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        },
+        {
+          "path": "detail",
+          "style": {
+            "navigationBarTextStyle": "white",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        }
+      ]
+    },
+
+    {
+      "root": "pages/web-view",
+      "pages": [
+        {
+          "path": "index",
+          "style": {
+            "enablePullDownRefresh": false,
+            "navigationBarTextStyle": "black",
+            "navigationBarTitleText": "岚客丨DISCOVER",
+            "app-plus": {
+              "pullToRefresh": {
+                "support": false,
+                "style": "circle",
+                "offset": "45px"
+              }
+            },
+            "componentPlaceholder": {}
+          }
+        }
+      ]
+    },
+
+    {
+      "root": "pages/user",
+      "pages": [
+        {
+          "path": "user",
+          "style": {
+            "navigationBarTextStyle": "black",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": true,
+            "componentPlaceholder": {
+              "user-info": "view",
+              "post-content": "view",
+              "post-footer": "view",
+              "comment-scroll": "view",
+              "comment-form": "view",
+              "single-item": "view",
+              "post-share": "view"
+            }
+          }
+        },
+        {
+          "path": "used/used",
+          "style": {
+            "navigationBarTextStyle": "black",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": true,
+            "componentPlaceholder": {}
+          }
+        }
+      ]
+    },
+
+    {
+      "root": "pagesX/mayi/movie",
+      "plugins": {
+        "mayi-movie": {
+          "version": "1.0.22",
+          "provider": "wx459759608c80cf98"
+        }
+      },
+      "pages": [
+        {
+          "path": "test",
+          "style": {
+            "navigationBarTitleText": "",
+            "navigationStyle": "custom",
+            "componentPlaceholder": {}
+          }
+        }
+      ]
+    }
+  ],
+  // #ifdef MP
+  "tabBar": {
+    "custom": true,
+    "borderStyle": "white",
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#ffffff",
+    "height": "46px",
+    "list": [
+      {
+        "pagePath": "pages/tabbar/index/index",
+        "text": "",
+        "iconPath": "static/tabbar/11.png",
+        "selectedIconPath": "static/tabbar/1.png"
+      },
+      {
+        "pagePath": "pages/tabbar/bureau/bureau",
+        "text": "",
+        "iconPath": "static/tabbar/22.png",
+        "selectedIconPath": "static/tabbar/2.png"
+      },
+      {
+        "pagePath": "pages/tabbar/add/add",
+        "text": "",
+        "iconPath": "static/tabbar/33.png",
+        "selectedIconPath": "static/tabbar/3.png"
+      },
+      {
+        "pagePath": "pages/tabbar/notice/notice",
+        "text": "",
+        "iconPath": "static/tabbar/44.png",
+        "selectedIconPath": "static/tabbar/4.png"
+      },
+      {
+        "pagePath": "pages/tabbar/mine/mine",
+        "text": "",
+        "iconPath": "static/tabbar/55.png",
+        "selectedIconPath": "static/tabbar/5.png"
+      }
+    ]
+  },
+  // #endif
+  // #ifdef APP || H5
+  "tabBar": {
+    "borderStyle": "white",
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#ffffff",
+    "height": "46px",
+    "list": [
+      {
+        "pagePath": "pages/tabbar/index/index",
+        "text": "",
+        "iconPath": "static/tabbar/11.png",
+        "selectedIconPath": "static/tabbar/1.png"
+      },
+      {
+        "pagePath": "pages/tabbar/bureau/bureau",
+        "text": "",
+        "iconPath": "static/tabbar/22.png",
+        "selectedIconPath": "static/tabbar/2.png"
+      },
+      {
+        "pagePath": "pages/tabbar/add/add",
+        "text": "",
+        "iconPath": "static/tabbar/33.png",
+        "selectedIconPath": "static/tabbar/3.png"
+      },
+      {
+        "pagePath": "pages/tabbar/notice/notice",
+        "text": "",
+        "iconPath": "static/tabbar/44.png",
+        "selectedIconPath": "static/tabbar/4.png"
+      },
+      {
+        "pagePath": "pages/tabbar/mine/mine",
+        "text": "",
+        "iconPath": "static/tabbar/55.png",
+        "selectedIconPath": "static/tabbar/5.png"
+      }
+    ]
+  },
+  // #endif
+
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "requiredBackgroundModes": ["audio", "location"],
+  "sitemapLocation": "sitemap.json",
+  "globalStyle": {
+    "navigationBarTitleText": "",
+    "enablePullDownRefresh": false,
+    "onReachBottomDistance": 300,
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#f8f8f8",
+    "backgroundColor": "#fafafa",
+    "backgroundColorTop": "#fafafa",
+    "backgroundColorBottom": "#fafafa",
+    "app-plus": {
+      "pullToRefresh": {
+        "support": true,
+        "style": "circle",
+        "offset": "50px"
+      }
+    },
+    // #ifdef MP-WEIXIN
+    "usingComponents": {
+      "mini-sph": "/wxcomponents/mini-sph/mini-sph"
+    }
+    // #endif
+  }
+}

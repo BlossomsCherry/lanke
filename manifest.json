@@ -1,7 +1,6 @@
-
-        {
+{
     "name" : "岚客丨DISCOVER",
-    "appid" : "__UNI__F5C2520",
+    "appid" : "__UNI__EFB9CD4",
     "description" : "新兴生活方式的内容兴趣社区",
     "versionName" : "1.2.1.2",
     "versionCode" : 1,
@@ -11,9 +10,9 @@
         "darkmode" : true,
         "nvueStyleCompiler" : "uni-app",
         "compilerVersion" : 3,
-        "compatible": {
-			"ignoreVersion": true
-		},
+        "compatible" : {
+            "ignoreVersion" : true
+        },
         "splashscreen" : {
             "alwaysShowBeforeRender" : false,
             "waiting" : true,
@@ -72,7 +71,7 @@
                 "schemes" : "lankeapp",
                 "abiFilters" : [ "armeabi-v7a", "arm64-v8a", "x86" ],
                 "minSdkVersion" : 21,
-				"targetSdkVersion" : 31
+                "targetSdkVersion" : 31
             },
             "ios" : {
                 "dSYMs" : false,
@@ -183,7 +182,8 @@
         "darkmode" : true,
         "appid" : "wx7d35f5910d79b7d3",
         "setting" : {
-            "urlCheck" : false
+            "urlCheck" : false,
+            "minified" : true
         },
         "usingComponents" : true,
         "permission" : {
@@ -196,19 +196,19 @@
         "optimization" : {
             "subPackages" : true
         },
-        "requiredPrivateInfos": [
-		    "getLocation",
-		    "onLocationChange",
-		    "startLocationUpdateBackground",
-		    "chooseAddress",
-		    "chooseLocation"
-		],
+        "requiredPrivateInfos" : [
+            "getLocation",
+            "onLocationChange",
+            "startLocationUpdateBackground",
+            "chooseAddress",
+            "chooseLocation"
+        ],
         "singlePage" : {
             "navigationBarFit" : "float"
         },
         "componentPlaceholder" : {
-			"my-toast": "view",
-			"hover-ball": "view",
+            "my-toast" : "view",
+            "hover-ball" : "view",
             "mp-html" : "view",
             "mini-upload-img" : "view"
         }
@@ -227,5 +227,3 @@
     },
     "vueVersion" : "2"
 }
-
-        
