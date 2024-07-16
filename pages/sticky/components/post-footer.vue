@@ -13,7 +13,7 @@
               <!-- <i class="mini-icon mini-fenxiang2"></i> -->
               <image
                 style="width: 36rpx; height: 25rpx"
-                src="@/static/tabbar/67.png"
+                src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/67.png"
               ></image>
             </block>
             <block v-else-if="item == 2">
@@ -33,7 +33,7 @@
                 <i class="mini-icon mini-xihuan-kongxin"></i>
                 <!-- <image
                   style="width: 36rpx; height: 25rpx"
-                  src="@/static/tabbar/69.png"
+                  src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/69.png"
                 ></image> -->
                 <view class="num">{{
                   words.like_count > 0
@@ -64,7 +64,7 @@
               <i class="mini-icon mini-a-pinglun2"></i>
               <!-- <image
                 style="width: 36rpx; height: 25rpx"
-                src="@/static/tabbar/68.png"
+                src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/68.png"
               ></image> -->
               <view class="num">{{
                 words.comment_count > 0
@@ -115,7 +115,7 @@
                 <!-- <i class="mini-icon mini-xihuan-kongxin"></i> -->
                 <image
                   style="width: 33rpx; height: 31rpx; margin-right: 12rpx"
-                  src="@/static/tabbar/69.png"
+                  src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/69.png"
                 ></image>
                 <view class="num">{{
                   words.like_count > 0
@@ -129,7 +129,7 @@
                 <!-- <i class="mini-icon mini-shoucang-shixin1"></i> -->
                 <image
                   style="width: 32rpx; height: 31rpx; margin-right: 12rpx"
-                  src="@/static/tabbar/71.png"
+                  src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/71.png"
                 ></image>
                 <view class="num">{{
                   words.collected_count > 0
@@ -141,7 +141,7 @@
                 <!-- <i class="mini-icon mini-shoucang-kongxin1"></i> -->
                 <image
                   style="width: 32rpx; height: 31rpx; margin-right: 12rpx"
-                  src="@/static/tabbar/66.png"
+                  src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/66.png"
                 ></image>
                 <view class="num">{{
                   words.collected_count > 0
@@ -154,7 +154,7 @@
               <!-- <i class="mini-icon mini-a-pinglun2"></i> -->
               <image
                 style="width: 34rpx; height: 30rpx; margin-right: 12rpx"
-                src="@/static/tabbar/68.png"
+                src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/68.png"
               ></image>
               <view class="num">{{
                 words.comment_count > 0
@@ -289,7 +289,6 @@
   $post-list-footer-icon-size: 36rpx; // 图标大小（默认值：46rpx）
   $post-list-footer-font-color: #141414; // 颜色（默认值：#141414 ）
 
- 
   .post-footer {
     width: 750rpx;
     padding-top: 10rpx;

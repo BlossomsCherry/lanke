@@ -28,8 +28,14 @@
         ></i>
 
         <view class="gender-icon">
-          <image src="@/static/tabbar/62.png" v-if="user.gender == 1"></image>
-          <image src="@/static/tabbar/61.png" v-if="user.gender == 2"></image>
+          <image
+            src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/62.svg"
+            v-if="user.gender == 1"
+          ></image>
+          <image
+            src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/61.svg"
+            v-if="user.gender == 2"
+          ></image>
         </view>
       </view>
 

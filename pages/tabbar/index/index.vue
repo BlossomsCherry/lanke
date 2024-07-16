@@ -35,7 +35,7 @@
         :background="global__theme__ == 'black' ? '#19191e' : '#ffffff'"
       >
         <view slot="left" class="lxy-nav-bar__logo default">
-          <!-- <block v-if="config_app_multi > 0">
+          <block v-if="config_app_multi > 0">
             <block
               v-if="
                 config_page_index_channels &&
@@ -97,8 +97,7 @@
                 ></i>
               </block>
             </block>
-          </block> -->
-          <text class="lxy-nav-bar__logo-text">KISS</text>
+          </block>
         </view>
         <block
           v-if="
@@ -163,9 +162,11 @@
         <!-- #endif -->
       </navBar>
 
-      <block v-if="channelIndex == 1">
+      <block v-if="channelIndex == 1 && _type == 1">
         <view
-          :class="' index-header ' + subNavHeaderTranslateClass"
+          :class="
+            ' index-header ' + subNavHeaderTranslateClass + ' index_header_2'
+          "
           :style="'top: ' + CustomBar + 'px;'"
         >
           <scroll-view
@@ -176,37 +177,48 @@
           >
             <view
               :class="
-                'tab-bar-item type_' +
-                item.type +
-                (index == type ? ' active' : '')
+                'tab-bar-item type_' + item.type + (index == 0 ? ' active' : '')
               "
-              :data-pid="item.plate_id"
-              :data-type="index"
+              :data-pid="undefined"
+              :data-type="item.type"
               @tap.stop.prevent="check"
-              v-for="(item, index) in config_tab"
+              v-for="(item, index) in [
+                {
+                  plate_name: '推荐',
+                  type: 1
+                },
+                {
+                  plate_name: '热门',
+                  type: 3
+                },
+                {
+                  plate_name: '关注',
+                  type: 0
+                }
+              ]"
               :key="index"
             >
-              <block v-if="item.show == 1 && item.icon">
-                <i :class="'mini-icon tab-bar-icon ' + item.icon"></i>
-              </block>
-              <block v-else>
-                <i
-                  v-if="item.icon && item.icon.length > 0"
-                  :class="'mini-icon tab-bar-icon ' + item.icon"
-                ></i>
+              <block>
                 <text class="tab-bar-title" v-if="item.plate_name">{{
                   item.plate_name
                 }}</text>
-                <view class="tab-bar-title-slider"></view>
               </block>
             </view>
           </scroll-view>
-          <view @tap.stop.prevent="moretags" class="tab-more">
-            <i class="mini-icon mini-xiajiantou"></i>
-          </view>
         </view>
-        <view class="index-header-height"></view>
       </block>
+
+      <!-- <view class="top-header" v-if="_type == 1">
+        <view
+          :class="['item', { active: index === headerCurrentIndex }]"
+          v-for="(item, index) in ['推荐', '热门', '关注']"
+          :key="item"
+          @click="checkHeaderTab(index)"
+        >
+          <text> {{ item }}</text>
+          <view class="tab-bar-title-slider"></view>
+        </view>
+      </view> -->
 
       <view class="xhs-loading-wrap">
         <!-- #ifdef MP-WEIXIN -->
@@ -218,7 +230,7 @@
 
       <block v-if="channelIndex == 1">
         <!-- 幻灯片 -->
-        <!-- <view
+        <view
           v-if="
             _type == 1 &&
             config_page_index_banner &&
@@ -297,79 +309,7 @@
               </swiper-item>
             </swiper>
           </view>
-        </block> -->
-
-        <!-- 圈子分类 -->
-        <view class="new-circle-class" v-if="_type == 1">
-          <view class="title">圈子分类</view>
-          <view class="content">
-            <view class="left">
-              <image
-                src="@/static/tabbar/53.svg"
-                @tap.stop.prevent="toSliderUrl(2, 48)"
-              ></image>
-            </view>
-            <view class="right">
-              <view class="top">
-                <image
-                  src="@/static/tabbar/57.svg"
-                  @tap.stop.prevent="toSliderUrl(2, 46)"
-                ></image>
-                <image
-                  src="@/static/tabbar/58.svg"
-                  @tap.stop.prevent="toSliderUrl(2, 49)"
-                ></image>
-              </view>
-              <view class="bottom">
-                <image
-                  src="@/static/tabbar/59.svg"
-                  @tap.stop.prevent="toSliderUrl(2, 50)"
-                ></image>
-              </view>
-            </view>
-          </view>
-        </view>
-
-        <!-- 大家都在看 -->
-        <view
-          class="all-person-view"
-          v-if="_type == 1 && bureauList.length > 0"
-        >
-          <view class="title">大家都在看</view>
-          <view class="content">
-            <view class="title">
-              <view class="left">
-                <image src="@/static/tabbar/72.svg"></image>
-              </view>
-              <view class="right">
-                <image src="@/static/tabbar/60.svg"></image>
-              </view>
-            </view>
-            <view
-              class="activity"
-              v-for="(bitem, bindex) in bureauList"
-              :key="bindex"
-            >
-              <view class="activity-item">
-                <view class="pic">
-                  <image :src="bitem.pic" alt="" />
-                </view>
-                <view class="activity-info">
-                  <view class="title">
-                    <text>#{{ bitem.title }}</text>
-                    <view class="personJoin" v-if="bitem.comment_count > 10"
-                      >{{ bitem.comment_count }}人已参与</view
-                    >
-                  </view>
-                  <view class="intro">{{ bitem.intro }}</view>
-                </view>
-                <view class="goto" @click="gotoBureauDetail(bitem.id)"
-                  >去看看</view
-                >
-              </view>
-            </view>
-          </view>
-        </view>
+        </block>
 
         <!-- 滚动nav -->
         <scroll-nav
@@ -382,7 +322,7 @@
           "
           :scene="1"
         ></scroll-nav>
-        <view class="post-list-gap" v-if="_type == 3"></view>
+        <!-- <view class="post-list-gap" v-if="_type == 3"></view> -->
         <scroll-nav
           :platformList="config_page_index_shop_nav"
           @toSliderUrl="toSliderUrl"
@@ -398,7 +338,7 @@
           v-if="config_tab && config_tab[type] && config_tab[type]['type'] == 2"
         >
           <view class="hot_realtime_topics_top">
-            <view class="post-list-gap"></view>
+            <!-- <view class="post-list-gap"></view> -->
             <ls-skeleton
               :loading="topicTopTenLoad"
               :skeleton="topicTopTenSkeleton"
@@ -483,9 +423,133 @@
         </view>
       </block>
 
+      <!-- 圈子分类 -->
+      <view class="new-circle-class" v-if="_type == 1">
+        <view class="title">圈子分类</view>
+        <view class="content">
+          <view class="left">
+            <image
+              src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/53.svg"
+              @tap.stop.prevent="toSliderUrl(2, 48)"
+            ></image>
+          </view>
+          <view class="right">
+            <view class="top">
+              <image
+                src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/57.svg"
+                @tap.stop.prevent="toSliderUrl(2, 46)"
+              ></image>
+              <image
+                src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/58.svg"
+                @tap.stop.prevent="toSliderUrl(2, 49)"
+              ></image>
+            </view>
+            <view class="bottom">
+              <image
+                src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/59.svg"
+                @tap.stop.prevent="toSliderUrl(2, 50)"
+              ></image>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 大家都在看 -->
+      <view class="all-person-view" v-if="_type == 1 && bureauList.length > 0">
+        <view class="title">大家都在看</view>
+        <view class="content">
+          <view class="title">
+            <view class="left">
+              <image src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/72.svg"></image>
+            </view>
+            <view class="right">
+              <image src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/60.svg"></image>
+            </view>
+          </view>
+          <view
+            class="activity"
+            v-for="(bitem, bindex) in bureauList"
+            :key="bindex"
+          >
+            <view class="activity-item">
+              <view class="pic">
+                <image :src="bitem.pic" alt="" />
+              </view>
+              <view class="activity-info">
+                <view class="title">
+                  <text>#{{ bitem.title }}</text>
+                  <view class="personJoin" v-if="bitem.comment_count > 10"
+                    >{{ bitem.comment_count }}人已参与</view
+                  >
+                </view>
+                <view class="intro">{{ bitem.intro }}</view>
+              </view>
+              <view class="goto" @click="gotoBureauDetail(bitem.id)"
+                >去看看</view
+              >
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <block v-if="channelIndex == 1">
+        <view
+          :class="
+            ' index-header ' +
+            `${_type == 1 ? '' : subNavHeaderTranslateClass}` +
+            `${_type == 1 ? ' index_header_1' : ''}`
+          "
+          :style="'top: ' + CustomBar + 'px;'"
+        >
+          <scroll-view
+            :show-scrollbar="false"
+            scroll-x
+            class="tab-view"
+            :scroll-left="scrollLeft"
+          >
+            <view
+              :class="
+                'tab-bar-item type_' +
+                item.type +
+                (index == type ? ' active' : '')
+              "
+              :data-pid="item.plate_id"
+              :data-type="index"
+              @tap.stop.prevent="check"
+              v-for="(item, index) in config_tab"
+              :key="index"
+            >
+              <block v-if="item.show == 1 && item.icon">
+                <i :class="'mini-icon tab-bar-icon ' + item.icon"></i>
+              </block>
+              <block v-else>
+                <i
+                  v-if="item.icon && item.icon.length > 0"
+                  :class="'mini-icon tab-bar-icon ' + item.icon"
+                ></i>
+                <text class="tab-bar-title" v-if="item.plate_name">{{
+                  item.plate_name
+                }}</text>
+              </block>
+            </view>
+          </scroll-view>
+          <view
+            @tap.stop.prevent="moretags"
+            class="tab-more"
+            v-if="_type == 1 ? false : true"
+          >
+            <i class="mini-icon mini-xiajiantou"></i>
+          </view>
+        </view>
+        <view
+          class="index-header-height"
+          v-if="_type == 1 ? false : true"
+        ></view>
+      </block>
+
       <view class="topic-list">
         <view style="padding-bottom: 100px">
-          <view class="post-list-gap"></view>
+          <!-- <view class="post-list-gap"></view> -->
           <ls-skeleton
             :loading="topicload"
             :skeleton="commonSkeleton"
@@ -649,10 +713,10 @@
                         </block>
                       </view>
                     </contextualPopup>
-                    <view
+                    <!-- <view
                       class="post-list-gap"
                       v-if="index != posts.length - 1"
-                    ></view>
+                    ></view> -->
                     <block v-if="posts.length > 5 && item.ad">
                       <!-- #ifdef MP -->
                       <view class="flow-ad-wrap" v-if="item.ad">
@@ -676,7 +740,7 @@
                           ></view>
                         </block>
                       </view>
-                      <view class="post-list-gap" v-if="item.ad"></view>
+                      <!-- <view class="post-list-gap" v-if="item.ad"></view> -->
                       <!-- #endif -->
                       <!-- #ifndef MP -->
                       <view class="flow-ad-wrap" v-if="item.ad">
@@ -700,7 +764,7 @@
                           ></view>
                         </block>
                       </view>
-                      <view class="post-list-gap" v-if="item.ad"></view>
+                      <!-- <view class="post-list-gap" v-if="item.ad"></view> -->
                       <!-- #endif -->
                     </block>
 
@@ -786,7 +850,7 @@
                             <view class="may-know">
                               <view class="top">
                                 <view class="icon">
-                                  <image src="@/static/tabbar/63.svg"></image>
+                                  <image src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/63.svg"></image>
                                 </view>
                                 <view class="title">TA可能是你认识的人</view>
                               </view>
@@ -799,16 +863,16 @@
                                   <view class="avatar">
                                     <image :src="user_item.user_avatar"></image>
                                     <!-- <view > -->
-                                      <image
+                                    <image
                                       class="gender"
-                                        v-if="user_item.gender == 1"
-                                        src="@/static/tabbar/61.svg"
-                                      ></image>
-                                      <image
+                                      v-if="user_item.gender == 1"
+                                      src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/62.png"
+                                    ></image>
+                                    <image
                                       class="gender"
-                                        v-if="user_item.gender == 2"
-                                        src="@/static/tabbar/62.svg"
-                                      ></image>
+                                      v-if="user_item.gender == 2"
+                                      src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/61.png"
+                                    ></image>
                                     <!-- </view> -->
                                   </view>
                                   <view class="user_name">{{
@@ -822,11 +886,11 @@
                                   >
                                     <image
                                       v-if="!user_item.is_follow_user"
-                                      src="@/static/tabbar/64.svg"
+                                      src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/64.svg"
                                     ></image>
                                     <image
                                       v-if="user_item.is_follow_user"
-                                      src="@/static/tabbar/65.svg"
+                                      src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/65.svg"
                                     ></image>
                                   </view>
                                 </view>
@@ -887,7 +951,7 @@
                           </block>
                         </view>
                       </view>
-                      <view class="post-list-gap"></view>
+                      <!-- <view class="post-list-gap"></view> -->
                     </block>
                   </view>
                 </block>
@@ -1290,6 +1354,7 @@
         },
         set(v) {}
       },
+
       config_page_index_header: {
         get() {
           let that = this
@@ -1603,7 +1668,8 @@
 
         real_time_posts: [],
         real_time_posts_time: '',
-        bureauList: []
+        bureauList: [],
+        headerCurrentIndex: 0
       }
     },
     /**
@@ -1857,6 +1923,9 @@
       // #endif
     },
     methods: {
+      checkHeaderTab(index) {
+        this.headerTabIndex = index
+      },
       getBureauList() {
         uni.wen.util
           .request(
@@ -1925,6 +1994,7 @@
               that.$store.state.config.tab[type]['target_type'],
               that.$store.state.config.tab[type]['target']
             )
+
             return false
           } else {
             that.setData({
@@ -1946,6 +2016,7 @@
               pagebgcolorClass:
                 that.channelIndex == 1 && type_ == 3 ? 'pagebg_default' : ''
             })
+
             if (type_ == 2 && that.topicTopTenLoad) {
               that.getRealtimeTopics()
             }

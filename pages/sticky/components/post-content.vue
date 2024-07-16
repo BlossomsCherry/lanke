@@ -126,7 +126,7 @@
         @tap.stop.preventp="showPayContent"
       >
         <image
-          src="@/static/tabbar/70.png"
+          src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/70.png"
           style="width: 26rpx; height: 26rpx"
         ></image>
         <view>付费解锁后可观看</view></view
