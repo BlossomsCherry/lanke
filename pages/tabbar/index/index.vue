@@ -304,15 +304,27 @@
           <view class="title">圈子分类</view>
           <view class="content">
             <view class="left">
-              <image src="@/static/tabbar/53.svg"  @tap.stop.prevent="toSliderUrl(2, 48)"></image>
+              <image
+                src="@/static/tabbar/53.svg"
+                @tap.stop.prevent="toSliderUrl(2, 48)"
+              ></image>
             </view>
             <view class="right">
               <view class="top">
-                <image src="@/static/tabbar/57.svg" @tap.stop.prevent="toSliderUrl(2, 46)"></image>
-                <image src="@/static/tabbar/58.svg" @tap.stop.prevent="toSliderUrl(2, 49)"></image>
+                <image
+                  src="@/static/tabbar/57.svg"
+                  @tap.stop.prevent="toSliderUrl(2, 46)"
+                ></image>
+                <image
+                  src="@/static/tabbar/58.svg"
+                  @tap.stop.prevent="toSliderUrl(2, 49)"
+                ></image>
               </view>
               <view class="bottom">
-                <image src="@/static/tabbar/59.svg" @tap.stop.prevent="toSliderUrl(2, 50)"></image>
+                <image
+                  src="@/static/tabbar/59.svg"
+                  @tap.stop.prevent="toSliderUrl(2, 50)"
+                ></image>
               </view>
             </view>
           </view>
@@ -326,7 +338,9 @@
           <view class="title">大家都在看</view>
           <view class="content">
             <view class="title">
-              <view class="left">热门活动</view>
+              <view class="left">
+                <image src="@/static/tabbar/72.svg"></image>
+              </view>
               <view class="right">
                 <image src="@/static/tabbar/60.svg"></image>
               </view>
@@ -735,7 +749,7 @@
                             </view>
                           </block>
                           <block v-if="item.flow.type == '2'">
-                            <view class="title">
+                            <!-- <view class="title">
                               <view class="left">大家都在聊</view>
                               <view class="right"></view>
                             </view>
@@ -767,6 +781,55 @@
                                     filters.toFix(topic_item.degree)
                                   }}热度</view
                                 >
+                              </view>
+                            </view> -->
+                            <view class="may-know">
+                              <view class="top">
+                                <view class="icon">
+                                  <image src="@/static/tabbar/63.svg"></image>
+                                </view>
+                                <view class="title">TA可能是你认识的人</view>
+                              </view>
+                              <view class="content">
+                                <view
+                                  class="user-item"
+                                  v-for="(user_item, index) in knowPeople"
+                                  :key="index"
+                                >
+                                  <view class="avatar">
+                                    <image :src="user_item.user_avatar"></image>
+                                    <!-- <view > -->
+                                      <image
+                                      class="gender"
+                                        v-if="user_item.gender == 1"
+                                        src="@/static/tabbar/61.svg"
+                                      ></image>
+                                      <image
+                                      class="gender"
+                                        v-if="user_item.gender == 2"
+                                        src="@/static/tabbar/62.svg"
+                                      ></image>
+                                    <!-- </view> -->
+                                  </view>
+                                  <view class="user_name">{{
+                                    user_item.user_name
+                                  }}</view>
+                                  <view class="user_tag">社区活跃用户</view>
+                                  <view
+                                    class="add"
+                                    @tap.stop.prevent="postsActionFollow"
+                                    :data-userid="user_item.id"
+                                  >
+                                    <image
+                                      v-if="!user_item.is_follow_user"
+                                      src="@/static/tabbar/64.svg"
+                                    ></image>
+                                    <image
+                                      v-if="user_item.is_follow_user"
+                                      src="@/static/tabbar/65.svg"
+                                    ></image>
+                                  </view>
+                                </view>
                               </view>
                             </view>
                           </block>
@@ -1223,7 +1286,6 @@
       config_tab: {
         get() {
           let that = this
-          console.log(that.$store.state.config.tab), 111111
           return that.$store.state.config.tab
         },
         set(v) {}
@@ -1435,7 +1497,6 @@
             that.$store.state.config.tab.length > 0 &&
             that.$store.state.config.tab[that.type]
           ) {
-            console.log(that.$store.state.config.tab[that.type]['type'], 4444)
             return that.$store.state.config.tab[that.type]['type'] || 0
           }
           return 0
@@ -1462,6 +1523,26 @@
             return that.$store.state.CustomBar
           }
           return 87
+        },
+        set(v) {}
+      },
+      knowPeople: {
+        get() {
+          const arr = this.posts.map(item => {
+            item.user.is_follow_user = item.is_follow_user
+            return item.user
+          })
+
+          if (arr.length == 0) return arr
+          const resArr = []
+          for (let i = 0; i < 10; i++) {
+            const num = Math.floor(Math.random() * arr.length)
+
+            if (resArr.includes(num)) i--
+            else resArr.push(num)
+          }
+
+          return arr.filter((item, index) => resArr.includes(index))
         },
         set(v) {}
       }
@@ -1789,7 +1870,7 @@
             147
           )
           .then(res => {
-            this.bureauList = res.data.data
+            this.bureauList = res.data.data.slice(0, 3)
           })
       },
       gotoBureauDetail(id) {
@@ -1867,9 +1948,7 @@
             })
             if (type_ == 2 && that.topicTopTenLoad) {
               that.getRealtimeTopics()
-              console.log(22222)
             }
-            console.log(type_, 33333)
             that.indexPosts()
           }
         }

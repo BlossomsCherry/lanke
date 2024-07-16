@@ -1296,7 +1296,6 @@
           return false
         }
         if (that.words.refer.presets) {
-          console.log('object')
           that.toSliderUrl(1, id + '&presets=' + that.words.refer.presets)
           return false
         }
@@ -1304,8 +1303,6 @@
       },
       toDetail(id) {
         let that = this
-
-        console.log(that.is_content_pay, 'that.is_content_pay')
         if (that.is_content_pay) return
 
         if (that.scene != 9) {
@@ -1325,7 +1322,6 @@
             return false
           }
           if (that.words.presets) {
-            console.log('object')
             that.toSliderUrl(1, id + '&presets=' + that.words.presets)
             return false
           }

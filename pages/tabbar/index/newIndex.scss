@@ -38,7 +38,7 @@
     position: relative;
 
     .tab-bar-title {
-      font-weight: 500;
+      font-weight: bold;
       font-size: 40rpx;
       color: #000000;
     }
@@ -136,15 +136,10 @@
       .left {
         width: 192rpx;
         height: 48rpx;
-        font-family: EYXDH_3500ZSYB, EYXDH_3500ZSYB;
-        font-weight: bold;
-        font-size: 48rpx;
-        color: #000000;
-        line-height: 48rpx;
-        text-align: left;
-        font-style: normal;
-        text-transform: none;
-        text-shadow: 2px 2px 0 white; /* 右下方向白色描边 */
+        image {
+          width: 100%;
+          height: 100%;
+        }
       }
 
       .right {
@@ -156,7 +151,7 @@
     }
 
     .activity {
-      margin-top: 12rpx;
+      margin-bottom: 12rpx;
       display: flex;
       flex-direction: column;
       row-gap: 20rpx;
@@ -182,8 +177,6 @@
             left: 50%;
             top: 20%;
             transform: translate(-50%, -50%);
-            // width: 100%;
-            // height: 100%;
           }
         }
 
@@ -192,7 +185,7 @@
           display: flex;
           flex-direction: column;
           justify-content: center;
-          row-gap: 18rpx;
+          row-gap: 8rpx;
 
           .title {
             display: flex;
@@ -305,11 +298,12 @@
         width: 56rpx;
         height: 56rpx;
         border-radius: 100rpx;
-        overflow: hidden;
+        // overflow: hidden;
 
         image {
           width: 100%;
           height: 100%;
+          border-radius: 100rpx;
         }
 
         .gender {
