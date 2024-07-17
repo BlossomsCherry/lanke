@@ -460,10 +460,14 @@
         <view class="content">
           <view class="title">
             <view class="left">
-              <image src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/72.svg"></image>
+              <image
+                src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/72.svg"
+              ></image>
             </view>
             <view class="right">
-              <image src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/60.svg"></image>
+              <image
+                src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/60.svg"
+              ></image>
             </view>
           </view>
           <view
@@ -850,7 +854,9 @@
                             <view class="may-know">
                               <view class="top">
                                 <view class="icon">
-                                  <image src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/63.svg"></image>
+                                  <image
+                                    src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/63.svg"
+                                  ></image>
                                 </view>
                                 <view class="title">TA可能是你认识的人</view>
                               </view>
@@ -1591,6 +1597,7 @@
         },
         set(v) {}
       },
+      /* 可能认识的人 */
       knowPeople: {
         get() {
           const arr = this.posts.map(item => {
@@ -1598,16 +1605,30 @@
             return item.user
           })
 
-          if (arr.length == 0) return arr
-          const resArr = []
+          if (arr.length == 0) return []
+          
+          const randomArr = []
           for (let i = 0; i < 10; i++) {
             const num = Math.floor(Math.random() * arr.length)
 
-            if (resArr.includes(num)) i--
-            else resArr.push(num)
+            if (randomArr.includes(num)) i--
+            else randomArr.push(num)
           }
 
-          return arr.filter((item, index) => resArr.includes(index))
+          const nameArr = arr.map((item, index) => {
+            if (randomArr.includes(index)) return item.user_name
+          })
+
+          const res = Array.from(new Set(nameArr)).map((item, index) => {
+            const result = arr.filter(ele => ele.user_name == item)[0]
+            return result
+          })
+
+          res.forEach((item, index, arr) => {
+            if (item == undefined) arr.splice(index, 1)
+          })
+
+          return res
         },
         set(v) {}
       }
