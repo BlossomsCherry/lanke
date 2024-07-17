@@ -46,11 +46,11 @@
             v-if="user.gender == 2"
           ></i> -->
           <image
-            src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/62.svg"
+            src="@/static/tabbar/204.svg"
             v-if="user.gender == 1"
           ></image>
           <image
-            src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/61.svg"
+            src="@/static/tabbar/203.svg"
             v-if="user.gender == 2"
           ></image>
           <i

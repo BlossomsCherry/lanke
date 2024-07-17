@@ -1099,7 +1099,20 @@
         }
       ]
     },
-
+    {
+      "root": "pagesF",
+      "pages": [
+        {
+          "path": "index/index",
+          "style": {
+            "navigationBarTextStyle": "black",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": true,
+            "componentPlaceholder": {}
+          }
+        }
+      ]
+    },
     {
       "root": "pagesN",
       "pages": [

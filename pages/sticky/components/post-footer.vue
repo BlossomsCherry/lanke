@@ -293,7 +293,7 @@
     width: 750rpx;
     padding-top: 10rpx;
     .inner {
-      width: $page-content-body-width;
+      width: $page-content-body-width-scend;
       margin: auto;
       justify-content: space-between;
       .left {

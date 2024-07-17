@@ -126,8 +126,8 @@
         @tap.stop.preventp="showPayContent"
       >
         <image
-          src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/70.png"
-          style="width: 26rpx; height: 26rpx"
+          src="https://haitanshidian-1312538539.cos.ap-shanghai.myqcloud.com/icon/70.svg"
+          style="width: 26rpx; height: 26rpx;p"
         ></image>
         <view>付费解锁后可观看</view></view
       >
@@ -1881,7 +1881,7 @@
   .post-content-wrap {
     .inner {
       display: block;
-      width: $page-content-body-width;
+      width: $page-content-body-width-scend;
       margin: auto;
     }
     .media_type_2,
@@ -1919,25 +1919,25 @@
       }
 
       .w-video {
-        width: $page-content-body-width;
+        width: $page-content-body-width-scend;
         .video-height {
           height: 490rpx;
           width: 100%;
         }
         .mpvideo {
-          width: $page-content-body-width;
+          width: $page-content-body-width-scend;
           height: 490rpx;
         }
       }
 
       .h-video {
-        width: $page-content-body-width;
+        width: $page-content-body-width-scend;
         .video-height {
           width: 100%;
           height: 690rpx;
         }
         .mpvideo {
-          width: $page-content-body-width;
+          width: $page-content-body-width-scend;
           height: 690rpx;
         }
       }
@@ -2011,7 +2011,7 @@
     .content-view {
       margin: 6rpx auto;
       font-size: $uni-font-size-medium;
-      width: $page-content-body-width;
+      width: $page-content-body-width-scend;
       line-height: 50rpx;
       @include color(color-light-dark);
       display: block;
@@ -2062,7 +2062,7 @@
     }
 
     .content-view-unfold {
-      width: $page-content-body-width;
+      width: $page-content-body-width-scend;
       margin-bottom: 26rpx;
       display: flex;
       @include color(color-light-dark);
@@ -2201,7 +2201,7 @@
     }
 
     .shop-goods-view {
-      width: $page-content-body-width;
+      width: $page-content-body-width-scend;
       min-height: 150rpx;
       max-height: 150rpx;
       .goods-swiper {
@@ -2214,7 +2214,7 @@
         max-height: 120rpx;
         padding: 6rpx;
         box-sizing: border-box;
-        width: $page-content-body-width;
+        width: $page-content-body-width-scend;
         border-radius: 8rpx;
         .left {
           margin-right: 20rpx;
@@ -2269,7 +2269,7 @@
     }
 
     .used-goods-view {
-      width: $page-content-body-width;
+      width: $page-content-body-width-scend;
       min-height: 150rpx;
       max-height: 150rpx;
       .used-goods-swiper {
@@ -2330,7 +2330,7 @@
     }
 
     .bureau-list-view {
-      width: $page-content-body-width;
+      width: $page-content-body-width-scend;
       min-height: 210rpx;
       max-height: 210rpx;
       .bureau-swiper {
@@ -2402,15 +2402,15 @@
     }
 
     .grid-img-box {
-      width: 230rpx;
-      height: 230rpx;
+      width: 160rpx;
+      height: 160rpx;
       border-radius: $uni-border-radius-sm;
       position: relative;
       margin-right: 10rpx;
       margin-bottom: 10rpx;
       .image-box {
-        width: 230rpx;
-        height: 230rpx;
+        width: 160rpx;
+        height: 160rpx;
         border-radius: $uni-border-radius-sm;
         position: relative;
       }
@@ -2442,7 +2442,7 @@
       position: relative;
     }
     .one-pictures1 {
-      width: $page-content-body-width;
+      width: $page-content-body-width-scend;
       border-radius: $uni-border-radius-sm;
       position: relative;
     }
@@ -2459,21 +2459,18 @@
       color: $uni-color-primary;
     }
     .hidden_not_payd {
-      // @include background_color(page-gray-background-color);
       position: absolute;
       bottom: 80rpx;
-      left: 0;
+      bottom: 25%;
+      left: 50%;
+      transform: translateX(-50%);
       display: flex;
       column-gap: 10rpx;
       align-items: center;
       justify-content: center;
-      // padding: 20rpx;
       overflow: hidden;
-      width: $page-content-body-width;
+      width: $page-content-body-width-scend;
       box-sizing: border-box;
-      // height: 140rpx;
-      // line-height: 100rpx;
-      // text-align: center;
       font-weight: 400;
       font-size: 24rpx;
       color: #d5a637;
@@ -2490,7 +2487,7 @@
         box-sizing: border-box;
         font-size: 13px;
         margin-bottom: 5px;
-        width: $page-content-body-width;
+        width: $page-content-body-width-scend;
         .mini-icon {
           color: slategray;
           margin-right: 5rpx;
@@ -2661,7 +2658,7 @@
       content: '';
       position: absolute;
       pointer-events: none;
-      width: $page-content-body-width;
+      width: $page-content-body-width-scend;
       top: -56rpx;
       height: 56rpx;
       background-image: linear-gradient(
@@ -2672,7 +2669,7 @@
       );
     }
     .pay_fold {
-      width: $page-content-body-width;
+      width: $page-content-body-width-scend;
       position: relative;
       display: flex;
       justify-content: center;
@@ -2834,7 +2831,7 @@
     }
 
     .voter-view {
-      width: $page-content-body-width;
+      width: $page-content-body-width-scend;
       height: 360rpx;
       background-size: cover;
       position: relative;
