@@ -782,7 +782,22 @@
           v-for="(sound, sound_index) in words.sounds"
           :key="sound_index"
         >
-          <view class="gurudin-poster">
+          <view class="gurudin-content">
+            <view class="play">
+              <image src="@/static/tabbar/205.svg"></image>
+            </view>
+            <view class="middle">
+              <view
+                class="item-slider"
+                v-for="i in 8"
+                :key="i"
+                :style="{ height: getRandom(i + 1) + 'rpx' }"
+              ></view>
+            </view>
+            <view class="time">32s</view>
+          </view>
+
+          <!-- <view class="gurudin-poster">
             <image
               :src="words.squre"
               v-if="words.squre != ''"
@@ -802,7 +817,7 @@
               <view class="time">{{ sounds_formatTime(sound.startTime) }}</view>
             </view>
             <view class="author">{{ words.user.user_name }}</view>
-          </view>
+          </view> -->
         </view>
       </view>
 
@@ -1247,6 +1262,9 @@
       uni.$eventBus.$off('stopAllVideo', this.stopAllVideo)
     },
     methods: {
+      getRandom(index) {
+        return Math.floor(Math.random() * 8) * index
+      },
       fullscreen(flag) {
         if (flag.fullscreen) {
           this.$store.commit('updateFullgreen', true)
@@ -2556,72 +2574,111 @@
       .gurudin-audio {
         animation: mymove 0.5s;
         position: relative;
-        height: 130rpx;
+        width: 216rpx;
+        height: 80rpx;
         border-radius: 8rpx;
         clear: both;
         margin: 10rpx 0 0;
 
-        .gurudin-poster,
         .gurudin-content {
-          float: left;
-        }
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 20rpx 20rpx 18rpx 30rpx;
+          width: 216rpx;
+          height: 80rpx;
+          background: #242424;
+          border-radius: 16rpx;
+          box-sizing: border-box;
 
-        .gurudin-poster {
-          position: relative;
-          width: 130rpx;
-          height: 126rpx;
-          margin-top: 1rpx;
-          margin-left: 1rpx;
-          border-top-left-radius: 8rpx;
-          border-bottom-left-radius: 8rpx;
-
-          ._image {
-            width: 110rpx;
-            height: 110rpx;
-            margin: 10rpx;
-            opacity: 0.8;
-            border-radius: 100%;
-          }
-
-          .tools {
-            position: absolute;
-            text-align: center;
-            top: 0;
-            left: 0;
-            height: 130rpx;
-            width: 130rpx;
-
-            ._image {
-              width: 50rpx;
-              height: 50rpx;
-              margin-top: calc((100% - 50rpx) / 2);
-            }
-          }
-        }
-
-        .gurudin-content {
-          width: calc(100% - 130rpx - 62rpx);
-          height: calc(130rpx - 60rpx);
-          padding: 30rpx;
-
-          .title {
-            position: relative;
-            font-size: $uni-font-size-base;
-            height: 40rpx;
-
-            .time {
-              position: absolute;
-              right: 0;
-              top: 0;
-              font-size: $uni-font-size-sm;
+          .play {
+            width: 20rpx;
+            height: 22rpx;
+            image {
+              width: 100%;
+              height: 100%;
             }
           }
 
-          .author {
-            margin-top: 10rpx;
-            font-size: $uni-font-size-sm;
+          .middle {
+            display: flex;
+            align-items: center;
+            column-gap: 4rpx;
+            .item-slider {
+              width: 4rpx;
+              height: 17rpx;
+              background: #ffffff;
+              border-radius: 8rpx 8rpx 8rpx 8rpx;
+            }
+          }
+
+          .time {
+            font-size: 28rpx;
+            color: #ffffff;
           }
         }
+
+        // .gurudin-poster,
+        // .gurudin-content {
+        //   float: left;
+        // }
+
+        // .gurudin-poster {
+        //   position: relative;
+        //   width: 130rpx;
+        //   height: 126rpx;
+        //   margin-top: 1rpx;
+        //   margin-left: 1rpx;
+        //   border-top-left-radius: 8rpx;
+        //   border-bottom-left-radius: 8rpx;
+
+        //   ._image {
+        //     width: 110rpx;
+        //     height: 110rpx;
+        //     margin: 10rpx;
+        //     opacity: 0.8;
+        //     border-radius: 100%;
+        //   }
+
+        //   .tools {
+        //     position: absolute;
+        //     text-align: center;
+        //     top: 0;
+        //     left: 0;
+        //     height: 130rpx;
+        //     width: 130rpx;
+
+        //     ._image {
+        //       width: 50rpx;
+        //       height: 50rpx;
+        //       margin-top: calc((100% - 50rpx) / 2);
+        //     }
+        //   }
+        // }
+
+        // .gurudin-content {
+        //   width: calc(100% - 130rpx - 62rpx);
+        //   height: calc(130rpx - 60rpx);
+        //   padding: 30rpx;
+
+        //   .title {
+        //     position: relative;
+        //     font-size: $uni-font-size-base;
+        //     height: 40rpx;
+
+        //     .time {
+        //       position: absolute;
+        //       right: 0;
+        //       top: 0;
+        //       font-size: $uni-font-size-sm;
+        //     }
+        //   }
+
+        //   .author {
+        //     margin-top: 10rpx;
+        //     font-size: $uni-font-size-sm;
+        //   }
+        // }
       }
 
       @keyframes mymove {

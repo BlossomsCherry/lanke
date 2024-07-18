@@ -193,8 +193,14 @@
       min-width: 216rpx;
       height: 280rpx;
       border-radius: 16rpx;
-      background-color: red;
       box-sizing: border-box;
+      overflow: hidden;
+
+      image {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
 
       .name {
         position: absolute;
@@ -258,15 +264,24 @@
     column-gap: 20rpx;
 
     .left {
+      position: relative;
       display: flex;
       flex-direction: column;
       width: 400rpx;
       height: 478rpx;
       border-radius: 16rpx;
       padding: 34rpx 30rpx;
-      background-color: red;
       box-sizing: border-box;
       row-gap: 20rpx;
+      overflow: hidden;
+
+      .bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
 
       .title {
         margin-bottom: 18rpx;
@@ -280,6 +295,7 @@
         flex-direction: column;
         align-items: center;
         row-gap: 18rpx;
+        z-index: 2;
 
         .item {
           display: flex;
@@ -287,13 +303,16 @@
           column-gap: 28rpx;
           width: 338rpx;
           height: 100rpx;
+          padding: 10rpx;
           background: rgba(255, 255, 255, 0.8);
           border-radius: 16rpx;
+          box-sizing: border-box;
 
           .icon {
             width: 80rpx;
             height: 80rpx;
             border-radius: 12rpx;
+            overflow: hidden;
 
             image {
               width: 100%;
@@ -302,6 +321,7 @@
           }
 
           .right {
+            max-width: 210rpx;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -310,6 +330,10 @@
             .title2 {
               font-size: 28rpx;
               color: #242424;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 1;
+              overflow: hidden;
             }
             .info {
               display: -webkit-box;
@@ -334,7 +358,28 @@
         width: 270rpx;
         height: 228rpx;
         border-radius: 16rpx;
-        background-color: skyblue;
+        overflow: hidden;
+
+        image {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+        }
+
+        .mask {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0) 0%,
+            #000000 100%
+          );
+        }
 
         .msg {
           position: absolute;
@@ -345,6 +390,10 @@
             margin-bottom: 14rpx;
             font-size: 28rpx;
             color: #ffffff;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            overflow: hidden;
           }
           .info {
             display: -webkit-box;

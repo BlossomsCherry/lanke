@@ -366,27 +366,28 @@
       </block>
 
       <!-- 圈子分类 -->
-      <view class="new-circle-class" v-if="_type == 1">
+      <view class="new-circle-class" v-if="_type == 1 ">
         <view class="title">
           <view class="left">
             <view class="slider"></view>
             <text>圈子分类</text>
           </view>
-          <view class="right">
+          <view class="right" @click="allCircle">
             <text>全部</text>
             <image src="@/static/tabbar/right.svg"></image>
           </view>
         </view>
         <view class="content">
-          <view class="add-circle">
+          <view class="add-circle" @click="createCircle">
             <view class="title">创建圈子</view>
             <view class="info">属于自己的社交圈</view>
             <image class="add-icon" src="@/static/tabbar/202.svg"></image>
             <image class="bg" src="@/static/tabbar/201.svg"></image>
           </view>
-          <block v-for="(item, index) in 10" :key="index">
+          <block v-for="(item, index) in circleList" :key="index">
             <view class="item">
-              <view class="name">#萌宠</view>
+              <image :src="item.background_maps"></image>
+              <view class="name">#{{ item.circle_name }}</view>
             </view>
           </block>
         </view>
@@ -406,22 +407,35 @@
         </view>
         <view class="content">
           <view class="left">
+            <image class="bg" :src="bureauList[0].pic"></image>
             <view class="title">热门活动</view>
             <view class="hotActivity">
-              <view class="item" v-for="(item, index) in 3" :key="index">
-                <view class="icon"></view>
+              <view
+                class="item"
+                v-for="(item, index) in bureauList.slice(0, 3)"
+                :key="index"
+              >
+                <view class="icon">
+                  <image :src="item.pic"></image>
+                </view>
                 <view class="right">
-                  <view class="title2">夜半剧本杀</view>
-                  <view class="info">周末组队游戏沉浸...</view>
+                  <view class="title2">{{ item.title }}</view>
+                  <view class="info">{{ item.intro }}</view>
                 </view>
               </view>
             </view>
           </view>
           <view class="right">
-            <view class="item" v-for="(item, index) in 2" :key="index">
+            <view
+              class="item"
+              v-for="(item, index) in bureauList.slice(3, 4)"
+              :key="index"
+            >
+              <image :src="item.pic"></image>
+              <view class="mask"></view>
               <view class="msg">
-                <view class="title2">排球娱乐</view>
-                <view class="info">周末组队游戏沉浸...</view>
+                <view class="title2">{{ item.title }}</view>
+                <view class="info">{{ item.intro }}</view>
               </view>
             </view>
           </view>
@@ -1529,7 +1543,7 @@
         },
         set(v) {}
       },
-     knowPeople: {
+      knowPeople: {
         get() {
           const arr = this.posts.map(item => {
             item.user.is_follow_user = item.is_follow_user
@@ -1537,7 +1551,7 @@
           })
 
           if (arr.length == 0) return []
-          
+
           const randomArr = []
           for (let i = 0; i < 10; i++) {
             const num = Math.floor(Math.random() * arr.length)
@@ -1621,7 +1635,8 @@
         real_time_posts: [],
         real_time_posts_time: '',
         bureauList: [],
-        headerCurrentIndex: 0
+        headerCurrentIndex: 0,
+        circleList: []
       }
     },
     /**
@@ -1657,6 +1672,14 @@
       that.indexPosts()
 
       that.getBureauList()
+
+      that.circleByplateid()
+
+      uni.wen.util
+        .request('https://www.lanke.pro/api/v1/posts/plate/list', 'GET')
+        .then(res => {
+          console.log(res, 55555555555)
+        })
 
       // 注意：mini js代码插入点002号，请勿删除下面一行（热帖榜）
       //script(<<<JS<<<002<<<JS);
@@ -1875,6 +1898,22 @@
       // #endif
     },
     methods: {
+      createCircle() {
+        uni.navigateTo({ url: '/pagesA/circle/creat/index' })
+      },
+      allCircle() {
+        uni.navigateTo({ url: '/pages/circleClass/circleClass' })
+      },
+      circleByplateid(id) {
+        let that = this
+        uni.wen.util
+          .request('https://www.lanke.pro/api/v1/posts/circle/byplateid', {
+            plate_id: -1
+          })
+          .then(function (res) {
+            that.circleList = res.data
+          })
+      },
       checkHeaderTab(index) {
         this.headerTabIndex = index
       },
@@ -1891,7 +1930,7 @@
             147
           )
           .then(res => {
-            this.bureauList = res.data.data.slice(0, 3)
+            this.bureauList = res.data.data
           })
       },
       gotoBureauDetail(id) {
