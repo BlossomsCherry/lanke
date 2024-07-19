@@ -29,6 +29,15 @@
     },
     methods: {
       addTag(index) {
+        if (this.currentIndex.length > 5) {
+          uni.showToast({
+            title: '最多选择5个标签',
+            icon: 'none',
+            duration: 2000
+          })
+
+          return
+        }
         if (this.currentIndex.indexOf(index) === -1) {
           this.currentIndex.push(index)
         } else {
@@ -76,26 +85,28 @@
       <view class="tag-subtitle">展示风格，个性化定制</view>
 
       <view class="tags-box">
-        <view class="box">
-          <view
-            class="item"
-            v-for="(item, index) in tagList.slice(0, 12)"
-            :key="index"
-            :class="{ active: currentIndex.includes(index) }"
-            @click="addTag(index)"
-            >{{ item }}</view
-          >
-        </view>
-        <!-- <view class="box">
-          <view
-            class="item"
-            v-for="(item, index) in tagList.slice(12, tagList.length - 1)"
-            :key="index"
-            :class="{ active: currentIndex.includes(index) }"
-            @click="addTag(index)"
-            >{{ item }}</view
-          >
-        </view> -->
+        <scroll-view scroll-x="true" class="scroll-view">
+          <view class="box">
+            <view
+              class="item"
+              v-for="(item, index) in tagList.slice(0, 12)"
+              :key="index"
+              :class="{ active: currentIndex.includes(index) }"
+              @click="addTag(index)"
+              >{{ item }}</view
+            >
+          </view>
+          <!-- <view class="box">
+            <view
+              class="item"
+              v-for="(item, index) in tagList.slice(0, 12)"
+              :key="index"
+              :class="{ active: currentIndex.includes(index) }"
+              @click="addTag(index)"
+              >{{ item }}</view
+            >
+          </view> -->
+        </scroll-view>
         <image src="@/static/tabbar/209.svg"></image>
       </view>
 
@@ -140,10 +151,17 @@
         overflow-x: scroll;
         box-sizing: border-box;
 
+        .scroll-view {
+          display: flex;
+          width: 1400rpx;
+          align-items: center;
+        }
+
         .box {
           display: flex;
           flex-wrap: wrap;
           gap: 20rpx;
+          overflow: hidden;
           .item {
             padding: 6rpx 24rpx;
             height: 46rpx;

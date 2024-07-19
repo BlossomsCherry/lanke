@@ -641,11 +641,11 @@
             formType="submit"
             v-if="config_user_login_style.includes(0)"
           >
-            <!-- <block v-if="config_app_mode == 'examine'"> 立即登录 </block> -->
-            <!-- <block v-else> -->
-            <image src="../../static/tabbar/weixing.svg"></image>
-            通过微信登录
-            <!-- </block> -->
+            <block v-if="config_app_mode == 'examine'"> 立即登录 </block>
+            <block v-else>
+              <image src="../../static/tabbar/weixing.svg"></image>
+              通过微信登录
+            </block>
           </button>
           <!-- #endif -->
           <button
@@ -689,53 +689,7 @@
           </view>
         </view>
       </view>
-      <u-popup
-        :show="showClausePopup"
-        @close="shutShowClausePopup"
-        mode="bottom"
-        :safe-area-inset-bottom="false"
-        :zIndex="99999991009"
-      >
-        <view class="clause-box">
-          <view class="inner flex-column">
-            <view class="title">请阅读并同意以下条款</view>
-            <view class="content">
-              <view @tap.stop.prevent="to_policy(21)" class="item"
-                >《用户协议》</view
-              >
-              <view style="width: 10rpx"></view>
-              <!-- #ifdef MP-WEIXIN -->
-              <view @tap.stop.prevent="openPrivacyContract" class="item">{{
-                mpPrivacyName
-              }}</view>
-              <!-- #endif -->
-              <!-- #ifndef MP-WEIXIN -->
-              <view @tap.stop.prevent="to_policy(22)" class="item"
-                >《隐私政策》</view
-              >
-              <!-- #endif -->
-            </view>
-            <view class="bottom">
-              <!-- #ifdef MP-WEIXIN -->
-              <button
-                class="u-reset-button agree_button"
-                id="agree-btn"
-                open-type="agreePrivacyAuthorization"
-                @tap.stop.prevent="button_agree"
-                @agreeprivacyauthorization="handleAgreePrivacyAuthorization"
-              >
-                同意并继续
-              </button>
-              <!-- #endif -->
-              <!-- #ifndef MP-WEIXIN -->
-              <view class="agree_button" @tap.stop.prevent="button_agree"
-                >同意并继续</view
-              >
-              <!-- #endif -->
-            </view>
-          </view>
-        </view>
-      </u-popup>
+      
       <u-popup
         :show="showMoreLoginPopup"
         @close="shutShowMoreLoginPopup"

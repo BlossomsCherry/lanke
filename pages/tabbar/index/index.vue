@@ -403,7 +403,7 @@
             <view class="slider"></view>
             <text>大家都在看</text>
           </view>
-          <view class="right">
+          <view class="right"  @tap.stop.prevent="toSliderUrl(6,'/pagesZ/organize-bureau/index/index')">
             <text>全部</text>
             <image src="@/static/tabbar/right.svg"></image>
           </view>
@@ -415,6 +415,7 @@
             <view class="hotActivity">
               <view
                 class="item"
+                @click="gotoBureauDetail(item.id)"
                 v-for="(item, index) in bureauList.slice(0, 3)"
                 :key="index"
               >
@@ -422,8 +423,8 @@
                   <image :src="item.pic"></image>
                 </view>
                 <view class="right">
-                  <view class="title2">{{ item.title }}</view>
-                  <view class="info">{{ item.intro }}</view>
+                  <view class="title2"  @click="gotoBureauDetail(item.id)">{{ item.title }}</view>
+                  <view class="info"  @click="gotoBureauDetail(item.id)">{{ item.intro }}</view>
                 </view>
               </view>
             </view>
@@ -1983,12 +1984,12 @@
           })
       },
       gotoBureauDetail(id) {
-        uni.navigateTo({
-          url: '/pagesF/index/index'
-        })
         // uni.navigateTo({
-        //   url: '/pagesZ/organize-bureau/details/index?id=' + id
+        //   url: '/pagesF/index/index'
         // })
+        uni.navigateTo({
+          url: '/pagesZ/organize-bureau/details/index?id=' + id
+        })
       },
       changeChanel(index) {
         let that = this
