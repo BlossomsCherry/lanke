@@ -790,8 +790,9 @@
           :key="sound_index"
         >
           <view class="gurudin-content">
-            <view class="play">
-              <image src="@/static/tabbar/bofang.svg"></image>
+            <view class="play"  @tap.stop.prevent="sounds_play(sound_index)">
+              <image v-if="!sound.isPlay" src="@/static/tabbar/205.svg"></image>
+              <image v-else src="@/static/tabbar/206.svg"></image>
             </view>
             <view class="middle">
               <view
@@ -2629,7 +2630,7 @@
           display: flex;
           align-items: center;
           justify-content: space-between;
-          padding: 20rpx 20rpx 18rpx 30rpx;
+          padding: 20rpx 20rpx 20rpx 30rpx;
           width: 216rpx;
           height: 80rpx;
           background: #242424;
@@ -2651,9 +2652,11 @@
             column-gap: 4rpx;
             .item-slider {
               width: 4rpx;
-              height: 17rpx;
+              min-height: 10rpx;
+              max-height: 42rpx;
               background: #ffffff;
               border-radius: 8rpx 8rpx 8rpx 8rpx;
+              transition: all 0.7s;
             }
           }
 

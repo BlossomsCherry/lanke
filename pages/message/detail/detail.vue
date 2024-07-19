@@ -1545,7 +1545,7 @@
     onLoad(options) {
       const pages = getCurrentPages()
       const currPage = pages[pages.length - 1]
-      console.log(options,currPage.route,'ooooooooooooooooooo')
+      console.log(options, pages, 'ooooooooooooooooooo')
       let that = this
       that.globalOnloadProcess(options)
       that.setData({
