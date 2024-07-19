@@ -16,18 +16,19 @@
       return {
         currentIndex: [],
         tagList: [],
-        nickName: ''
+        nickName: '',
+        avatar: '',
+        flag: true
       }
     },
     onLoad(options) {
       this.nickName = options.nickName
-      uni.wen.util
-        .request(uni.wen.api.ApiRootUrl + 'configData?which=2')
-        .then(res => {
-          this.tagList = res.data.user.labels
-        })
+      this.avatar = options.avatar
     },
     methods: {
+      changeGender(index) {
+        this.flag = !this.flag
+      },
       addTag(index) {
         if (this.currentIndex.indexOf(index) === -1) {
           this.currentIndex.push(index)
@@ -35,12 +36,12 @@
           this.currentIndex.splice(this.currentIndex.indexOf(index), 1)
         }
       },
-      beginClick() {
-        const arr = this.currentIndex.map(item => {
-          return this.tagList[item]
-        })
-        this.updateInfo({ tagList: arr }).then(() => {
-          uni.navigateTo({ url: `/pages/tabbar/index/index` })
+      nextClick() {
+        const gender = Number(this.flag) === 0 ? 2 : 1
+        this.updateInfo({ gender: gender }).then(() => {
+          uni.navigateTo({
+            url: `/pagesF/personImage/index?nickName=${this.nickName}&avatar=${this.avatar}`
+          })
         })
       }
     }
@@ -72,34 +73,28 @@
     </view>
 
     <view class="tag-header">
-      <view class="tag-title">选择标签，</view>
-      <view class="tag-subtitle">展示风格，个性化定制</view>
+      <view class="tag-title">基础信息，</view>
+      <view class="tag-subtitle">完善个人信息，完善情绪版</view>
 
-      <view class="tags-box">
+      <view class="gender-box">
+        <view class="title">选择性别</view>
         <view class="box">
-          <view
-            class="item"
-            v-for="(item, index) in tagList.slice(0, 12)"
-            :key="index"
-            :class="{ active: currentIndex.includes(index) }"
-            @click="addTag(index)"
-            >{{ item }}</view
-          >
+          <view class="man" @click="changeGender()">
+            <image src="@/static/tabbar/man.svg"></image>
+            <view class="circle" :class="{ active: flag }">
+              <image src="@/static/tabbar/214.svg"></image>
+            </view>
+          </view>
+          <view class="woman" @click="changeGender()">
+            <image src="@/static/tabbar/woman.svg"></image>
+            <view class="circle" :class="{ active: !flag }">
+              <image src="@/static/tabbar/214.svg"></image>
+            </view>
+          </view>
         </view>
-        <!-- <view class="box">
-          <view
-            class="item"
-            v-for="(item, index) in tagList.slice(12, tagList.length - 1)"
-            :key="index"
-            :class="{ active: currentIndex.includes(index) }"
-            @click="addTag(index)"
-            >{{ item }}</view
-          >
-        </view> -->
-        <image src="@/static/tabbar/209.svg"></image>
       </view>
 
-      <view class="begin-btn" @click="beginClick">开始体验</view>
+      <view class="begin-btn" @click="nextClick">下一步</view>
 
       <view class="bottom">
         <image src="@/static/tabbar/210.svg"></image>
@@ -109,10 +104,8 @@
 </template>
 
 <style lang="scss" scoped>
-  page {
-    background: #f7f7f9;
-  }
   .container {
+    background-color: #f7f7f9;
     padding: 225rpx 48rpx 0 48rpx;
     .tag-header {
       .tag-title {
@@ -128,48 +121,50 @@
         color: #000000;
       }
 
-      .tags-box {
-        position: relative;
-        width: 656rpx;
-        height: 320rpx;
-        display: flex;
-        padding: 54rpx 34rpx 88rpx 34rpx;
-        margin-bottom: 60rpx;
-        background: #d8d8d8;
-        border-radius: 10rpx;
-        overflow-x: scroll;
-        box-sizing: border-box;
+      .gender-box {
+        margin-bottom: 100rpx;
+        .title {
+          margin-bottom: 60rpx;
+          font-size: 24rpx;
+          color: #000000;
+        }
 
         .box {
           display: flex;
-          flex-wrap: wrap;
-          gap: 20rpx;
-          .item {
-            padding: 6rpx 24rpx;
-            height: 46rpx;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #ffffff;
-            border-radius: 25rpx;
-            font-size: 24rpx;
-            color: #000000;
-            box-sizing: border-box;
-            z-index: 2;
+          justify-content: center;
+          column-gap: 102rpx;
 
-            &.active {
-              background: #00c78b;
-              color: #ffffff;
+          .man,
+          .woman {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 22rpx;
+
+            image {
+              width: 176rpx;
+              height: 176rpx;
+            }
+
+            .circle {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 40rpx;
+              height: 40rpx;
+              background: #ffffff;
+              border-radius: 100rpx;
+
+              &.active {
+                background: #00c78b;
+              }
+
+              image {
+                width: 28rpx;
+                height: 28rpx;
+              }
             }
           }
-        }
-
-        image {
-          position: absolute;
-          left: 0;
-          top: 0;
-          width: 656rpx;
-          height: 320rpx;
         }
       }
 

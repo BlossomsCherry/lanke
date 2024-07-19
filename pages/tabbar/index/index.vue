@@ -1563,33 +1563,41 @@
       },
       knowPeople: {
         get() {
-          const arr = this.posts.map(item => {
-            item.user.is_follow_user = item.is_follow_user
-            return item.user
-          })
+          // 检查 this.posts 是否存在且是数组
+          if (!Array.isArray(this.posts)) return []
 
-          if (arr.length == 0) return []
+          const arr = this.posts
+            .map(item => {
+              // 检查 item 和 item.user 是否存在
+              if (item && item.user) {
+                item.user.is_follow_user = item.is_follow_user
+                return item.user
+              }
+              return null // 如果 item.user 不存在，则返回 null
+            })
+            .filter(item => item !== null) // 过滤掉 null 的元素
+
+          if (arr.length === 0) return []
 
           const randomArr = []
-          for (let i = 0; i < 10; i++) {
+          while (randomArr.length < 10 && randomArr.length < arr.length) {
+            // 确保 randomArr 不超过 arr 的长度
             const num = Math.floor(Math.random() * arr.length)
-
-            if (randomArr.includes(num)) i--
-            else randomArr.push(num)
+            if (!randomArr.includes(num)) randomArr.push(num)
           }
 
-          const nameArr = arr.map((item, index) => {
-            if (randomArr.includes(index)) return item.user_name
-          })
+          const nameArr = arr
+            .map((item, index) => {
+              if (randomArr.includes(index)) return item.user_name
+              return null // 返回 null 以保持数组的长度
+            })
+            .filter(item => item !== null) // 过滤掉 null 的元素
 
-          const res = Array.from(new Set(nameArr)).map((item, index) => {
-            const result = arr.filter(ele => ele.user_name == item)[0]
-            return result
-          })
-
-          res.forEach((item, index, arr) => {
-            if (item == undefined) arr.splice(index, 1)
-          })
+          const res = Array.from(new Set(nameArr))
+            .map(item => {
+              return arr.find(ele => ele.user_name === item)
+            })
+            .filter(item => item !== undefined) // 过滤掉 undefined 的元素
 
           return res
         },

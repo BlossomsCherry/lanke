@@ -1112,6 +1112,15 @@
           }
         },
         {
+          "path": "gender/index",
+          "style": {
+            "navigationBarTextStyle": "black",
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": true,
+            "componentPlaceholder": {}
+          }
+        },
+        {
           "path": "personImage/index",
           "style": {
             "navigationBarTextStyle": "black",

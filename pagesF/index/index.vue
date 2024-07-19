@@ -477,7 +477,11 @@
                 that.$store.state.userInfo.phone &&
                 that.$store.state.userInfo.phone.length > 5
               ) {
-                uni.wen.toUrl(-2, 0, null)
+                // uni.wen.toUrl(-2, 0, null)
+                const userInfo = that.$store.state.userInfo
+                uni.navigateTo({
+                  url: `/pagesF/gender/index?avatar=${userInfo.user_avatar}&nickName=${userInfo.user_name}`
+                })
               } else if (
                 that.$store.state.config.app.phone.pages.includes(14)
               ) {
@@ -488,7 +492,11 @@
                   isClick: true
                 })
               } else {
-                uni.wen.toUrl(-2, 0, null)
+                // uni.wen.toUrl(-2, 0, null)
+                const userInfo = that.$store.state.userInfo
+                uni.navigateTo({
+                  url: `/pagesF/gender/index?avatar=${userInfo.user_avatar}&nickName=${userInfo.user_name}`
+                })
               }
             }
           })
@@ -633,11 +641,11 @@
             formType="submit"
             v-if="config_user_login_style.includes(0)"
           >
-            <block v-if="config_app_mode == 'examine'"> 立即登录 </block>
-            <block v-else>
-              <image src="../../static/tabbar/weixing.svg"></image>
-              通过微信登录
-            </block>
+            <!-- <block v-if="config_app_mode == 'examine'"> 立即登录 </block> -->
+            <!-- <block v-else> -->
+            <image src="../../static/tabbar/weixing.svg"></image>
+            通过微信登录
+            <!-- </block> -->
           </button>
           <!-- #endif -->
           <button
@@ -648,16 +656,6 @@
             手机号登录/注册
           </button>
           <view class="toTiaoKuan">
-            <!-- <i
-              @tap.stop.prevent="argeen_policy"
-              class="mini-icon mini-duigouxiao argeened"
-              v-if="is_argeen_policy"
-            ></i>
-            <i
-              @tap.stop.prevent="argeen_policy"
-              class="mini-icon mini-quan"
-              v-else
-            ></i> -->
             <view
               :class="['icon', { active: !is_argeen_policy }]"
               @tap.stop.prevent="argeen_policy"
