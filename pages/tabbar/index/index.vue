@@ -817,18 +817,26 @@
                                   v-for="(user_item, index) in knowPeople"
                                   :key="index"
                                 >
-                                  <view class="avatar">
+                                  <view
+                                    class="avatar"
+                                    :style="{
+                                      borderColor:
+                                        user_item.gender == 1
+                                          ? '#00c78b'
+                                          : '#FFB637'
+                                    }"
+                                  >
                                     <image :src="user_item.user_avatar"></image>
                                     <!-- <view > -->
                                     <image
                                       class="gender"
                                       v-if="user_item.gender == 1"
-                                      src="@/static/tabbar/204.svg"
+                                      src="@/static/tabbar/208.svg"
                                     ></image>
                                     <image
                                       class="gender"
                                       v-if="user_item.gender == 2"
-                                      src="@/static/tabbar/203.svg"
+                                      src="@/static/tabbar/207.svg"
                                     ></image>
                                     <!-- </view> -->
                                   </view>
