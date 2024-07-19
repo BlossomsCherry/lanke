@@ -294,7 +294,7 @@
               </view>
               <view
                 class="header-top"
-                @tap.stop.prevent="toSliderUrl(6, '/pagesF/personImage/index')"
+                @tap.stop.prevent="toSliderUrl(6, '/pagesF/index/index')"
                 v-else
               >
                 <view class="own-header-img-div">

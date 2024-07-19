@@ -3,6 +3,29 @@
   export default {
     components: {
       navBar
+    },
+    data() {
+      return {
+        currentIndex: [],
+        tagList: []
+      }
+    },
+    onLoad(options) {
+      uni.wen.util
+        .request(uni.wen.api.ApiRootUrl + 'configData?which=2')
+        .then(res => {
+          console.log(res, 888888888888)
+          this.tagList = res.data.user.labels
+        })
+    },
+    methods: {
+      addTag(index) {
+        if (this.currentIndex.indexOf(index) === -1) {
+          this.currentIndex.push(index)
+        } else {
+          this.currentIndex.splice(this.currentIndex.indexOf(index), 1)
+        }
+      }
     }
   }
 </script>
@@ -36,9 +59,26 @@
       <view class="tag-subtitle">展示风格，个性化定制</view>
 
       <view class="tags-box">
-        <block v-for="(item, index) in 10" :key="index">
-          <view class="item">爱旅游</view>
-        </block>
+        <view class="box">
+          <view
+            class="item"
+            v-for="(item, index) in tagList.slice(0, 12)"
+            :key="index"
+            :class="{ active: currentIndex.includes(index) }"
+            @click="addTag(index)"
+            >{{ item }}</view
+          >
+        </view>
+        <view class="box">
+          <view
+            class="item"
+            v-for="(item, index) in tagList.slice(12, tagList.length - 1)"
+            :key="index"
+            :class="{ active: currentIndex.includes(index) }"
+            @click="addTag(index)"
+            >{{ item }}</view
+          >
+        </view>
         <image src="@/static/tabbar/209.svg"></image>
       </view>
 
@@ -76,29 +116,39 @@
       }
 
       .tags-box {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20rpx;
         position: relative;
         width: 656rpx;
         height: 320rpx;
-        padding: 54rpx 34rpx;
+        display: flex;
+        padding: 54rpx 34rpx 88rpx 34rpx;
         margin-bottom: 60rpx;
         background: #d8d8d8;
         border-radius: 10rpx;
+        overflow-x: scroll;
         box-sizing: border-box;
 
-        .item {
-          padding: 6rpx 24rpx;
-          height: 46rpx;
+        .box {
           display: flex;
-          align-items: center;
-          justify-content: center;
-          background: #ffffff;
-          border-radius: 25rpx;
-          font-size: 24rpx;
-          color: #000000;
-          z-index: 2;
+          flex-wrap: wrap;
+          gap: 20rpx;
+          .item {
+            padding: 6rpx 24rpx;
+            height: 46rpx;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            border-radius: 25rpx;
+            font-size: 24rpx;
+            color: #000000;
+            box-sizing: border-box;
+            z-index: 2;
+
+            &.active {
+              background: #00c78b;
+              color: #ffffff;
+            }
+          }
         }
 
         image {
