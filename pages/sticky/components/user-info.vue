@@ -45,18 +45,17 @@
             class="header-label gender-w-icon mini-icon mini-xingbienv"
             v-if="user.gender == 2"
           ></i> -->
-          <image
-            src="@/static/tabbar/204.svg"
-            v-if="user.gender == 1"
-          ></image>
-          <image
-            src="@/static/tabbar/203.svg"
-            v-if="user.gender == 2"
-          ></image>
-          <i
+          <image src="@/static/tabbar/204.svg" v-if="user.gender == 1"></image>
+          <image src="@/static/tabbar/203.svg" v-if="user.gender == 2"></image>
+          <!-- <i
             class="header-label official-icon mini-icon mini-renzhengguanli1"
             v-if="user.is_official == 1"
-          ></i>
+          ></i> -->
+          <image
+            src="@/static/tabbar/guanfang.svg"
+            v-if="user.is_official == 1"
+            style="width: 26rpx; height: 24rpx"
+          ></image>
           <i
             class="header-label vip-icon mini-icon mini-vip"
             v-if="user.is_member == 1"

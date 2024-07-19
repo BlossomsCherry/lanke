@@ -366,7 +366,7 @@
       </block>
 
       <!-- 圈子分类 -->
-      <view class="new-circle-class" v-if="_type == 1 ">
+      <view class="new-circle-class" v-if="channelIndex == 1">
         <view class="title">
           <view class="left">
             <view class="slider"></view>
@@ -394,7 +394,10 @@
       </view>
 
       <!-- 大家都在看 -->
-      <view class="all-person-view" v-if="_type == 1 && bureauList.length > 0">
+      <view
+        class="all-person-view"
+        v-if="channelIndex == 1 && bureauList.length > 0"
+      >
         <view class="title">
           <view class="left">
             <view class="slider"></view>
@@ -428,7 +431,7 @@
           <view class="right">
             <view
               class="item"
-              v-for="(item, index) in bureauList.slice(3, 4)"
+              v-for="(item, index) in bureauList.slice(3, 5)"
               :key="index"
             >
               <image :src="item.pic"></image>
@@ -444,11 +447,7 @@
 
       <block v-if="channelIndex == 1">
         <view
-          :class="
-            ' index-header ' +
-            `${_type == 1 ? '' : subNavHeaderTranslateClass}` +
-            `${_type == 1 ? ' index_header_1' : ''}`
-          "
+          :class="' index-header ' + ' index_header_1'"
           :style="'top: ' + CustomBar + 'px;'"
         >
           <scroll-view
@@ -483,18 +482,18 @@
               </block>
             </view>
           </scroll-view>
-          <view
+          <!-- <view
             @tap.stop.prevent="moretags"
             class="tab-more"
             v-if="_type == 1 ? false : true"
           >
             <i class="mini-icon mini-xiajiantou"></i>
-          </view>
+          </view> -->
         </view>
-        <view
+        <!-- <view
           class="index-header-height"
           v-if="_type == 1 ? false : true"
-        ></view>
+        ></view> -->
       </block>
 
       <view class="topic-list">
@@ -581,14 +580,14 @@
                                   </block>
                                   <block v-else>
                                     <block v-if="!item.is_my_posts">
-                                      <view
+                                      <!-- <view
                                         @tap.stop.prevent="postsActionFollow"
                                         :data-userid="item.user.id"
                                         :data-index="index"
                                         class="follow-view"
                                         v-if="!item.is_follow_user"
                                       >
-                                        私聊
+                                      关注
                                       </view>
                                       <view
                                         @tap.stop.prevent="postsActionFollow"
@@ -598,6 +597,12 @@
                                         v-else-if="item.is_follow_user"
                                       >
                                         已关注
+                                      </view> -->
+                                      <view
+                                        @click="privateChat(item.user.id)"
+                                        class="follow-view"
+                                      >
+                                        私聊
                                       </view>
                                     </block>
                                   </block>
@@ -884,10 +889,15 @@
                                     <text class="user-nick-text">{{
                                       user_item.user_name
                                     }}</text>
-                                    <i
+                                    <!-- <i
                                       class="header-label official-icon mini-icon mini-renzhengguanli1"
                                       v-if="user_item.is_official == 1"
-                                    ></i>
+                                    ></i> -->
+                                    <image
+                                      src="@/static/tabbar/guanfang.svg"
+                                      v-if="user.is_official == 1"
+                                      style="width: 26rpx; height: 24rpx"
+                                    ></image>
                                     <!-- <i class="header-label vip-icon mini-icon mini-vip" v-if="true || user_item.is_member == 1"></i>
 																	<i :class="'header-label lv-icon mini-icon mini-lv' + user_item.lv"></i> -->
                                   </view>
@@ -1302,7 +1312,7 @@
       config_tab: {
         get() {
           let that = this
-          return that.$store.state.config.tab
+          return this.circleTypeList
         },
         set(v) {}
       },
@@ -1636,7 +1646,8 @@
         real_time_posts_time: '',
         bureauList: [],
         headerCurrentIndex: 0,
-        circleList: []
+        circleList: [],
+        circleTypeList: []
       }
     },
     /**
@@ -1644,6 +1655,8 @@
      */
     onLoad: function (options) {
       let that = this
+
+      that.circleType()
       // #ifdef APP
       plus.navigator.closeSplashscreen()
       // #endif
@@ -1674,12 +1687,6 @@
       that.getBureauList()
 
       that.circleByplateid()
-
-      uni.wen.util
-        .request('https://www.lanke.pro/api/v1/posts/plate/list', 'GET')
-        .then(res => {
-          console.log(res, 55555555555)
-        })
 
       // 注意：mini js代码插入点002号，请勿删除下面一行（热帖榜）
       //script(<<<JS<<<002<<<JS);
@@ -1898,6 +1905,32 @@
       // #endif
     },
     methods: {
+      privateChat(id) {
+        uni.navigateTo({ url: '/pages/message/detail/detail?userid=' + id })
+      },
+      addCircleType(id) {
+        uni.wen.util.request(
+          uni.wen.api.ApiRootUrl + 'user/plate/add',
+          {
+            plate_id: id
+          },
+          'POST'
+        )
+      },
+      circleType() {
+        uni.wen.util
+          .request('https://www.lanke.pro/api/v1/posts/plate/list', 'GET')
+          .then(res => {
+            res.data.forEach((item, index) => {
+              item.plate_id = item.id
+              item.type = index
+            })
+            // this.$store.state.config.tab.shift()
+            this.circleTypeList = this.$store.state.config.tab
+
+            console.log(this.circleTypeList, 'this.circleTypeList')
+          })
+      },
       createCircle() {
         uni.navigateTo({ url: '/pagesA/circle/creat/index' })
       },
@@ -1961,6 +1994,8 @@
       },
       //切换导航栏
       check: function (e) {
+        console.log(e, this.$store.state.config.tab, 3333333333)
+        this.addCircleType(e.currentTarget.dataset.pid)
         let that = this
         let type = e.currentTarget.dataset.type
         let pid = e.currentTarget.dataset.pid

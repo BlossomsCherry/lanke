@@ -328,7 +328,8 @@
                 :controls="true"
                 :show-fullscreen-btn="true"
                 :enable-play-gesture="true"
-                :show-play-btn="true"
+                :show-play-btn="false"
+                :show-center-play-btn="false"
                 :poster-for-crawler="words.video.video_thumb_url"
                 :poster="words.video.video_thumb_url"
                 :enable-progress-gesture="true"
@@ -337,6 +338,8 @@
                 :enable-auto-rotation="true"
                 :src="fakeVideoUrl"
               ></video>
+
+              <image src="@/static/tabbar/bofang.svg"></image>
             </view>
             <!-- #endif -->
           </view>
@@ -486,7 +489,8 @@
                 :controls="true"
                 :show-fullscreen-btn="true"
                 :enable-play-gesture="true"
-                :show-play-btn="true"
+                :show-play-btn="false"
+                :show-center-play-btn="false"
                 :poster-for-crawler="words.video.video_thumb_url"
                 :poster="words.video.video_thumb_url"
                 :enable-progress-gesture="true"
@@ -495,6 +499,7 @@
                 :enable-auto-rotation="true"
                 :src="fakeVideoUrl"
               ></video>
+              <image src="@/static/tabbar/bofang.svg"></image>
             </view>
             <!-- #endif -->
           </view>
@@ -718,7 +723,8 @@
                 :controls="true"
                 :show-fullscreen-btn="true"
                 :enable-play-gesture="true"
-                :show-play-btn="true"
+                :show-play-btn="false"
+                :show-center-play-btn="false"
                 :poster-for-crawler="words.refer.video.video_thumb_url"
                 :poster="words.refer.video.video_thumb_url"
                 :enable-progress-gesture="true"
@@ -727,6 +733,7 @@
                 :enable-auto-rotation="true"
                 :src="referFakeVideoUrl"
               ></video>
+              <image src="@/static/tabbar/bofang.svg"></image>
             </view>
             <!-- #endif -->
           </view>
@@ -784,7 +791,7 @@
         >
           <view class="gurudin-content">
             <view class="play">
-              <image src="@/static/tabbar/205.svg"></image>
+              <image src="@/static/tabbar/bofang.svg"></image>
             </view>
             <view class="middle">
               <view
@@ -1941,6 +1948,17 @@
         .video-height {
           height: 490rpx;
           width: 100%;
+          position: relative;
+
+          image {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 30rpx;
+            height: 32rpx;
+            z-index: 9;
+            transform: translate(-50%, -50%);
+          }
         }
         .mpvideo {
           width: $page-content-body-width-scend;
@@ -1953,6 +1971,15 @@
         .video-height {
           width: 100%;
           height: 690rpx;
+          image {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 30rpx;
+            height: 32rpx;
+            z-index: 9;
+            transform: translate(-50%, -50%);
+          }
         }
         .mpvideo {
           width: $page-content-body-width-scend;
@@ -2007,6 +2034,15 @@
         .video-height {
           width: 100%;
           height: 490rpx;
+          image {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 20rpx;
+            height: 22rpx;
+            z-index: 9;
+            transform: translate(-50%, -50%);
+          }
         }
         .mpvideo {
           height: 490rpx;
@@ -2016,6 +2052,15 @@
         .video-height {
           width: 100%;
           height: 690rpx;
+          image {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 30rpx;
+            height: 32rpx;
+            z-index: 9;
+            transform: translate(-50%, -50%);
+          }
         }
         .mpvideo {
           height: 690rpx;
