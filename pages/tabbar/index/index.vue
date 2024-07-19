@@ -385,7 +385,10 @@
             <image class="bg" src="@/static/tabbar/201.svg"></image>
           </view>
           <block v-for="(item, index) in circleList" :key="index">
-            <view class="item">
+            <view
+              class="item"
+             @tap.stop.prevent="toSliderUrl(2, item.id)"
+            >
               <image :src="item.background_maps"></image>
               <view class="name">#{{ item.circle_name }}</view>
             </view>
@@ -403,7 +406,12 @@
             <view class="slider"></view>
             <text>大家都在看</text>
           </view>
-          <view class="right"  @tap.stop.prevent="toSliderUrl(6,'/pagesZ/organize-bureau/index/index')">
+          <view
+            class="right"
+            @tap.stop.prevent="
+              toSliderUrl(6, '/pagesZ/organize-bureau/index/index')
+            "
+          >
             <text>全部</text>
             <image src="@/static/tabbar/right.svg"></image>
           </view>
@@ -423,8 +431,12 @@
                   <image :src="item.pic"></image>
                 </view>
                 <view class="right">
-                  <view class="title2"  @click="gotoBureauDetail(item.id)">{{ item.title }}</view>
-                  <view class="info"  @click="gotoBureauDetail(item.id)">{{ item.intro }}</view>
+                  <view class="title2" @click="gotoBureauDetail(item.id)">{{
+                    item.title
+                  }}</view>
+                  <view class="info" @click="gotoBureauDetail(item.id)">{{
+                    item.intro
+                  }}</view>
                 </view>
               </view>
             </view>
