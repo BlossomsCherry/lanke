@@ -26,23 +26,22 @@
         signature: '',
         wechatAccount: '',
         imagesubject: '',
-        imagesubjectTmp: ''
+        imagesubjectTmp: '',
+        gender: 1
       }
     },
     onLoad(options) {
       console.log(options, 'iiiiiiiiiiiiiiiiiii')
       this.nickName = options.nickName
       this.avatar = options.avatar
+      this.gender = options.gender
     },
     methods: {
       changeName() {
-        // uni.wen.util.request(
-        //   uni.wen.api.ApiRootUrl + 'user/update/info',
-        //   { user_name: this.nickName },
-        //   'POST'
-        // )
-        this.updateInfo({ nickName: this.nickName })
-        uni.navigateTo({ url: `/pagesF/tags/index?nickName=${this.nickName}` })
+        this.updateInfo({ nickName: this.nickName, gender: this.gender })
+        uni.navigateTo({
+          url: `/pagesF/tags/index?nickName=${this.nickName}&gender=${this.gender}`
+        })
       },
       clipperImage(e) {
         // this.$refs.avatar.fSelect()

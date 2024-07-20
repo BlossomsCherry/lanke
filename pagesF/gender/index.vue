@@ -18,12 +18,15 @@
         tagList: [],
         nickName: '',
         avatar: '',
+        gender: 1,
         flag: true
       }
     },
     onLoad(options) {
       this.nickName = options.nickName
       this.avatar = options.avatar
+      this.gender = options.gender
+      options.gender == 1 ? (this.flag = true) : (this.flag = false)
     },
     methods: {
       changeGender(index) {
@@ -37,10 +40,11 @@
         }
       },
       nextClick() {
-        const gender = Number(this.flag) === 0 ? 2 : 1
-        this.updateInfo({ gender: gender }).then(() => {
+        // const gender = Number(this.flag) === 0 ? 2 : 1
+        this.gender = this.flag ? 1 : 2
+        this.updateInfo().then(() => {
           uni.navigateTo({
-            url: `/pagesF/personImage/index?nickName=${this.nickName}&avatar=${this.avatar}`
+            url: `/pagesF/personImage/index?nickName=${this.nickName}&avatar=${this.avatar}&gender=${this.gender}`
           })
         })
       }

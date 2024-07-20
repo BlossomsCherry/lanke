@@ -90,10 +90,38 @@
               获取短信验证码
             </button> -->
 
+            <view class="toTiaoKuan">
+              <view
+                :class="['icon', { active: !is_argeen_policy }]"
+                @tap.stop.prevent="argeen_policy"
+              >
+                <image
+                  v-if="is_argeen_policy"
+                  src="@/static/tabbar/213.svg"
+                ></image>
+              </view>
+              我已阅读并同意
+              <view @tap.stop.prevent="to_policy(21)" class="clause"
+                >《用户协议》</view
+              >
+              与
+              <!-- #ifdef MP-WEIXIN -->
+              <view @tap.stop.prevent="openPrivacyContract" class="clause"
+                >《隐私政策》</view
+              >
+              <!-- #endif -->
+              <!-- #ifndef MP-WEIXIN -->
+              <view @tap.stop.prevent="to_policy(22)" class="clause"
+                >《隐私政策》</view
+              >
+              <!-- #endif -->
+            </view>
+
             <view @tap.stop.prevent="loginPhone" class="login-btn"
               >立即登录</view
             >
           </view>
+
           <!-- </view> -->
         </block>
         <u-popup
@@ -177,7 +205,7 @@
 
         mpPrivacyName: '《隐私政策》',
         isNeedAgreeMpPrivacy: false,
-
+        is_argeen_policy: false,
         showCountryCodePopup: false
       }
     },
@@ -265,6 +293,14 @@
       },
       loginPhone() {
         let that = this
+        if (!that.is_argeen_policy) {
+          uni.showToast({
+            title: '请先同意用户协议',
+            icon: 'none'
+          })
+
+          return
+        }
         if (that.logining === true) {
           return false
         }
@@ -519,6 +555,37 @@
       row-gap: 40rpx;
       background-color: #f7f7f9;
       padding: 225rpx 48rpx 0 48rpx;
+
+      .toTiaoKuan {
+        display: flex;
+        align-items: center;
+        font-size: 24rpx;
+        column-gap: 12rpx;
+
+        .icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 22rpx;
+          height: 22rpx;
+          background: #000000;
+          border-radius: 4rpx;
+          border: 2rpx solid #000000;
+
+          &.active {
+            background-color: #fff;
+          }
+
+          image {
+            width: 22rpx;
+            height: 22rpx;
+          }
+        }
+
+        .clause {
+          font-weight: bold;
+        }
+      }
 
       .phone-input {
         display: flex;

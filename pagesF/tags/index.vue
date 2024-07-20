@@ -15,16 +15,19 @@
     data() {
       return {
         currentIndex: [],
-        tagList: [],
-        nickName: ''
+        tagLists: [],
+        nickName: '',
+        gender: 0,
+        cid: 0
       }
     },
     onLoad(options) {
       this.nickName = options.nickName
+      this.gender = options.gender
       uni.wen.util
         .request(uni.wen.api.ApiRootUrl + 'configData?which=2')
         .then(res => {
-          this.tagList = res.data.user.labels
+          this.tagLists = res.data.user.labels
         })
     },
     methods: {
@@ -46,9 +49,17 @@
       },
       beginClick() {
         const arr = this.currentIndex.map(item => {
-          return this.tagList[item]
+          return this.tagLists[item]
         })
-        this.updateInfo({ tagList: arr }).then(() => {
+
+        if (arr.length === 0) {
+          // uni.navigateTo({ url: `/pages/tabbar/index/index` })
+          this.updateInfo().then(() => {
+            uni.navigateTo({ url: `/pages/tabbar/index/index` })
+          })
+          return
+        }
+        this.updateInfo({ tagList: arr, gender: this.gender }).then(() => {
           uni.navigateTo({ url: `/pages/tabbar/index/index` })
         })
       }
@@ -89,7 +100,7 @@
           <view class="box">
             <view
               class="item"
-              v-for="(item, index) in tagList.slice(0, 12)"
+              v-for="(item, index) in tagLists.slice(0, 12)"
               :key="index"
               :class="{ active: currentIndex.includes(index) }"
               @click="addTag(index)"

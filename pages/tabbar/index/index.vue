@@ -444,6 +444,7 @@
           <view class="right">
             <view
               class="item"
+               @click="gotoBureauDetail(item.id)"
               v-for="(item, index) in bureauList.slice(3, 5)"
               :key="index"
             >

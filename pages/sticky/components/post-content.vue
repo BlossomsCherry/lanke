@@ -790,14 +790,14 @@
           :key="sound_index"
         >
           <view class="gurudin-content">
-            <view class="play"  @tap.stop.prevent="sounds_play(sound_index)">
+            <view class="play" @tap.stop.prevent="sounds_play(sound_index)">
               <image v-if="!sound.isPlay" src="@/static/tabbar/205.svg"></image>
               <image v-else src="@/static/tabbar/206.svg"></image>
             </view>
             <view class="middle">
               <view
                 class="item-slider"
-                v-for="i in 8"
+                v-for="i in 12"
                 :key="i"
                 :style="{ height: getRandom(i + 1) + 'rpx' }"
               ></view>
@@ -2631,7 +2631,7 @@
           align-items: center;
           justify-content: space-between;
           padding: 20rpx 20rpx 20rpx 30rpx;
-          width: 216rpx;
+          width: 280rpx;
           height: 80rpx;
           background: #242424;
           border-radius: 16rpx;
